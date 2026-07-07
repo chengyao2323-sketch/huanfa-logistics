@@ -1,0 +1,11 @@
+﻿name = "huanfa-logistics"
+compatibility_date = "2025-07-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[env.production]
+
+[[redirects]]
+from = "/api/*"
+to = "/api/:splat"
+status = 200

@@ -1,0 +1,307 @@
+﻿import { I18nDict } from "./types";
+
+const zh: I18nDict = {
+  nav: {
+    home: "首页",
+    services: "服务项目",
+    about: "关于我们",
+    contact: "联系我们",
+    getQuote: "获取报价",
+    openMenu: "打开菜单",
+  },
+  hero: {
+    badge: "全球物流 · 值得信赖",
+    title: "焕发国际物流",
+    subtitle: "Huanfa International Logistics",
+    description:
+      "以专业连接全球，用服务赢得信赖。我们致力于为每一位客户提供高效、安全、可靠的国际物流解决方案。",
+    getQuote: "获取报价",
+    learnMore: "了解服务",
+  },
+  stats: {
+    countries: "全球服务国家",
+    containers: "年处理货柜",
+    onTime: "准时交付率",
+    experience: "行业经验",
+  },
+  services: {
+    title: "核心服务",
+    description: "覆盖全球的物流网络，为您提供全方位、定制化的国际物流解决方案",
+    ocean: {
+      title: "海运服务",
+      subtitle: "Ocean Freight",
+      desc: "提供整箱（FCL）、拼箱（LCL）及散杂货运输服务，覆盖全球主要港口。",
+    },
+    air: {
+      title: "空运服务",
+      subtitle: "Air Freight",
+      desc: "国际空运快件、普货及包机服务，安全快速送达全球各个角落。",
+    },
+    ddp: {
+      title: "DDP门到门",
+      subtitle: "DDP Shipping",
+      desc: "DDP门到门运输，含出口报关、国际干线、进口清关及末端派送，一站式全包服务。",
+    },
+    warehouse: {
+      title: "仓储配送",
+      subtitle: "Warehousing & Distribution",
+      desc: "现代化仓储设施，提供集货、分拣、包装、配送等增值服务。",
+    },
+    ecommerce: {
+      title: "跨境电商物流",
+      subtitle: "E-Commerce Logistics",
+      desc: "为跨境电商平台提供海外仓、小包直邮、FBA头程等综合物流方案。",
+    },
+  },
+  about: {
+    badge: "关于我们",
+    title: "跨境专线物流\n直达欧美全境",
+    p1: "深圳焕发国际物流深耕中国至欧美全境门到门跨境专线物流，总部坐落深圳宝安，聚焦大件家具专线、带电产品专线、欧美精品空派等跨境细分赛道。创始团队均拥有 8 年以上头部跨境物流实操经验，自建 3000㎡标准化分拣仓，配备专属取派车队与固定合作海外代理，全程自主把控清关、运输、末端派送全流程。",
+    p2: "主打欧美空派、海运大件专线、商业快递三大标准化产品，专为亚马逊卖家、外贸工厂、独立站商家提供一站式跨境履约方案，已稳定服务千余家跨境商户。我们坚持自营操作链路，摒弃多层中间商转包，从上门提货、国内分拣、国际干线到海外清关派送，全流程实时轨迹可视化追踪。以高时效、低破损、售后快速响应为服务核心，用心承接每一票货物，助力国内商家轻松打通全球出海通路。",
+    learnMore: "了解更多",
+    mission: { label: "使命", value: "让跨境物流更简单" },
+    vision: { label: "愿景", value: "成为跨境专线物流领跑者" },
+    values: { label: "价值观", value: "专注 高效 诚信 创新" },
+    promise: { label: "承诺", value: "用心承运每一票" },
+  },
+  cta: {
+    title: "准备好运输您的货物了吗？",
+    description: "联系我们，获取专业物流方案和实时报价",
+    button: "立即咨询",
+  },
+  footer: {
+    description: "深耕中国至欧美全境跨境专线物流，专注大件家具、带电产品、欧美空派等跨境细分赛道，为亚马逊卖家、外贸工厂、独立站商家提供一站式跨境履约方案。",
+    quickLinks: "快速链接",
+    servicesTitle: "服务项目",
+    contactTitle: "联系我们",
+    address: "深圳市宝安区福德路15号恒安商务大厦803",
+    phone: "+86 15207122341",
+    email: "chengyao2323@gmail.com",
+    copyright: "© 2026 深圳焕发国际物流 Huanfa International Logistics. All rights reserved.",
+    icp: "沪ICP备XXXXXXXX号",
+    home: "首页",
+    services: "服务项目",
+    about: "关于我们",
+    contact: "联系我们",
+    ocean: "海运服务",
+    air: "空运服务",
+    land: "DDP门到门",
+    warehouse: "仓储配送",
+  },
+  aboutPage: {
+    page: {
+      title: "关于我们",
+      desc: "了解焕发国际物流的故事、使命与价值观",
+    },
+    story: {
+      badge: "我们的故事",
+      title: "深耕欧美\n专注跨境专线",
+      companyInfo: "公司简介",
+      p1: "深圳焕发国际物流深耕中国至欧美全境门到门跨境专线物流，总部坐落深圳宝安，聚焦大件家具专线、带电产品专线、欧美精品空派等跨境细分赛道。",
+      p2: "创始团队均拥有 8 年以上头部跨境物流实操经验，自建 3000㎡标准化分拣仓，配备专属取派车队与固定合作海外代理，全程自主把控清关、运输、末端派送全流程。主打欧美空派、海运大件专线、商业快递三大标准化产品，专为亚马逊卖家、外贸工厂、独立站商家提供一站式跨境履约方案，已稳定服务千余家跨境商户。",
+      p3: "我们坚持自营操作链路，摒弃多层中间商转包，从上门提货、国内分拣、国际干线到海外清关派送，全流程实时轨迹可视化追踪。以高时效、低破损、售后快速响应为服务核心，用心承接每一票货物，助力国内商家轻松打通全球出海通路。",
+      timeline: [
+        { year: "2016", event: "创始团队进入跨境物流行业" },
+        { year: "2018", event: "启动欧美空派专线服务" },
+        { year: "2020", event: "自建3000㎡标准化分拣仓" },
+        { year: "2021", event: "上线全流程轨迹追踪系统" },
+        { year: "2023", event: "服务客户突破1000家" },
+        { year: "2024", event: "总部迁至深圳宝安，全面升级服务体系" },
+      ],
+    },
+    values: {
+      title: "核心价值观",
+      desc: "这些价值观驱动着我们每一天的行动和决策",
+      items: [
+        { title: "诚信为本", desc: "诚实守信是我们的立足之本。我们坚持透明报价、规范操作，与客户建立长期信任关系。" },
+        { title: "专业高效", desc: "经验丰富的操作团队和先进的IT系统，确保每一票货物高效流转、全程可控。" },
+        { title: "客户至上", desc: "以客户需求为导向，提供个性化定制方案，全程贴心服务，让您省心省力。" },
+        { title: "持续创新", desc: "拥抱数字化变革，持续优化流程与服务模式，为客户创造更大价值。" },
+      ],
+    },
+  },
+  servicesPage: {
+    page: {
+      title: "服务项目",
+      desc: "全方位国际物流服务，为您的全球贸易保驾护航",
+    },
+    details: [
+      {
+        title: "海运服务",
+        subtitle: "Ocean Freight",
+        color: "from-blue-500 to-blue-700",
+        items: [
+          "整箱运输 (FCL) — 20GP / 40GP / 40HQ 等标准及特种集装箱",
+          "拼箱运输 (LCL) — 灵活拼箱，经济高效",
+          "散杂货及滚装船运输 (Breakbulk / Ro-Ro)",
+          "危险品及冷链物流运输",
+          "全球主要航线周班服务，保证舱位",
+        ],
+      },
+      {
+        title: "空运服务",
+        subtitle: "Air Freight",
+        color: "from-sky-500 to-indigo-600",
+        items: [
+          "国际空运普货及快件运输",
+          "包机及分包机服务 (Charter)",
+          "危险品空运及温控货物运输",
+          "门到门限时派送服务",
+          "与多家主流航空公司保持长期合作",
+        ],
+      },
+      {
+        title: "DDP门到门",
+        subtitle: "DDP Shipping",
+        color: "from-emerald-500 to-teal-700",
+    items: [
+      "DDP门到门运输，中国至美国/欧洲全境含清关派送",
+      "DDU运输服务，灵活选择清关方式",
+          "空运/海运门到门组合方案",
+          "全程轨迹可视化追踪，实时更新",
+        ],
+      },
+      {
+        title: "仓储与配送",
+        subtitle: "Warehousing & Distribution",
+        color: "from-amber-500 to-orange-600",
+        items: [
+          "现代化仓储设施，覆盖主要口岸城市",
+          "集货、分拣、包装、贴标等增值服务",
+          "库存管理及实时追踪系统",
+          "保税仓储及跨境电商保税备货",
+          "最后一公里配送解决方案",
+        ],
+      },
+      {
+        title: "跨境电商物流",
+        subtitle: "E-Commerce Logistics",
+        color: "from-violet-500 to-purple-700",
+        items: [
+          "Amazon FBA 头程物流服务",
+          "海外仓一件代发",
+          "国际小包及专线直邮",
+          "多平台 ERP 系统对接",
+          "退件处理及逆向物流",
+        ],
+      },
+    ],
+    learnMore: "了解详情",
+    cta: {
+      title: "需要定制物流方案？",
+      desc: "我们的专业团队将根据您的需求，量身打造最优化、最经济的物流解决方案",
+      button: "联系我们",
+    },
+  },
+  contactPage: {
+    page: {
+      title: "联系我们",
+      desc: "随时为您提供专业物流咨询与报价服务",
+    },
+    form: {
+      title: "发送询盘",
+      desc: "请填写以下信息，我们的物流顾问将在24小时内与您联系",
+      companyName: "公司名称",
+      contactPerson: "联系人",
+      email: "邮箱",
+      phone: "电话",
+      origin: "起运地",
+      destination: "目的地",
+      cargoType: "货物类型",
+      weightVolume: "重量/体积",
+      remarks: "备注",
+      submit: "提交询盘",
+      successTitle: "询盘已提交",
+      successDesc: "感谢您的询盘！我们的物流顾问将在24小时内与您联系。",
+      sendAnother: "再次提交",
+      requiredMsg: "请填写此项",
+      emailInvalidMsg: "请输入有效的邮箱地址",
+    },
+    info: {
+        title: "联系方式",
+        addressLabel: "地址",
+        addressValue: "深圳市宝安区福德路15号恒安商务大厦803",
+        phoneLabel: "服务热线",
+        phoneValue: "+86 15207122341",
+        emailLabel: "电子邮箱",
+        emailValue: "chengyao2323@gmail.com",
+        hoursLabel: "工作时间",
+        hoursValue: "周一至周五 9:00 - 18:00",
+    },
+    },
+  servicePages: {
+  seaFreight: {
+      title: "中国发全球海运服务 | 整箱拼箱集装箱运输",
+      desc: "经济实惠的海运方案——FCL整箱和LCL拼箱服务，覆盖全球主要港口。",
+      features: [
+        "整箱运输（FCL）— 20GP/40GP/40HQ标准及特种集装箱",
+        "拼箱运输（LCL）— 灵活拼箱，经济高效",
+        "散杂货及滚装船运输（Breakbulk/Ro-Ro）",
+        "转运时间：至美国西岸约20-35天",
+        "含清关及门到门派送服务",
+        "全球主要港口定期班轮服务",
+      ],
+      solutionsTitle: "灵活的中国海运方案",
+      solutionsSubtitle: "FOB、CIF、DDP及门到门运输服务",
+      solutionsDesc: "我们提供多种国际贸易条款下的灵活海运方案，涵盖FOB、CIF、DDP和DDU。我们的团队负责订舱、报关、运输及末端派送，确保从中国到全球目的地的运输体验顺畅无忧。",
+      faq: [
+        {
+          question: "从中国发CIF海运是什么意思？",
+          answer: "CIF（Cost, Insurance and Freight，成本、保险费加运费）是一种国际贸易术语，指卖方负责安排海运及保险，直至货物到达目的港。我们可以协助处理从中国的CIF出货，包括订舱、报关文件和国际物流协调。"
+        }
+      ],
+    },
+    airFreight: {
+      title: "中国发全球空运服务 | 国际航空货运",
+      desc: "快速可靠的国际空运——电商货物、样品、急件空运直达。",
+      features: [
+        "国际空运普货及快件运输",
+        "转运时间：至美国5-12天，加急3-7天",
+        "危险品及温控货物空运",
+        "门到门限时派送服务",
+        "含电池及特殊货物处理能力",
+        "多家主流航空公司长期合作",
+      ],
+    },
+    doorToDoor: {
+      title: "中国至全球门到门运输 | DDP双清包税",
+      desc: "DDP门到门一站式服务——含提货、报关、国际运输、清关、末端派送。",
+      features: [
+        "上门提货、国内分拣、包装",
+        "国际干线运输（空运/海运）",
+        "出口报关 + 进口清关全程代办",
+        "DDP（完税交付）和DDU选项可选",
+        "末端派送上门",
+        "全程轨迹可视化追踪",
+      ],
+    },
+    ecommerceLogistics: {
+      title: "跨境电商物流 | Amazon FBA及独立站配送",
+      desc: "Amazon FBA头程、Shopify订单履约、跨境电商一站式物流方案。",
+      features: [
+        "Amazon FBA头程物流，中国至美国/欧洲",
+        "海外仓一件代发服务",
+        "国际小包及专线直邮",
+        "多平台ERP系统对接",
+        "出货前质检及验货服务",
+        "退件处理及逆向物流",
+      ],
+    },
+    warehousing: {
+      title: "仓储与配送服务",
+      desc: "现代化仓储和配送服务——集货、分拣、包装、贴标、库存管理及最后一公里配送。",
+      features: [
+        "现代化仓储设施，覆盖主要口岸城市",
+        "集货、分拣、包装、贴标等增值服务",
+        "库存管理及实时追踪系统",
+        "保税仓储及跨境电商保税备货",
+        "最后一公里配送解决方案",
+        "灵活的短期和长期仓储选项",
+      ],
+    },
+  },
+};
+
+export default zh;
+
+
