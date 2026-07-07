@@ -1,22 +1,22 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { sendInquiryEmail } from "@/lib/email";
+
+export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Validate required fields
     const requiredFields = ["companyName", "contactPerson", "email"];
     for (const field of requiredFields) {
       if (!body[field] || !body[field].trim()) {
         return NextResponse.json(
-          { error: `Missing required field: ${field}` },
+          { error: "Missing required field: " + field },
           { status: 400 }
         );
       }
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(body.email)) {
       return NextResponse.json(
@@ -25,7 +25,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email notification
     await sendInquiryEmail(body);
 
     return NextResponse.json({
@@ -41,7 +40,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Allow OPTIONS for CORS preflight if needed
 export async function OPTIONS() {
   return NextResponse.json({}, { status: 200 });
 }
