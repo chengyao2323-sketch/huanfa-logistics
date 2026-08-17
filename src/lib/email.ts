@@ -38,7 +38,7 @@ export async function sendInquiryEmail(data: {
         host: smtpHost,
         port: Number(env.SMTP_PORT || 465),
         username: smtpUser,
-        password: smtpPass,
+        password: smtpPass.replace(/\s+/g, ""),
         from: env.SMTP_FROM || smtpUser,
         to: notifyTo,
         secureTransport: Number(env.SMTP_PORT || 465) === 587 ? "starttls" : "tls",
