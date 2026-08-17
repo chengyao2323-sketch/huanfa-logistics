@@ -17,5 +17,12 @@ const nextConfig = {
       },
     ];
   },
+  webpack(config, { isServer }) {
+    if (isServer) {
+      config.externals.push("cloudflare:sockets");
+      config.externalsType = "commonjs";
+    }
+    return config;
+  },
 };
 module.exports = nextConfig;
