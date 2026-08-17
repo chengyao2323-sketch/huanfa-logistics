@@ -11,8 +11,9 @@ export async function sendInquiryEmail(data: {
   weightVolume: string;
   remarks: string;
 }): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const notifyTo = process.env.NOTIFY_EMAIL;
+  const env = (globalThis as any).process?.env ?? {};
+  const apiKey = env.RESEND_API_KEY;
+  const notifyTo = env.NOTIFY_EMAIL;
   const subject = "New Inquiry - " + data.companyName;
   const body = [
     "Company: " + data.companyName,
@@ -28,19 +29,19 @@ export async function sendInquiryEmail(data: {
     "--- Sent via Huanfa Logistics Website ---",
   ].join("\n");
 
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
+  const smtpHost = env.SMTP_HOST;
+  const smtpUser = env.SMTP_USER;
+  const smtpPass = env.SMTP_PASS;
   if (smtpHost && smtpUser && smtpPass && notifyTo) {
     await sendMail(
       {
         host: smtpHost,
-        port: Number(process.env.SMTP_PORT || 465),
+        port: Number(env.SMTP_PORT || 465),
         username: smtpUser,
         password: smtpPass,
-        from: process.env.SMTP_FROM || smtpUser,
+        from: env.SMTP_FROM || smtpUser,
         to: notifyTo,
-        secureTransport: Number(process.env.SMTP_PORT || 465) === 587 ? "starttls" : "tls",
+        secureTransport: Number(env.SMTP_PORT || 465) === 587 ? "starttls" : "tls",
       },
       {
         subject,
