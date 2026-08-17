@@ -11,6 +11,14 @@ const serviceColors = [
   "from-violet-500 to-purple-700",
 ];
 
+const serviceHrefs = [
+  "/services/sea-freight",
+  "/services/air-freight",
+  "/services/door-to-door",
+  "/services/warehousing",
+  "/services/ecommerce-logistics",
+];
+
 export default function ServicesPage() {
   const t = useT();
 
@@ -48,7 +56,7 @@ export default function ServicesPage() {
               </ul>
               <div className="mt-6">
                 <Link
-                  href={idx === 0 ? "/services/sea-freight" : idx === 1 ? "/services/air-freight" : idx === 2 ? "/services/door-to-door" : idx === 3 ? "/services/sea-freight" : "/services/ecommerce-logistics"}
+                  href={serviceHrefs[idx] || "/services"}
                   className="inline-flex items-center gap-1.5 text-brand-600 font-semibold text-sm hover:text-brand-700 transition-colors"
                 >
                   {t.servicesPage.learnMore}

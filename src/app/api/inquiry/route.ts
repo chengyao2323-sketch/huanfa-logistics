@@ -25,8 +25,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    await sendInquiryEmail(body);
-
+    const sent = await sendInquiryEmail(body);
+    if (!sent) {
+      return NextResponse.json(
+        { error: "Email service is not configured" },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({
       success: true,
       message: "Inquiry submitted successfully",
@@ -34,7 +39,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Inquiry submission error:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: error instanceof Error ? error.message : "Unknown error" },
       { status: 500 }
     );
   }

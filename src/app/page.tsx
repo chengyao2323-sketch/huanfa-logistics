@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useT, useI18n } from "@/i18n";
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -46,6 +47,13 @@ const serviceIcons: Record<string, React.ReactNode> = {
 
 
 const serviceKeys = ["ocean", "air", "ddp", "warehouse", "ecommerce"] as const;
+const serviceHrefs: Record<(typeof serviceKeys)[number], string> = {
+  ocean: "/services/sea-freight",
+  air: "/services/air-freight",
+  ddp: "/services/door-to-door",
+  warehouse: "/services/warehousing",
+  ecommerce: "/services/ecommerce-logistics",
+};
 
 export default function HomePage() {
   const t = useT();
@@ -62,6 +70,15 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
+        <Image
+          src="/hero-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-900/90 via-brand-900/75 to-brand-700/70"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuMDMiPjxwYXRoIGQ9Ik0zMCAwaDMwdjMwSDMwem0wIDMwaDMwdjMwSDMweiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
           <div className="max-w-3xl">
@@ -126,9 +143,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {serviceKeys.map((key) => (
-              <div
+              <Link
                 key={key}
-                className="bg-white rounded-xl p-6 lg:p-8 border border-gray-100 hover:border-brand-200 hover:shadow-lg transition-all group"
+                href={serviceHrefs[key]}
+                className="bg-white rounded-xl p-6 lg:p-8 border border-gray-100 hover:border-brand-200 hover:shadow-lg transition-all group block"
               >
                 <div className="w-14 h-14 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors">
                   {serviceIcons[key]}
@@ -136,7 +154,7 @@ export default function HomePage() {
                 <h3 className="text-lg font-bold text-brand-800 mb-1">{t.services[key].title}</h3>
                 <p className="text-xs text-gray-400 uppercase tracking-wider mb-3">{t.services[key].subtitle}</p>
                 <p className="text-sm text-gray-600 leading-relaxed">{t.services[key].desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

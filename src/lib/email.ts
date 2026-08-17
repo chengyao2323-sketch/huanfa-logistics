@@ -8,13 +8,13 @@
   cargoType: string;
   weightVolume: string;
   remarks: string;
-}): Promise<void> {
+}): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   const notifyTo = process.env.NOTIFY_EMAIL;
   if (!apiKey || !notifyTo) {
     console.log('Email not configured. Inquiry data:', JSON.stringify(data, null, 2));
     console.log('To enable: set RESEND_API_KEY and NOTIFY_EMAIL in Cloudflare Pages');
-    return;
+    return false;
   }
   const subject = 'New Inquiry - ' + data.companyName;
   const body = [
@@ -37,4 +37,5 @@
   });
   if (!response.ok) throw new Error('Email API error (' + response.status + '): ' + (await response.text()));
   console.log('Inquiry email sent to', notifyTo);
+  return true;
 }

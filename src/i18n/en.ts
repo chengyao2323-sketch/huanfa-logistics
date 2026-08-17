@@ -6,6 +6,7 @@ const en: I18nDict = {
     services: "Services",
     about: "About Us",
     contact: "Contact Us",
+    faq: "FAQ",
     getQuote: "Get a Quote",
     openMenu: "Open menu",
   },
@@ -83,6 +84,7 @@ const en: I18nDict = {
     services: "Services",
     about: "About Us",
     contact: "Contact Us",
+    faq: "FAQ",
     ocean: "Ocean Freight",
     air: "Air Freight",
     land: "DDP Door to Door",
@@ -298,6 +300,51 @@ const en: I18nDict = {
         "Last-mile delivery solutions",
         "Flexible short-term and long-term storage options",
       ],
+    },
+  },
+  faqPage: {
+    page: {
+      title: "FAQ",
+      desc: "Answers to common questions about international logistics, transit times, and pricing",
+    },
+    items: [
+      {
+        question: "Which routes and products do you focus on?",
+        answer: "We specialize in door-to-door cross-border logistics from China to the USA and Europe, offering three flagship products: air freight, sea freight for oversized cargo, and commercial express. We also provide custom solutions for Amazon sellers, factories, and independent e-commerce merchants.",
+      },
+      {
+        question: "What is the difference between DDP and DDU?",
+        answer: "DDP (Delivered Duty Paid) means we handle export customs, international transport, import clearance, duties, and last-mile delivery, so you only receive the goods. DDU (Delivered Duty Unpaid) means the consignee handles destination customs clearance and duties. We recommend the best option based on your cargo and destination.",
+      },
+      {
+        question: "Can you ship products with batteries?",
+        answer: "Yes. We operate dedicated lanes for battery-powered products, including built-in and accompanying batteries. We handle compliant declaration, documentation, and transport according to destination requirements.",
+      },
+      {
+        question: "How do you ship oversized furniture?",
+        answer: "Oversized furniture moves through our sea freight express lane or air freight service. We arrange pickup, domestic sorting, reinforced packaging, international transport, and last-mile delivery, with extra protection for high-value and fragile pieces.",
+      },
+      {
+        question: "What are the typical transit times?",
+        answer: "Air freight to the USA typically takes 5-12 days, with express options in 3-7 days. Sea freight to the US West Coast takes about 20-35 days. Actual times depend on destination, port, and cargo type.",
+      },
+      {
+        question: "How can I track my shipment?",
+        answer: "From pickup to overseas delivery, every shipment is tracked with real-time visibility at each stage. You can check progress through your dedicated account manager or by quoting your booking number.",
+      },
+      {
+        question: "Can you ship to Amazon FBA warehouses?",
+        answer: "Yes. We offer Amazon FBA first-mile logistics from China to the USA and Europe, including FCL, LCL, and air freight, with assistance for warehouse appointments, labeling, and compliance documents.",
+      },
+      {
+        question: "How do I get a quote?",
+        answer: "Submit an inquiry with your origin, destination, cargo type, weight, and volume. Our logistics consultant will respond with a tailored solution and quote within 24 hours.",
+      },
+    ],
+    cta: {
+      title: "Have Another Question?",
+      desc: "Contact us and our logistics consultants will answer in detail",
+      button: "Contact Us",
     },
   },
 };
