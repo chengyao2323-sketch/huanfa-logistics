@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "China Freight Forwarder | International Logistics Company | Huanfa Logistics",
     template: "%s | Huanfa Logistics - China Freight Forwarder",
   },
-  description: "Professional China freight forwarder offering air freight from China, sea freight from China to USA & Europe, and door-to-door shipping. International logistics company with 8+ years serving 200+ countries.",
+  description: "Professional China freight forwarder offering air freight from China, sea freight from China to USA & Europe, and door-to-door shipping. International logistics company with 8+ years helping importers ship from China.",
   keywords: [
     "China freight forwarder", "international logistics company China",
     "shipping from China", "China sea freight", "China air freight",

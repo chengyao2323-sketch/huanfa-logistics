@@ -66,7 +66,7 @@ export default function HomePage() {
   const stats = [
     { value: "3,000㎡", label: t.stats.countries },
     { value: "1,000+", label: t.stats.containers },
-    { value: locale === "zh" ? "10年" : "10+", label: t.stats.onTime },
+    { value: locale === "zh" ? "8年" : "8+", label: t.stats.onTime },
     { value: locale === "zh" ? "中→美/欧专线" : "China → USA / Europe", label: t.stats.experience },
   ];
 
