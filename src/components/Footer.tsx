@@ -70,6 +70,12 @@ export default function Footer() {
 
         <div className="border-t border-gray-700/50 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>{t.footer.copyright}</p>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link href="/shipping-terms" className="hover:text-white transition-colors">Shipping Terms</Link>
+          </div>
           {t.footer.icp && <p>{t.footer.icp}</p>}
         </div>
       </div>

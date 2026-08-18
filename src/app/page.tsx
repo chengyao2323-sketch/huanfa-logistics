@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useT, useI18n } from "@/i18n";
@@ -59,6 +60,8 @@ const serviceHrefs: Record<(typeof serviceKeys)[number], string> = {
 export default function HomePage() {
   const t = useT();
   const { locale } = useI18n();
+  const [trackingNumber, setTrackingNumber] = useState("");
+  const [trackingSubmitted, setTrackingSubmitted] = useState(false);
 
   const stats = [
     { value: "3,000㎡", label: t.stats.countries },
@@ -450,6 +453,101 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <PhotoPlaceholder label={t.homeSections.testimonials.placeholder} />
             <PhotoPlaceholder label={t.homeSections.testimonials.placeholder} />
+          </div>
+        </div>
+      </section>
+
+      {/* Tracking */}
+      <section className="py-16 lg:py-24 bg-white" id="tracking">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.tracking.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.tracking.desc}
+            </p>
+          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setTrackingSubmitted(true);
+            }}
+            className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3"
+          >
+            <input
+              type="text"
+              value={trackingNumber}
+              onChange={(e) => setTrackingNumber(e.target.value)}
+              placeholder={t.homeSections.tracking.inputPlaceholder}
+              className="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-400 focus:ring-2 focus:ring-brand-100 outline-none transition-all"
+            />
+            <button
+              type="submit"
+              className="bg-brand-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors"
+            >
+              {t.homeSections.tracking.button}
+            </button>
+          </form>
+          {trackingSubmitted && (
+            <p className="mt-6 text-center text-sm text-gray-500">
+              {t.homeSections.tracking.note}
+            </p>
+          )}
+        </div>
+      </section>
+
+      {/* Carriers */}
+      <section className="py-16 lg:py-24 bg-gray-50" id="carriers">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.carriers.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.carriers.desc}
+            </p>
+          </div>
+          <PhotoPlaceholder
+            label={t.homeSections.carriers.placeholder}
+            aspectClass="aspect-[16/4]"
+          />
+        </div>
+      </section>
+
+      {/* Freight specialist */}
+      <section className="py-16 lg:py-24 bg-white" id="specialist">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.specialist.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.specialist.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <PhotoPlaceholder label={t.homeSections.specialist.photo} />
+            <div>
+              <div className="text-2xl font-bold text-brand-800">{t.homeSections.specialist.name}</div>
+              <div className="text-gray-500 mb-6">{t.homeSections.specialist.role}</div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/8615207122341"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors"
+                >
+                  {t.homeSections.specialist.whatsapp}
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg text-sm font-semibold hover:border-brand-300 hover:text-brand-600 transition-colors"
+                >
+                  {t.homeSections.specialist.email}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

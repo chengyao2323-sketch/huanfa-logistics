@@ -13,6 +13,11 @@ type FormData = {
   destination: string;
   cargoType: string;
   weightVolume: string;
+  cartonsPallets: string;
+  dimensions: string;
+  containsBattery: string;
+  readyDate: string;
+  serviceNeeded: string;
   remarks: string;
 };
 
@@ -27,6 +32,11 @@ const initialForm: FormData = {
   destination: "",
   cargoType: "",
   weightVolume: "",
+  cartonsPallets: "",
+  dimensions: "",
+  containsBattery: "",
+  readyDate: "",
+  serviceNeeded: "",
   remarks: "",
 };
 
@@ -102,6 +112,8 @@ export default function ContactPage() {
     colSpan?: string;
     isTextarea?: boolean;
     rows?: number;
+    isSelect?: boolean;
+    options?: Array<{ value: string; label: string }>;
   }> = [
     { key: "companyName", type: "text", required: true },
     { key: "contactPerson", type: "text", required: true },
@@ -111,6 +123,30 @@ export default function ContactPage() {
     { key: "destination", type: "text" },
     { key: "cargoType", type: "text" },
     { key: "weightVolume", type: "text" },
+    { key: "cartonsPallets", type: "text" },
+    { key: "dimensions", type: "text" },
+    {
+      key: "containsBattery",
+      type: "select",
+      isSelect: true,
+      options: [
+        { value: "yes", label: t.contactPage.form.batteryYes },
+        { value: "no", label: t.contactPage.form.batteryNo },
+      ],
+    },
+    { key: "readyDate", type: "date" },
+    {
+      key: "serviceNeeded",
+      type: "select",
+      isSelect: true,
+      options: [
+        { value: "ocean", label: t.contactPage.form.serviceOcean },
+        { value: "air", label: t.contactPage.form.serviceAir },
+        { value: "ddp", label: t.contactPage.form.serviceDdp },
+        { value: "fba", label: t.contactPage.form.serviceFba },
+        { value: "express", label: t.contactPage.form.serviceExpress },
+      ],
+    },
     { key: "remarks", type: "text", colSpan: "sm:col-span-2 lg:col-span-3", isTextarea: true, rows: 4 },
   ];
 
@@ -174,7 +210,27 @@ export default function ContactPage() {
                             {t.contactPage.form[field.key]}
                             {field.required && <span className="text-red-400 ml-0.5">*</span>}
                           </label>
-                          {field.isTextarea ? (
+                          {field.isSelect ? (
+                            <select
+                              id={field.key}
+                              value={form[field.key]}
+                              onChange={(e) => setField(field.key, e.target.value)}
+                              className={`w-full px-4 py-3 rounded-lg border text-sm focus:border-brand-400 focus:ring-2 focus:ring-brand-100 outline-none transition-all bg-white ${
+                                errors[field.key] ? "border-red-300 bg-red-50" : "border-gray-200"
+                              }`}
+                            >
+                              <option value="">
+                                {field.key === "serviceNeeded"
+                                  ? t.contactPage.form.serviceNeeded
+                                  : t.contactPage.form.containsBattery}
+                              </option>
+                              {field.options?.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                  {option.label}
+                                </option>
+                              ))}
+                            </select>
+                          ) : field.isTextarea ? (
                             <textarea
                               id={field.key}
                               rows={field.rows || 4}
@@ -259,6 +315,42 @@ export default function ContactPage() {
                       <div className="text-gray-500">{t.contactPage.info.addressValue}</div>
                     </div>
                   </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900">{t.contactPage.info.officeAddressLabel}</div>
+                      <div className="text-gray-500">{t.contactPage.info.officeAddressValue}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21V9l9-6 9 6v12" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21V13h10v8" />
+                        <line x1="9" y1="13" x2="15" y2="13" />
+                        <line x1="9" y1="17" x2="15" y2="17" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900">{t.contactPage.info.warehouseAddressLabel}</div>
+                      <div className="text-gray-500">{t.contactPage.info.warehouseAddressValue}</div>
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Room+803%2C+No.15+Fude+Road%2C+Baoan%2C+Shenzhen"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm hover:text-brand-700 transition-colors"
+                  >
+                    {t.contactPage.info.mapsLabel}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -128,6 +128,27 @@
       desc: string;
       placeholder: string;
     };
+    tracking: {
+      title: string;
+      desc: string;
+      inputPlaceholder: string;
+      button: string;
+      note: string;
+    };
+    carriers: {
+      title: string;
+      desc: string;
+      placeholder: string;
+    };
+    specialist: {
+      title: string;
+      desc: string;
+      name: string;
+      role: string;
+      photo: string;
+      whatsapp: string;
+      email: string;
+    };
   };
   footer: {
     description: string;
@@ -190,6 +211,18 @@
       destination: string;
       cargoType: string;
       weightVolume: string;
+      cartonsPallets: string;
+      dimensions: string;
+      containsBattery: string;
+      readyDate: string;
+      serviceNeeded: string;
+      serviceOcean: string;
+      serviceAir: string;
+      serviceDdp: string;
+      serviceFba: string;
+      serviceExpress: string;
+      batteryYes: string;
+      batteryNo: string;
       remarks: string;
       submit: string;
       successTitle: string;
@@ -206,6 +239,11 @@
       specialistPhoto: string;
       addressLabel: string;
       addressValue: string;
+      officeAddressLabel: string;
+      officeAddressValue: string;
+      warehouseAddressLabel: string;
+      warehouseAddressValue: string;
+      mapsLabel: string;
       phoneLabel: string;
       phoneValue: string;
       emailLabel: string;
