@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useT } from "@/i18n";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import OperationsGallery from "@/components/OperationsGallery";
 
 const valueIcons = [
@@ -110,8 +109,7 @@ export default function AboutPage() {
               {t.homeSections.specialist.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <PhotoPlaceholder label={t.homeSections.specialist.photo} />
+          <div className="mx-auto max-w-xl rounded-2xl border border-gray-100 bg-gray-50 p-8 text-center">
             <div>
               <div className="text-2xl font-bold text-brand-800">{t.homeSections.specialist.name}</div>
               <div className="text-gray-500 mb-6">{t.homeSections.specialist.role}</div>

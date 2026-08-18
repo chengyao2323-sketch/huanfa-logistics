@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useT, useI18n } from "@/i18n";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import OperationsGallery from "@/components/OperationsGallery";
+import CarrierNetwork from "@/components/CarrierNetwork";
 
 const serviceIcons: Record<string, React.ReactNode> = {
   ocean: (
@@ -314,7 +314,7 @@ export default function HomePage() {
               {t.homeSections.shipments.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="mx-auto max-w-3xl">
             {t.homeSections.shipments.items.map((item, i) => (
               <div key={i} className="bg-gray-50 rounded-2xl border border-gray-100 p-6 lg:p-8">
                 <div className="text-sm font-bold text-brand-700">{item.route}</div>
@@ -341,9 +341,8 @@ export default function HomePage() {
               {t.homeSections.caseStudies.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <PhotoPlaceholder label={t.homeSections.caseStudies.placeholder} />
-            <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-10">
+          <div className="mx-auto max-w-4xl">
+            <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-10 shadow-sm">
               <h3 className="text-xl font-bold text-brand-800 mb-6">{t.homeSections.caseStudies.card.title}</h3>
               <dl className="grid grid-cols-2 gap-4 mb-6">
                 <div>
@@ -457,24 +456,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 lg:py-24 bg-gray-50" id="testimonials">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.testimonials.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.testimonials.desc}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <PhotoPlaceholder label={t.homeSections.testimonials.placeholder} />
-            <PhotoPlaceholder label={t.homeSections.testimonials.placeholder} />
-          </div>
-        </div>
-      </section>
-
       {/* Tracking */}
       <section className="py-16 lg:py-24 bg-white" id="tracking">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -526,10 +507,7 @@ export default function HomePage() {
               {t.homeSections.carriers.desc}
             </p>
           </div>
-          <PhotoPlaceholder
-            label={t.homeSections.carriers.placeholder}
-            aspectClass="aspect-[16/4]"
-          />
+          <CarrierNetwork />
         </div>
       </section>
 
@@ -544,12 +522,11 @@ export default function HomePage() {
               {t.homeSections.specialist.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <PhotoPlaceholder label={t.homeSections.specialist.photo} />
+          <div className="mx-auto max-w-xl rounded-2xl border border-gray-100 bg-gray-50 p-8 text-center">
             <div>
               <div className="text-2xl font-bold text-brand-800">{t.homeSections.specialist.name}</div>
               <div className="text-gray-500 mb-6">{t.homeSections.specialist.role}</div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3">
                 <a
                   href="https://wa.me/8615207122341"
                   target="_blank"

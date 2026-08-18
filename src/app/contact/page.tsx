@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from "react";
 import { useT } from "@/i18n";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 
 type FormData = {
   companyName: string;
@@ -282,8 +281,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8">
                 <h3 className="font-bold text-brand-800 mb-4">{t.contactPage.info.specialistTitle}</h3>
-                <PhotoPlaceholder label={t.contactPage.info.specialistPhoto} />
-                <div className="mt-5">
+                <div>
                   <div className="font-bold text-gray-900">{t.contactPage.info.specialistName}</div>
                   <div className="text-sm text-gray-500 mb-4">{t.contactPage.info.specialistRole}</div>
                   <a
@@ -306,18 +304,6 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-900">{t.contactPage.info.addressLabel}</div>
-                      <div className="text-gray-500">{t.contactPage.info.addressValue}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
@@ -326,22 +312,8 @@ export default function ContactPage() {
                       <div className="text-gray-500">{t.contactPage.info.officeAddressValue}</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21V9l9-6 9 6v12" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21V13h10v8" />
-                        <line x1="9" y1="13" x2="15" y2="13" />
-                        <line x1="9" y1="17" x2="15" y2="17" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-900">{t.contactPage.info.warehouseAddressLabel}</div>
-                      <div className="text-gray-500">{t.contactPage.info.warehouseAddressValue}</div>
-                    </div>
-                  </div>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Room+803%2C+No.15+Fude+Road%2C+Baoan%2C+Shenzhen"
+                    href="https://www.google.com/maps/search/?api=1&query=%E6%81%92%E5%AE%89%E5%95%86%E5%8A%A1%E5%A4%A7%E5%8E%A6%2C%20%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm hover:text-brand-700 transition-colors"
