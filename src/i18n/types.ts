@@ -47,6 +47,88 @@
     description: string;
     button: string;
   };
+  homeSections: {
+    photoPlaceholder: string;
+    verification: {
+      title: string;
+      desc: string;
+      legalName: string;
+      legalNameValue: string;
+      registration: string;
+      registrationValue: string;
+      founded: string;
+      foundedValue: string;
+      hq: string;
+      hqValue: string;
+      warehouse: string;
+      warehouseValue: string;
+      email: string;
+      emailValue: string;
+      licenseTitle: string;
+      licenseDesc: string;
+      licensePlaceholder: string;
+    };
+    real: {
+      title: string;
+      desc: string;
+      warehouse1: string;
+      warehouse2: string;
+      team: string;
+    };
+    shipments: {
+      title: string;
+      desc: string;
+      items: Array<{
+        route: string;
+        mode: string;
+        volume: string;
+        cargo: string;
+        status: string;
+      }>;
+    };
+    caseStudies: {
+      title: string;
+      desc: string;
+      cargoLabel: string;
+      volumeLabel: string;
+      originLabel: string;
+      destinationLabel: string;
+      serviceLabel: string;
+      transitLabel: string;
+      includedLabel: string;
+      placeholder: string;
+      card: {
+        title: string;
+        cargo: string;
+        volume: string;
+        origin: string;
+        destination: string;
+        service: string;
+        transit: string;
+        included: string[];
+      };
+    };
+    process: {
+      title: string;
+      desc: string;
+      steps: string[];
+    };
+    insurance: {
+      title: string;
+      desc: string;
+      steps: string[];
+    };
+    payment: {
+      title: string;
+      desc: string;
+      items: string[];
+    };
+    testimonials: {
+      title: string;
+      desc: string;
+      placeholder: string;
+    };
+  };
   footer: {
     description: string;
     quickLinks: string;
@@ -118,6 +200,10 @@
     };
     info: {
       title: string;
+      specialistTitle: string;
+      specialistName: string;
+      specialistRole: string;
+      specialistPhoto: string;
       addressLabel: string;
       addressValue: string;
       phoneLabel: string;
@@ -126,6 +212,7 @@
       emailValue: string;
       hoursLabel: string;
       hoursValue: string;
+      whatsapp: string;
     };
   };
   servicePages: {

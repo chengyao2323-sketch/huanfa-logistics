@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { useT } from "@/i18n";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 
 type FormData = {
   companyName: string;
@@ -223,6 +224,26 @@ export default function ContactPage() {
 
             {/* Contact info (unchanged) */}
             <div className="lg:col-span-2 space-y-6">
+              <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8">
+                <h3 className="font-bold text-brand-800 mb-4">{t.contactPage.info.specialistTitle}</h3>
+                <PhotoPlaceholder label={t.contactPage.info.specialistPhoto} />
+                <div className="mt-5">
+                  <div className="font-bold text-gray-900">{t.contactPage.info.specialistName}</div>
+                  <div className="text-sm text-gray-500 mb-4">{t.contactPage.info.specialistRole}</div>
+                  <a
+                    href="https://wa.me/8615207122341"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.83 14.12c-.25.7-1.45 1.33-2.01 1.38-.55.05-1.05.24-3.52-.73-2.97-1.17-4.87-4.16-5.02-4.36-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.78-.37h.56c.18 0 .43-.07.67.51.25.6.85 2.07.92 2.22.07.15.12.33.02.54-.1.2-.15.33-.3.5-.15.18-.32.4-.45.54-.15.15-.31.31-.13.61.18.3.8 1.32 1.72 2.14 1.18 1.05 2.17 1.38 2.48 1.53.31.15.49.13.67-.08.18-.2.78-.91.99-1.22.21-.31.42-.26.7-.15.29.1 1.84.87 2.16 1.03.32.15.53.23.6.36.08.13.08.77-.17 1.47z" />
+                    </svg>
+                    {t.contactPage.info.whatsapp}
+                  </a>
+                </div>
+              </div>
+
               <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8">
                 <h3 className="font-bold text-brand-800 mb-4">{t.contactPage.info.title}</h3>
                 <div className="space-y-4 text-sm">

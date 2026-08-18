@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useT, useI18n } from "@/i18n";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 
 const serviceIcons: Record<string, React.ReactNode> = {
   ocean: (
@@ -60,10 +61,10 @@ export default function HomePage() {
   const { locale } = useI18n();
 
   const stats = [
-    { value: "200+", label: t.stats.countries },
-    { value: "5000+", label: t.stats.containers },
-    { value: "98%", label: t.stats.onTime },
-    { value: locale === "zh" ? "8年" : "8+", label: t.stats.experience },
+    { value: "3,000㎡", label: t.stats.countries },
+    { value: "1,000+", label: t.stats.containers },
+    { value: locale === "zh" ? "10年" : "10+", label: t.stats.onTime },
+    { value: locale === "zh" ? "中→美/欧专线" : "China → USA / Europe", label: t.stats.experience },
   ];
 
   return (
@@ -132,6 +133,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Company verification */}
+      <section className="py-16 lg:py-24 bg-white" id="verify">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.verification.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.verification.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4">
+              {[
+                { label: t.homeSections.verification.legalName, value: t.homeSections.verification.legalNameValue },
+                { label: t.homeSections.verification.registration, value: t.homeSections.verification.registrationValue },
+                { label: t.homeSections.verification.founded, value: t.homeSections.verification.foundedValue },
+                { label: t.homeSections.verification.hq, value: t.homeSections.verification.hqValue },
+                { label: t.homeSections.verification.warehouse, value: t.homeSections.verification.warehouseValue },
+                { label: t.homeSections.verification.email, value: t.homeSections.verification.emailValue },
+              ].map((item) => (
+                <div key={item.label} className="flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4">
+                  <div className="w-9 h-9 shrink-0 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-gray-900">{item.label}</div>
+                    <div className="text-sm text-gray-500">{item.value}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div>
+              <PhotoPlaceholder label={t.homeSections.verification.licensePlaceholder} />
+              <h3 className="text-xl font-bold text-brand-800 mt-6 mb-2">
+                {t.homeSections.verification.licenseTitle}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {t.homeSections.verification.licenseDesc}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section className="py-16 lg:py-24 bg-gray-50" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,8 +208,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Real warehouse and team */}
+      <section className="py-16 lg:py-24 bg-white" id="real">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.real.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.real.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <PhotoPlaceholder label={t.homeSections.real.warehouse1} />
+            <PhotoPlaceholder label={t.homeSections.real.warehouse2} />
+            <PhotoPlaceholder label={t.homeSections.real.team} />
+          </div>
+        </div>
+      </section>
+
       {/* About */}
-      <section className="py-16 lg:py-24 bg-white" id="about">
+      <section className="py-16 lg:py-24 bg-gray-50" id="about">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -211,6 +278,178 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent shipments */}
+      <section className="py-16 lg:py-24 bg-white" id="shipments">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.shipments.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.shipments.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {t.homeSections.shipments.items.map((item, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl border border-gray-100 p-6 lg:p-8">
+                <div className="text-sm font-bold text-brand-700">{item.route}</div>
+                <div className="text-xs uppercase tracking-wider text-gray-400 mt-1 mb-5">{item.mode}</div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-white border border-gray-200 px-3 py-1 text-xs font-medium text-gray-700">{item.volume}</span>
+                  <span className="rounded-full bg-white border border-gray-200 px-3 py-1 text-xs font-medium text-gray-700">{item.cargo}</span>
+                  <span className="rounded-full bg-green-50 text-green-700 border border-green-200 px-3 py-1 text-xs font-semibold">{item.status}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case study */}
+      <section className="py-16 lg:py-24 bg-gray-50" id="case-study">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.caseStudies.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.caseStudies.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <PhotoPlaceholder label={t.homeSections.caseStudies.placeholder} />
+            <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-10">
+              <h3 className="text-xl font-bold text-brand-800 mb-6">{t.homeSections.caseStudies.card.title}</h3>
+              <dl className="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.cargoLabel}</dt>
+                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.cargo}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.volumeLabel}</dt>
+                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.volume}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.originLabel}</dt>
+                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.origin}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.destinationLabel}</dt>
+                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.destination}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.serviceLabel}</dt>
+                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.service}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.transitLabel}</dt>
+                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.transit}</dd>
+                </div>
+              </dl>
+              <h4 className="text-sm font-bold text-brand-700 mb-3">{t.homeSections.caseStudies.includedLabel}</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {t.homeSections.caseStudies.card.included.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <svg className="w-4 h-4 mt-0.5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-16 lg:py-24 bg-white" id="process">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.process.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.process.desc}
+            </p>
+          </div>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.homeSections.process.steps.map((step, i) => (
+              <li key={step} className="rounded-2xl border border-gray-100 bg-gray-50 p-6">
+                <div className="w-10 h-10 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold mb-4">
+                  {i + 1}
+                </div>
+                <div className="text-sm font-semibold text-gray-800">{step}</div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Insurance and claims */}
+      <section className="py-16 lg:py-24 bg-gray-50" id="insurance">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.insurance.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.insurance.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.homeSections.insurance.steps.map((step, i) => (
+              <div key={step} className="bg-white rounded-2xl border border-gray-100 p-6">
+                <div className="text-xs font-bold text-brand-600 mb-3">0{i + 1}</div>
+                <div className="text-sm text-gray-700 leading-relaxed">{step}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Payment security */}
+      <section className="py-16 lg:py-24 bg-white" id="payment">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.payment.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.payment.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {t.homeSections.payment.items.map((item) => (
+              <div key={item} className="rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-start gap-3">
+                <svg className="w-5 h-5 mt-0.5 shrink-0 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <div className="text-sm text-gray-700 leading-relaxed">{item}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 lg:py-24 bg-gray-50" id="testimonials">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
+              {t.homeSections.testimonials.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t.homeSections.testimonials.desc}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <PhotoPlaceholder label={t.homeSections.testimonials.placeholder} />
+            <PhotoPlaceholder label={t.homeSections.testimonials.placeholder} />
           </div>
         </div>
       </section>

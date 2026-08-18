@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700/50 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>{t.footer.copyright}</p>
-          <p>{t.footer.icp}</p>
+          {t.footer.icp && <p>{t.footer.icp}</p>}
         </div>
       </div>
     </footer>
