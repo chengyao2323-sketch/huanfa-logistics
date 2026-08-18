@@ -102,9 +102,9 @@ const en: I18nDict = {
       title: "Recent Shipments",
       desc: "Real shipment records with customer information removed.",
       items: [
-        { route: "Shenzhen → Los Angeles", mode: "Ocean DDP", volume: "18.6 CBM", cargo: "Furniture", status: "Delivered" },
-        { route: "Shenzhen → New York", mode: "Air DDP", volume: "860 KG", cargo: "Electronics", status: "Delivered" },
-        { route: "Guangzhou → Germany", mode: "Ocean DDP", volume: "32 CBM", cargo: "Furniture", status: "In Transit" },
+        { route: "Shipment 1 / To be provided", mode: "To be provided", volume: "To be provided", cargo: "To be provided", status: "To be provided" },
+        { route: "Shipment 2 / To be provided", mode: "To be provided", volume: "To be provided", cargo: "To be provided", status: "To be provided" },
+        { route: "Shipment 3 / To be provided", mode: "To be provided", volume: "To be provided", cargo: "To be provided", status: "To be provided" },
       ],
     },
     caseStudies: {

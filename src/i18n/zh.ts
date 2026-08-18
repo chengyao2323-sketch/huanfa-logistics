@@ -102,9 +102,9 @@ const zh: I18nDict = {
       title: "最近出货",
       desc: "真实出货记录，客户信息已脱敏",
       items: [
-        { route: "Shenzhen → Los Angeles", mode: "Ocean DDP", volume: "18.6 CBM", cargo: "Furniture", status: "Delivered" },
-        { route: "Shenzhen → New York", mode: "Air DDP", volume: "860 KG", cargo: "Electronics", status: "Delivered" },
-        { route: "Guangzhou → Germany", mode: "Ocean DDP", volume: "32 CBM", cargo: "Furniture", status: "In Transit" },
+        { route: "运单 1 / 待补充", mode: "待补充", volume: "待补充", cargo: "待补充", status: "待补充" },
+        { route: "运单 2 / 待补充", mode: "待补充", volume: "待补充", cargo: "待补充", status: "待补充" },
+        { route: "运单 3 / 待补充", mode: "待补充", volume: "待补充", cargo: "待补充", status: "待补充" },
       ],
     },
     caseStudies: {
