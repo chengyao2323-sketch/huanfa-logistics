@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useT } from "@/i18n";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import OperationsGallery from "@/components/OperationsGallery";
 
 const valueIcons = [
   <svg key="0" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,11 +89,13 @@ export default function AboutPage() {
               {t.homeSections.real.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <PhotoPlaceholder label={t.homeSections.real.warehouse1} />
-            <PhotoPlaceholder label={t.homeSections.real.warehouse2} />
-            <PhotoPlaceholder label={t.homeSections.real.team} />
-          </div>
+          <OperationsGallery
+            labels={[
+              t.homeSections.real.warehouse1,
+              t.homeSections.real.warehouse2,
+              t.homeSections.real.team,
+            ]}
+          />
         </div>
       </section>
 
