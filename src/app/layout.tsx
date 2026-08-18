@@ -6,7 +6,7 @@ import { I18nProvider } from "@/i18n";
 import LangUpdater from "@/components/LangUpdater";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://huanfa-logistics.com"),
+  metadataBase: new URL("https://huanfalogistics.com"),
   title: {
     default: "China Freight Forwarder | International Logistics Company | Huanfa Logistics",
     template: "%s | Huanfa Logistics - China Freight Forwarder",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Huanfa International Logistics",
     title: "China Freight Forwarder | International Logistics Company | Huanfa Logistics",
     description: "Professional China freight forwarder offering air freight from China, sea freight from China to USA & Europe, and door-to-door shipping.",
-    url: "https://huanfa-logistics.com",
+    url: "https://huanfalogistics.com",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Huanfa International Logistics - China Freight Forwarder" }],
   },
   twitter: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "Professional China freight forwarder offering air freight, sea freight, and door-to-door shipping from China to worldwide.",
     images: ["/og-image.png"],
   },
-  alternates: { canonical: "https://huanfa-logistics.com", languages: { en: "https://huanfa-logistics.com", zh: "https://huanfa-logistics.com/zh" } },
+  alternates: { canonical: "https://huanfalogistics.com", languages: { en: "https://huanfalogistics.com", zh: "https://huanfalogistics.com/zh" } },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -47,8 +47,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Huanfa International Logistics",
-            url: "https://huanfa-logistics.com",
-            logo: "https://huanfa-logistics.com/logo.png",
+            url: "https://huanfalogistics.com",
+            logo: "https://huanfalogistics.com/logo.png",
             description: "Professional China freight forwarder.",
             address: { "@type": "PostalAddress", streetAddress: "Room 803, No.15 Fude Road, Baoan", addressLocality: "Shenzhen", addressCountry: "CN" },
             contactPoint: { "@type": "ContactPoint", telephone: "+86-15207122341", contactType: "sales", availableLanguage: ["English", "Chinese"] },

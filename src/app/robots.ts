@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/",
       },
     ],
-    sitemap: "https://huanfa-logistics.com/sitemap.xml",
+    sitemap: "https://huanfalogistics.com/sitemap.xml",
   };
 }
