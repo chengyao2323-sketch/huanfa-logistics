@@ -172,7 +172,22 @@ export default function HomePage() {
               ))}
             </div>
             <div>
-              <PhotoPlaceholder label={t.homeSections.verification.licensePlaceholder} />
+              <a
+                href="/company/business-license.webp"
+                target="_blank"
+                rel="noreferrer"
+                className="block overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-sm transition-shadow hover:shadow-lg"
+                aria-label={t.homeSections.verification.licenseTitle}
+              >
+                <Image
+                  src="/company/business-license.webp"
+                  alt={t.homeSections.verification.licenseTitle}
+                  width={1448}
+                  height={1086}
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </a>
               <h3 className="text-xl font-bold text-brand-800 mt-6 mb-2">
                 {t.homeSections.verification.licenseTitle}
               </h3>

@@ -4,14 +4,17 @@ const photos = [
   {
     src: "/operations/warehouse-exterior.webp",
     position: "object-center",
+    showCaption: true,
   },
   {
     src: "/operations/container-loading.webp",
     position: "object-center",
+    showCaption: false,
   },
   {
     src: "/operations/warehouse-operations.webp",
     position: "object-center",
+    showCaption: false,
   },
 ] as const;
 
@@ -34,10 +37,14 @@ export default function OperationsGallery({ labels }: OperationsGalleryProps) {
             className={`object-cover ${photo.position} transition-transform duration-500 group-hover:scale-[1.02]`}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
-          <figcaption className="absolute inset-x-0 bottom-0 px-5 pb-4 text-sm font-semibold text-white">
-            {labels[index]}
-          </figcaption>
+          {photo.showCaption && (
+            <>
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
+              <figcaption className="absolute inset-x-0 bottom-0 px-5 pb-4 text-sm font-semibold text-white">
+                {labels[index]}
+              </figcaption>
+            </>
+          )}
         </figure>
       ))}
     </div>
