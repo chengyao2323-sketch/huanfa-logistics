@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useT } from "@/i18n";
 
 const valueIcons = [
@@ -37,6 +38,16 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="bg-gradient-to-br from-brand-100 to-brand-50 rounded-2xl p-8 lg:p-12 order-2 lg:order-1">
+              <div className="rounded-xl overflow-hidden mb-6">
+                <Image
+                  src="/about-company.jpg"
+                  alt="Huanfa International Logistics"
+                  width={1600}
+                  height={1200}
+                  className="w-full h-auto object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
               <h3 className="text-lg font-bold text-brand-800 mb-4">{t.aboutPage.story.companyInfo}</h3>
               <p className="text-gray-700 leading-relaxed mb-4">{t.aboutPage.story.p1}</p>
               <p className="text-gray-700 leading-relaxed mb-4">{t.aboutPage.story.p2}</p>

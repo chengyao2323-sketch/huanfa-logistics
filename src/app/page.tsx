@@ -190,6 +190,16 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
+                <Image
+                  src="/about-company.jpg"
+                  alt="Huanfa International Logistics"
+                  width={1600}
+                  height={1200}
+                  className="w-full h-auto object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
               <div className="bg-gradient-to-br from-brand-100 to-brand-50 rounded-2xl p-8 lg:p-12">
                 <div className="grid grid-cols-2 gap-4">
                   {[t.about.mission, t.about.vision, t.about.values, t.about.promise].map((item) => (
