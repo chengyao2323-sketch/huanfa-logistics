@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useT, useI18n } from "@/i18n";
@@ -61,14 +60,12 @@ const serviceHrefs: Record<(typeof serviceKeys)[number], string> = {
 export default function HomePage() {
   const t = useT();
   const { locale } = useI18n();
-  const [trackingNumber, setTrackingNumber] = useState("");
-  const [trackingSubmitted, setTrackingSubmitted] = useState(false);
 
   const stats = [
-    { value: "3,000㎡", label: t.stats.countries },
-    { value: "1,000+", label: t.stats.containers },
-    { value: locale === "zh" ? "8年" : "8+", label: t.stats.onTime },
-    { value: locale === "zh" ? "中→美/欧专线" : "China → USA / Europe", label: t.stats.experience },
+    { value: locale === "zh" ? "深圳" : "Shenzhen", label: t.stats.countries },
+    { value: locale === "zh" ? "美国 / 欧洲" : "USA / Europe", label: t.stats.containers },
+    { value: locale === "zh" ? "海运 + 空运" : "Ocean + Air", label: t.stats.onTime },
+    { value: locale === "zh" ? "企业 + 个人" : "Business + Personal", label: t.stats.experience },
   ];
 
   return (
@@ -148,10 +145,11 @@ export default function HomePage() {
               {t.homeSections.verification.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-4">
+          <div className="mx-auto max-w-5xl">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
                 { label: t.homeSections.verification.legalName, value: t.homeSections.verification.legalNameValue },
+                { label: t.homeSections.verification.chineseLegalName, value: t.homeSections.verification.chineseLegalNameValue },
                 { label: t.homeSections.verification.registration, value: t.homeSections.verification.registrationValue },
                 { label: t.homeSections.verification.founded, value: t.homeSections.verification.foundedValue },
                 { label: t.homeSections.verification.hq, value: t.homeSections.verification.hqValue },
@@ -170,30 +168,6 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
-            </div>
-            <div>
-              <a
-                href="/company/business-license.webp"
-                target="_blank"
-                rel="noreferrer"
-                className="block overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-sm transition-shadow hover:shadow-lg"
-                aria-label={t.homeSections.verification.licenseTitle}
-              >
-                <Image
-                  src="/company/business-license.webp"
-                  alt={t.homeSections.verification.licenseTitle}
-                  width={1448}
-                  height={1086}
-                  className="h-auto w-full object-contain"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </a>
-              <h3 className="text-xl font-bold text-brand-800 mt-6 mb-2">
-                {t.homeSections.verification.licenseTitle}
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {t.homeSections.verification.licenseDesc}
-              </p>
             </div>
           </div>
         </div>
@@ -223,6 +197,38 @@ export default function HomePage() {
                 <p className="text-sm text-gray-600 leading-relaxed">{t.services[key].desc}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customer types */}
+      <section className="bg-white py-16 lg:py-24" id="who-we-ship-for">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-brand-800 lg:text-4xl">
+              {locale === "zh" ? "我们为谁运输" : "Who We Ship For"}
+            </h2>
+            <p className="mx-auto max-w-2xl text-gray-600">
+              {locale === "zh" ? "为企业进口商和从中国采购家具、建材或其他商品的个人客户提供清晰的运输方案。" : "Clear shipping options for businesses and individuals buying furniture, building materials, or other goods from China."}
+            </p>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-gray-100 bg-gray-50 p-8">
+              <div className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-600">{locale === "zh" ? "企业客户" : "For Businesses"}</div>
+              <h3 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "进口商、批发商、零售商与电商品牌" : "Importers, wholesalers, retailers & e-commerce brands"}</h3>
+              <p className="mb-6 text-sm leading-relaxed text-gray-600">{locale === "zh" ? "支持供应商提货、集货、海运或空运、清关协调及末端派送。" : "Supplier pickup, consolidation, ocean or air freight, customs coordination, and final delivery."}</p>
+              <Link href="/services" className="inline-flex rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
+                {locale === "zh" ? "查看企业运输服务" : "Business Shipping"}
+              </Link>
+            </div>
+            <div className="rounded-2xl border border-brand-100 bg-brand-50 p-8">
+              <div className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-600">{locale === "zh" ? "个人进口客户" : "For Personal Importers"}</div>
+              <h3 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "从中国购买家具、建材或家居用品？" : "Buying furniture or home goods from China?"}</h3>
+              <p className="mb-6 text-sm leading-relaxed text-gray-600">{locale === "zh" ? "我们可从多个供应商收货、集中整理，并根据目的地安排门到门运输方案。" : "We can collect from multiple suppliers, consolidate your goods, and arrange a door-to-door shipping plan for your destination."}</p>
+              <Link href="/personal-shipping-from-china" className="inline-flex rounded-lg bg-accent-500 px-5 py-2.5 text-sm font-bold text-brand-900 hover:bg-accent-600">
+                {locale === "zh" ? "个人运输指南" : "Personal Shipping"}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -298,89 +304,6 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Recent shipments */}
-      <section className="py-16 lg:py-24 bg-white" id="shipments">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.shipments.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.shipments.desc}
-            </p>
-          </div>
-          <div className="mx-auto max-w-3xl">
-            {t.homeSections.shipments.items.map((item, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl border border-gray-100 p-6 lg:p-8">
-                <div className="text-sm font-bold text-brand-700">{item.route}</div>
-                <div className="text-xs uppercase tracking-wider text-gray-400 mt-1 mb-5">{item.mode}</div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-white border border-gray-200 px-3 py-1 text-xs font-medium text-gray-700">{item.volume}</span>
-                  <span className="rounded-full bg-white border border-gray-200 px-3 py-1 text-xs font-medium text-gray-700">{item.cargo}</span>
-                  <span className="rounded-full bg-green-50 text-green-700 border border-green-200 px-3 py-1 text-xs font-semibold">{item.status}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case study */}
-      <section className="py-16 lg:py-24 bg-gray-50" id="case-study">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.caseStudies.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.caseStudies.desc}
-            </p>
-          </div>
-          <div className="mx-auto max-w-4xl">
-            <div className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-10 shadow-sm">
-              <h3 className="text-xl font-bold text-brand-800 mb-6">{t.homeSections.caseStudies.card.title}</h3>
-              <dl className="grid grid-cols-2 gap-4 mb-6">
-                <div>
-                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.cargoLabel}</dt>
-                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.cargo}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.volumeLabel}</dt>
-                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.volume}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.originLabel}</dt>
-                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.origin}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.destinationLabel}</dt>
-                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.destination}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.serviceLabel}</dt>
-                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.service}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs text-gray-400">{t.homeSections.caseStudies.transitLabel}</dt>
-                  <dd className="text-sm font-semibold text-gray-800">{t.homeSections.caseStudies.card.transit}</dd>
-                </div>
-              </dl>
-              <h4 className="text-sm font-bold text-brand-700 mb-3">{t.homeSections.caseStudies.includedLabel}</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {t.homeSections.caseStudies.card.included.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                    <svg className="w-4 h-4 mt-0.5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
@@ -467,32 +390,22 @@ export default function HomePage() {
               {t.homeSections.tracking.desc}
             </p>
           </div>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setTrackingSubmitted(true);
-            }}
-            className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3"
-          >
-            <input
-              type="text"
-              value={trackingNumber}
-              onChange={(e) => setTrackingNumber(e.target.value)}
-              placeholder={t.homeSections.tracking.inputPlaceholder}
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-400 focus:ring-2 focus:ring-brand-100 outline-none transition-all"
-            />
-            <button
-              type="submit"
-              className="bg-brand-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors"
+          <div className="mx-auto flex max-w-xl flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/8615207122341"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg bg-green-600 px-6 py-3 text-sm font-semibold text-white hover:bg-green-700"
             >
-              {t.homeSections.tracking.button}
-            </button>
-          </form>
-          {trackingSubmitted && (
-            <p className="mt-6 text-center text-sm text-gray-500">
-              {t.homeSections.tracking.note}
-            </p>
-          )}
+              {locale === "zh" ? "联系 Chris 查询进度" : "Ask Chris for an Update"}
+            </a>
+            <Link
+              href="/contact"
+              className="rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 hover:border-brand-300 hover:text-brand-600"
+            >
+              {locale === "zh" ? "联系我们" : "Contact Us"}
+            </Link>
+          </div>
         </div>
       </section>
 

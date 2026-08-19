@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "China Freight Forwarder | International Logistics Company | Huanfa Logistics",
     template: "%s | Huanfa Logistics - China Freight Forwarder",
   },
-  description: "Professional China freight forwarder offering air freight from China, sea freight from China to USA & Europe, and door-to-door shipping. International logistics company with 8+ years helping importers ship from China.",
+  description: "China freight coordination for ocean freight, air freight, and door-to-door shipping from China to the USA and Europe.",
   keywords: [
     "China freight forwarder", "international logistics company China",
     "shipping from China", "China sea freight", "China air freight",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "China Freight Forwarder | International Logistics Company | Huanfa Logistics",
-    description: "Professional China freight forwarder offering air freight, sea freight, and door-to-door shipping from China to worldwide.",
+    description: "China freight coordination for air, sea, and door-to-door shipping to the USA and Europe.",
     images: ["/og-image.png"],
   },
   alternates: { canonical: "https://huanfalogistics.com", languages: { en: "https://huanfalogistics.com", zh: "https://huanfalogistics.com/zh" } },
@@ -50,7 +50,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             url: "https://huanfalogistics.com",
             logo: "https://huanfalogistics.com/logo.png",
             description: "Professional China freight forwarder.",
-            address: { "@type": "PostalAddress", streetAddress: "Room 803, No.15 Fude Road, Baoan", addressLocality: "Shenzhen", addressCountry: "CN" },
             contactPoint: { "@type": "ContactPoint", telephone: "+86-15207122341", contactType: "sales", availableLanguage: ["English", "Chinese"] },
           }),
         }} />

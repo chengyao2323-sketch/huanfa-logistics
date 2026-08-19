@@ -54,6 +54,8 @@
       desc: string;
       legalName: string;
       legalNameValue: string;
+      chineseLegalName: string;
+      chineseLegalNameValue: string;
       registration: string;
       registrationValue: string;
       founded: string;
