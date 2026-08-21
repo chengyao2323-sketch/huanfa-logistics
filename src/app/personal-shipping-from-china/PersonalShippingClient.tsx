@@ -15,8 +15,8 @@ const content = {
     confirmTitle: "Confirmed before you ship",
     confirm: ["What the quoted price includes", "Estimated transit time", "Packing or pallet requirements", "Duties and customs responsibility", "Residential delivery scope", "Damage reporting and claims documents"],
     ctaTitle: "Not sure where to start?",
-    ctaDesc: "Send Chris the product list, supplier city, destination ZIP code, weight, volume, and delivery access restrictions.",
-    whatsapp: "Ask Chris on WhatsApp",
+    ctaDesc: "Send Chris Yu the product list, supplier city, destination ZIP code, weight, volume, and delivery access restrictions.",
+    whatsapp: "Ask Chris Yu on WhatsApp",
     quote: "Request a Shipping Plan",
   },
   zh: {
@@ -30,8 +30,8 @@ const content = {
     confirmTitle: "出货前明确确认",
     confirm: ["报价包含的费用", "预计运输时效", "包装、托盘或木架要求", "关税与清关责任", "住宅派送范围", "破损申报与理赔资料"],
     ctaTitle: "不知道从哪里开始？",
-    ctaDesc: "请把产品清单、供应商城市、目的地邮编、重量、体积和派送限制发给 Chris。",
-    whatsapp: "WhatsApp 咨询 Chris",
+    ctaDesc: "请把产品清单、供应商城市、目的地邮编、重量、体积和派送限制发给 Chris Yu。",
+    whatsapp: "WhatsApp 咨询 Chris Yu",
     quote: "获取运输方案",
   },
 } as const;

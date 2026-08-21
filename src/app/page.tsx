@@ -397,7 +397,7 @@ export default function HomePage() {
               rel="noreferrer"
               className="rounded-lg bg-green-600 px-6 py-3 text-sm font-semibold text-white hover:bg-green-700"
             >
-              {locale === "zh" ? "联系 Chris 查询进度" : "Ask Chris for an Update"}
+              {locale === "zh" ? "联系 Chris Yu 查询进度" : "Ask Chris Yu for an Update"}
             </a>
             <Link
               href="/contact"
