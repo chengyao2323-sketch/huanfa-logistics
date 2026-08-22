@@ -2,15 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { useT, useI18n } from "@/i18n";
 import OperationsGallery from "@/components/OperationsGallery";
 import CarrierNetwork from "@/components/CarrierNetwork";
-
-const LogisticsGlobe = dynamic(() => import("@/components/LogisticsGlobe"), {
-  ssr: false,
-  loading: () => <div className="aspect-square w-full max-w-[620px]" aria-hidden="true" />,
-});
 
 const serviceIcons: Record<string, React.ReactNode> = {
   ocean: (
@@ -88,8 +82,8 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-brand-900/90 via-brand-900/75 to-brand-700/70"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuMDMiPjxwYXRoIGQ9Ik0zMCAwaDMwdjMwSDMwem0wIDMwaDMwdjMwSDMweiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-20 sm:px-6 md:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:px-8 lg:py-24">
-          <div className="relative z-10 max-w-3xl">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm text-yellow-300 mb-6">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -121,12 +115,6 @@ export default function HomePage() {
               >
                 {t.hero.learnMore}
               </Link>
-            </div>
-          </div>
-          <div className="relative -mb-10 -mt-4 min-h-[300px] md:-my-10 md:min-h-[520px]">
-            <LogisticsGlobe />
-            <div className="pointer-events-none absolute bottom-[13%] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-brand-900/60 px-4 py-2 text-xs font-semibold tracking-wide text-blue-100 backdrop-blur-md">
-              {locale === "zh" ? "深圳连接美国与欧洲" : "Shenzhen to the USA & Europe"}
             </div>
           </div>
         </div>
