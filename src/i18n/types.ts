@@ -128,7 +128,16 @@
     testimonials: {
       title: string;
       desc: string;
-      placeholder: string;
+      quote: string;
+      customer: string;
+      source: string;
+      shipmentTitle: string;
+      shipmentItems: Array<{ label: string; value: string }>;
+      messagesTitle: string;
+      packingTitle: string;
+      viewOriginal: string;
+      imageAlts: string[];
+      packingAlt: string;
     };
     tracking: {
       title: string;

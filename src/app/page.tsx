@@ -379,6 +379,97 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Verified customer feedback */}
+      <section className="bg-gray-50 py-16 lg:py-24" id="customer-feedback">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center lg:mb-16">
+            <h2 className="mb-4 text-3xl font-bold text-brand-800 lg:text-4xl">
+              {t.homeSections.testimonials.title}
+            </h2>
+            <p className="mx-auto max-w-2xl text-gray-600">
+              {t.homeSections.testimonials.desc}
+            </p>
+          </div>
+
+          <div className="grid items-start gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
+            <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 to-brand-700 p-7 text-white shadow-lg lg:p-9">
+              <svg className="mb-5 h-9 w-9 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M7.17 6A5.17 5.17 0 002 11.17V18h7v-7H5.1A2.17 2.17 0 017.17 9H9V6H7.17zm10 0A5.17 5.17 0 0012 11.17V18h7v-7h-3.9A2.17 2.17 0 0117.17 9H19V6h-1.83z" />
+              </svg>
+              <blockquote className="mb-7 text-lg font-medium leading-relaxed text-blue-50 lg:text-xl">
+                “{t.homeSections.testimonials.quote}”
+              </blockquote>
+              <div className="border-t border-white/15 pt-5">
+                <div className="font-bold">{t.homeSections.testimonials.customer}</div>
+                <div className="mt-1 text-sm text-blue-200">{t.homeSections.testimonials.source}</div>
+              </div>
+
+              <div className="mt-8 rounded-xl border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
+                <h3 className="mb-4 font-bold text-white">{t.homeSections.testimonials.shipmentTitle}</h3>
+                <dl className="grid grid-cols-2 gap-x-4 gap-y-4">
+                  {t.homeSections.testimonials.shipmentItems.map((item) => (
+                    <div key={item.label}>
+                      <dt className="text-xs text-blue-200">{item.label}</dt>
+                      <dd className="mt-1 text-sm font-semibold text-white">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="mb-4 text-lg font-bold text-brand-800">{t.homeSections.testimonials.messagesTitle}</h3>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {[
+                  "/customer-feedback/brian-feedback-trust.jpg",
+                  "/customer-feedback/brian-feedback-packaging.jpg",
+                  "/customer-feedback/brian-feedback-thanks.jpg",
+                ].map((src, index) => (
+                  <a
+                    key={src}
+                    href={src}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={t.homeSections.testimonials.viewOriginal}
+                    className={`group block overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${index === 0 ? "sm:col-span-2" : ""}`}
+                  >
+                    <Image
+                      src={src}
+                      alt={t.homeSections.testimonials.imageAlts[index]}
+                      width={1117}
+                      height={647}
+                      className="h-auto w-full rounded-xl"
+                      sizes={index === 0 ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 640px) 100vw, 29vw"}
+                    />
+                  </a>
+                ))}
+              </div>
+
+              <h3 className="mb-4 mt-8 text-lg font-bold text-brand-800">{t.homeSections.testimonials.packingTitle}</h3>
+              <a
+                href="/customer-feedback/brian-packaging-collage.jpg"
+                target="_blank"
+                rel="noreferrer"
+                className="group block overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <Image
+                  src="/customer-feedback/brian-packaging-collage.jpg"
+                  alt={t.homeSections.testimonials.packingAlt}
+                  width={1456}
+                  height={1088}
+                  className="h-auto w-full rounded-xl"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                />
+              </a>
+
+              <p className="mt-4 text-center text-xs text-gray-500">
+                {t.homeSections.testimonials.viewOriginal}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tracking */}
       <section className="py-16 lg:py-24 bg-white" id="tracking">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
