@@ -502,36 +502,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Tracking */}
-      <section className="py-16 lg:py-24 bg-white" id="tracking">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.tracking.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.tracking.desc}
-            </p>
-          </div>
-          <div className="mx-auto flex max-w-xl flex-wrap justify-center gap-3">
-            <a
-              href="https://wa.me/8615207122341"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-lg bg-green-600 px-6 py-3 text-sm font-semibold text-white hover:bg-green-700"
-            >
-              {locale === "zh" ? "联系 Chris Yu 查询进度" : "Ask Chris Yu for an Update"}
-            </a>
-            <Link
-              href="/contact"
-              className="rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 hover:border-brand-300 hover:text-brand-600"
-            >
-              {locale === "zh" ? "联系我们" : "Contact Us"}
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Carriers */}
       <section className="py-16 lg:py-24 bg-gray-50" id="carriers">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

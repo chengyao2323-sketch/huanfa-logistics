@@ -143,13 +143,6 @@
         imageAlts: string[];
         packingAlt: string;
     };
-    tracking: {
-      title: string;
-      desc: string;
-      inputPlaceholder: string;
-      button: string;
-      note: string;
-    };
     carriers: {
       title: string;
       desc: string;

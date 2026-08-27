@@ -196,13 +196,6 @@ const en: I18nDict = {
       ],
       packingAlt: "Four-photo collage showing protective packing for the Hawaii shipment",
     },
-    tracking: {
-      title: "Track Your Shipment",
-      desc: "Contact your freight specialist for the latest verified shipment status and documents.",
-      inputPlaceholder: "Enter Tracking Number",
-      button: "Track",
-      note: "No API yet? Route customers to your shipment tracking portal.",
-    },
     carriers: {
       title: "Carrier & Delivery Networks",
       desc: "Carrier and last-mile options available through our logistics network. Final routing is confirmed with each booking.",
