@@ -132,12 +132,16 @@
       customer: string;
       source: string;
       shipmentTitle: string;
-      shipmentItems: Array<{ label: string; value: string }>;
-      messagesTitle: string;
-      packingTitle: string;
-      viewOriginal: string;
-      imageAlts: string[];
-      packingAlt: string;
+        shipmentItems: Array<{ label: string; value: string }>;
+        messagesTitle: string;
+        messagesNote: string;
+        packingTitle: string;
+        packingLabel: string;
+        packingDesc: string;
+        viewOriginal: string;
+        closeImage: string;
+        imageAlts: string[];
+        packingAlt: string;
     };
     tracking: {
       title: string;
