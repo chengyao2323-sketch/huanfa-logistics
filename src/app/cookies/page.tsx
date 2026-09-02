@@ -29,7 +29,7 @@ const sections = [
   {
     heading: "Contact",
     body: [
-      "For questions about this Cookie Policy, contact us at chengyao2323@gmail.com.",
+      "For questions about this Cookie Policy, contact us at sales@huanfalogistics.com.",
     ],
   },
 ];

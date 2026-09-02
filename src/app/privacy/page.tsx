@@ -50,7 +50,7 @@ const sections = [
   {
     heading: "Contact Us",
     body: [
-      "If you have questions about this Privacy Policy, contact us at chengyao2323@gmail.com or +86 15207122341.",
+      "If you have questions about this Privacy Policy, contact us at sales@huanfalogistics.com or +86 15207122341.",
     ],
   },
 ];
