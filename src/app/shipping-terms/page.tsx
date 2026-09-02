@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
   title: "Shipping Terms",
   description: "Shipping terms, DDP/DDU details, charges, and claims information for Huanfa Logistics.",
+  alternates: { canonical: "/shipping-terms" },
 };
 
 const sections = [

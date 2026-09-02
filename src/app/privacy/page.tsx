@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Huanfa International Logistics collects, uses, and protects your information.",
+  alternates: { canonical: "/privacy" },
 };
 
 const sections = [

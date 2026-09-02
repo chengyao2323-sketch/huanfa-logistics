@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    const requiredFields = ["companyName", "contactPerson", "email"];
+    const requiredFields = ["contactPerson"];
     for (const field of requiredFields) {
       if (!body[field] || !body[field].trim()) {
         return NextResponse.json(
@@ -17,8 +17,15 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    if (!body.email?.trim() && !body.phone?.trim()) {
+      return NextResponse.json(
+        { error: "Email or WhatsApp is required" },
+        { status: 400 }
+      );
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.email)) {
+    if (body.email?.trim() && !emailRegex.test(body.email)) {
       return NextResponse.json(
         { error: "Invalid email format" },
         { status: 400 }

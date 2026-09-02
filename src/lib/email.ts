@@ -9,17 +9,12 @@ export async function sendInquiryEmail(data: {
   destination: string;
   cargoType: string;
   weightVolume: string;
-  cartonsPallets: string;
-  dimensions: string;
-  containsBattery: string;
-  readyDate: string;
-  serviceNeeded: string;
   remarks: string;
 }): Promise<boolean> {
   const env = (globalThis as any).process?.env ?? {};
   const apiKey = env.RESEND_API_KEY;
   const notifyTo = env.NOTIFY_EMAIL;
-  const subject = "New Inquiry - " + data.companyName;
+  const subject = "New Inquiry - " + (data.companyName || data.contactPerson);
   const body = [
     "Company: " + data.companyName,
     "Contact: " + data.contactPerson,
@@ -29,11 +24,6 @@ export async function sendInquiryEmail(data: {
     "Destination: " + data.destination,
     "Cargo: " + data.cargoType,
     "Weight/Volume: " + data.weightVolume,
-    "Cartons/Pallets: " + data.cartonsPallets,
-    "Dimensions: " + data.dimensions,
-    "Contains Battery: " + data.containsBattery,
-    "Ready Date: " + data.readyDate,
-    "Service Needed: " + data.serviceNeeded,
     "Remarks: " + data.remarks,
     "",
     "--- Sent via Huanfa Logistics Website ---",
@@ -55,7 +45,7 @@ export async function sendInquiryEmail(data: {
       },
       {
         subject,
-        replyTo: data.email,
+        ...(data.email ? { replyTo: data.email } : {}),
         text: body,
       }
     );

@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description: "How Huanfa International Logistics uses cookies on its website.",
+  alternates: { canonical: "/cookies" },
 };
 
 const sections = [

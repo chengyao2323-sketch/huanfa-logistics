@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "China freight coordination for air, sea, and door-to-door shipping to the USA and Europe.",
     images: ["/og-image.png"],
   },
-  alternates: { canonical: "https://huanfalogistics.com", languages: { en: "https://huanfalogistics.com", zh: "https://huanfalogistics.com/zh" } },
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -50,7 +50,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             url: "https://huanfalogistics.com",
             logo: "https://huanfalogistics.com/logo.png",
             description: "Professional China freight forwarder.",
-            contactPoint: { "@type": "ContactPoint", telephone: "+86-15207122341", contactType: "sales", availableLanguage: ["English", "Chinese"] },
+            email: "sales@huanfalogistics.com",
+            contactPoint: { "@type": "ContactPoint", telephone: "+86-15207122341", email: "sales@huanfalogistics.com", contactType: "sales", availableLanguage: ["English", "French", "Chinese"] },
           }),
         }} />
       </head>

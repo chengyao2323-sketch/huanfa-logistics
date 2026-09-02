@@ -12,11 +12,6 @@ type FormData = {
   destination: string;
   cargoType: string;
   weightVolume: string;
-  cartonsPallets: string;
-  dimensions: string;
-  containsBattery: string;
-  readyDate: string;
-  serviceNeeded: string;
   remarks: string;
 };
 
@@ -31,11 +26,6 @@ const initialForm: FormData = {
   destination: "",
   cargoType: "",
   weightVolume: "",
-  cartonsPallets: "",
-  dimensions: "",
-  containsBattery: "",
-  readyDate: "",
-  serviceNeeded: "",
   remarks: "",
 };
 
@@ -49,10 +39,14 @@ export default function ContactPage() {
 
   const setField = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
-    if (errors[field]) {
+    if (errors[field] || ((field === "email" || field === "phone") && value.trim())) {
       setErrors((prev) => {
         const next = { ...prev };
         delete next[field];
+        if (field === "email" || field === "phone") {
+          delete next.email;
+          delete next.phone;
+        }
         return next;
       });
     }
@@ -60,11 +54,11 @@ export default function ContactPage() {
 
   const validate = (): FormErrors => {
     const errs: FormErrors = {};
-    if (!form.companyName.trim()) errs.companyName = t.contactPage.form.requiredMsg;
     if (!form.contactPerson.trim()) errs.contactPerson = t.contactPage.form.requiredMsg;
-    if (!form.email.trim()) {
-      errs.email = t.contactPage.form.requiredMsg;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    if (!form.email.trim() && !form.phone.trim()) {
+      errs.email = t.contactPage.form.contactRequiredMsg;
+      errs.phone = t.contactPage.form.contactRequiredMsg;
+    } else if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       errs.email = t.contactPage.form.emailInvalidMsg;
     }
     return errs;
@@ -111,41 +105,15 @@ export default function ContactPage() {
     colSpan?: string;
     isTextarea?: boolean;
     rows?: number;
-    isSelect?: boolean;
-    options?: Array<{ value: string; label: string }>;
   }> = [
-    { key: "companyName", type: "text", required: true },
+    { key: "companyName", type: "text" },
     { key: "contactPerson", type: "text", required: true },
-    { key: "email", type: "email", required: true },
+    { key: "email", type: "email" },
     { key: "phone", type: "tel" },
     { key: "origin", type: "text" },
     { key: "destination", type: "text" },
     { key: "cargoType", type: "text" },
     { key: "weightVolume", type: "text" },
-    { key: "cartonsPallets", type: "text" },
-    { key: "dimensions", type: "text" },
-    {
-      key: "containsBattery",
-      type: "select",
-      isSelect: true,
-      options: [
-        { value: "yes", label: t.contactPage.form.batteryYes },
-        { value: "no", label: t.contactPage.form.batteryNo },
-      ],
-    },
-    { key: "readyDate", type: "date" },
-    {
-      key: "serviceNeeded",
-      type: "select",
-      isSelect: true,
-      options: [
-        { value: "ocean", label: t.contactPage.form.serviceOcean },
-        { value: "air", label: t.contactPage.form.serviceAir },
-        { value: "ddp", label: t.contactPage.form.serviceDdp },
-        { value: "fba", label: t.contactPage.form.serviceFba },
-        { value: "express", label: t.contactPage.form.serviceExpress },
-      ],
-    },
     { key: "remarks", type: "text", colSpan: "sm:col-span-2 lg:col-span-3", isTextarea: true, rows: 4 },
   ];
 
@@ -191,6 +159,7 @@ export default function ContactPage() {
                 <>
                   <h2 className="text-2xl font-bold text-brand-800 mb-2">{t.contactPage.form.title}</h2>
                   <p className="text-sm text-gray-500 mb-8">{t.contactPage.form.desc}</p>
+                  <p className="-mt-5 mb-8 text-xs text-gray-500">{t.contactPage.form.contactRequiredMsg}</p>
 
                   {submitError && (
                     <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
@@ -209,27 +178,7 @@ export default function ContactPage() {
                             {t.contactPage.form[field.key]}
                             {field.required && <span className="text-red-400 ml-0.5">*</span>}
                           </label>
-                          {field.isSelect ? (
-                            <select
-                              id={field.key}
-                              value={form[field.key]}
-                              onChange={(e) => setField(field.key, e.target.value)}
-                              className={`w-full px-4 py-3 rounded-lg border text-sm focus:border-brand-400 focus:ring-2 focus:ring-brand-100 outline-none transition-all bg-white ${
-                                errors[field.key] ? "border-red-300 bg-red-50" : "border-gray-200"
-                              }`}
-                            >
-                              <option value="">
-                                {field.key === "serviceNeeded"
-                                  ? t.contactPage.form.serviceNeeded
-                                  : t.contactPage.form.containsBattery}
-                              </option>
-                              {field.options?.map((option) => (
-                                <option key={option.value} value={option.value}>
-                                  {option.label}
-                                </option>
-                              ))}
-                            </select>
-                          ) : field.isTextarea ? (
+                          {field.isTextarea ? (
                             <textarea
                               id={field.key}
                               rows={field.rows || 4}

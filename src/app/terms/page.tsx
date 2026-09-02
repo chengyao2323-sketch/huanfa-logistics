@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms and conditions for using Huanfa International Logistics website and services.",
+  alternates: { canonical: "/terms" },
 };
 
 const sections = [

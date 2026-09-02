@@ -17,6 +17,16 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.huanfalogistics.com" }],
+        destination: "https://huanfalogistics.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   webpack(config, { isServer }) {
     if (isServer) {
       config.externals.push("cloudflare:sockets");

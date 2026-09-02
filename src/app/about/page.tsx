@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useT } from "@/i18n";
-import OperationsGallery from "@/components/OperationsGallery";
 
 const valueIcons = [
   <svg key="0" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,55 +71,6 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Real photos */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.real.title}
-            </h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              {t.homeSections.real.desc}
-            </p>
-          </div>
-          <OperationsGallery
-            labels={[
-              t.homeSections.real.warehouse1,
-              t.homeSections.real.warehouse2,
-              t.homeSections.real.team,
-            ]}
-          />
-        </div>
-      </section>
-
-      {/* Freight specialist */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.specialist.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.specialist.desc}
-            </p>
-          </div>
-          <div className="mx-auto max-w-xl rounded-2xl border border-gray-100 bg-gray-50 p-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-brand-800">{t.homeSections.specialist.name}</div>
-              <div className="text-gray-500 mb-6">{t.homeSections.specialist.role}</div>
-              <a
-                href="https://wa.me/8615207122341"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors"
-              >
-                {t.homeSections.specialist.whatsapp}
-              </a>
             </div>
           </div>
         </div>

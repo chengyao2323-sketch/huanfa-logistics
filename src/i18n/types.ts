@@ -37,10 +37,6 @@
     p1: string;
     p2: string;
     learnMore: string;
-    mission: { label: string; value: string };
-    vision: { label: string; value: string };
-    values: { label: string; value: string };
-    promise: { label: string; value: string };
   };
   cta: {
     title: string;
@@ -48,7 +44,6 @@
     button: string;
   };
   homeSections: {
-    photoPlaceholder: string;
     verification: {
       title: string;
       desc: string;
@@ -66,9 +61,6 @@
       warehouseValue: string;
       email: string;
       emailValue: string;
-      licenseTitle: string;
-      licenseDesc: string;
-      licensePlaceholder: string;
     };
     real: {
       title: string;
@@ -76,39 +68,6 @@
       warehouse1: string;
       warehouse2: string;
       team: string;
-    };
-    shipments: {
-      title: string;
-      desc: string;
-      items: Array<{
-        route: string;
-        mode: string;
-        volume: string;
-        cargo: string;
-        status: string;
-      }>;
-    };
-    caseStudies: {
-      title: string;
-      desc: string;
-      cargoLabel: string;
-      volumeLabel: string;
-      originLabel: string;
-      destinationLabel: string;
-      serviceLabel: string;
-      transitLabel: string;
-      includedLabel: string;
-      placeholder: string;
-      card: {
-        title: string;
-        cargo: string;
-        volume: string;
-        origin: string;
-        destination: string;
-        service: string;
-        transit: string;
-        included: string[];
-      };
     };
     process: {
       title: string;
@@ -146,16 +105,9 @@
     carriers: {
       title: string;
       desc: string;
-      placeholder: string;
     };
     specialist: {
-      title: string;
-      desc: string;
-      name: string;
-      role: string;
-      photo: string;
       whatsapp: string;
-      email: string;
     };
   };
   footer: {
@@ -219,24 +171,13 @@
       destination: string;
       cargoType: string;
       weightVolume: string;
-      cartonsPallets: string;
-      dimensions: string;
-      containsBattery: string;
-      readyDate: string;
-      serviceNeeded: string;
-      serviceOcean: string;
-      serviceAir: string;
-      serviceDdp: string;
-      serviceFba: string;
-      serviceExpress: string;
-      batteryYes: string;
-      batteryNo: string;
       remarks: string;
       submit: string;
       successTitle: string;
       successDesc: string;
       sendAnother: string;
       requiredMsg: string;
+      contactRequiredMsg: string;
       emailInvalidMsg: string;
     };
     info: {
@@ -244,14 +185,6 @@
       specialistTitle: string;
       specialistName: string;
       specialistRole: string;
-      specialistPhoto: string;
-      addressLabel: string;
-      addressValue: string;
-      officeAddressLabel: string;
-      officeAddressValue: string;
-      warehouseAddressLabel: string;
-      warehouseAddressValue: string;
-      mapsLabel: string;
       phoneLabel: string;
       phoneValue: string;
       emailLabel: string;
