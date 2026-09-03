@@ -16,6 +16,18 @@ html[data-whatsapp-widget="visible"] footer {
   padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
 }
 
+@media (min-width: 768px) {
+  .whatsapp-contact-widget {
+    top: calc(70% - 20px);
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  html[data-whatsapp-widget="visible"] footer {
+    padding-bottom: 0;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
