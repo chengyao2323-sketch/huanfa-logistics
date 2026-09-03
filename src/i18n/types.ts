@@ -1,4 +1,10 @@
 ﻿export type I18nDict = {
+  floatingWhatsApp: {
+    label: string;
+    regionLabel: string;
+    linkLabel: string;
+    closeLabel: string;
+  };
   nav: {
     home: string;
     services: string;

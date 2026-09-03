@@ -6,6 +6,16 @@
   --foreground: #0f172a;
   --background: #ffffff;
 }
+.whatsapp-contact-widget {
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Keep footer links reachable above the floating control at the end of a page. */
+html[data-whatsapp-widget="visible"] footer {
+  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

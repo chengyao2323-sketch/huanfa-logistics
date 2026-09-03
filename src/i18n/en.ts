@@ -1,6 +1,12 @@
 ﻿import { I18nDict } from "./types";
 
 const en: I18nDict = {
+  floatingWhatsApp: {
+    label: "Chat with Chris",
+    regionLabel: "WhatsApp contact",
+    linkLabel: "Chat with Chris Yu on WhatsApp (opens in a new tab)",
+    closeLabel: "Hide WhatsApp button for this visit",
+  },
   nav: {
     home: "Home",
     services: "Services",

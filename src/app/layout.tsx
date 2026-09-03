@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { I18nProvider } from "@/i18n";
 import LangUpdater from "@/components/LangUpdater";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://huanfalogistics.com"),
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <FloatingWhatsApp />
         </I18nProvider>
       </body>
     </html>
