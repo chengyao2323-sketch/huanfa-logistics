@@ -153,17 +153,6 @@
       items: Array<{ title: string; desc: string }>;
     };
   };
-  servicesPage: {
-    page: { title: string; desc: string };
-    details: Array<{
-      title: string;
-      subtitle: string;
-      color: string;
-      items: string[];
-    }>;
-    learnMore: string;
-    cta: { title: string; desc: string; button: string };
-  };
   contactPage: {
     page: { title: string; desc: string };
     form: {
@@ -199,21 +188,6 @@
       hoursValue: string;
       whatsapp: string;
     };
-  };
-  servicePages: {
-    seaFreight: {
-      title: string;
-      desc: string;
-      features: string[];
-      solutionsTitle: string;
-      solutionsSubtitle: string;
-      solutionsDesc: string;
-      faq: Array<{ question: string; answer: string }>;
-    };
-    airFreight: { title: string; desc: string; features: string[] };
-    doorToDoor: { title: string; desc: string; features: string[] };
-    ecommerceLogistics: { title: string; desc: string; features: string[] };
-    warehousing: { title: string; desc: string; features: string[] };
   };
   faqPage: {
     page: { title: string; desc: string };

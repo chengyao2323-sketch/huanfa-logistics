@@ -47,7 +47,7 @@ const en: I18nDict = {
     ddp: {
       title: "DDP Door to Door",
       subtitle: "DDP Door to Door",
-      desc: "Full DDP door-to-door shipping including export customs clearance, international trunk lines, import customs clearance, and last-mile delivery — all-in-one service.",
+      desc: "Door-to-door freight with DDP options subject to cargo and destination review. Included services, customs responsibilities and charges are confirmed in your quotation.",
     },
     warehouse: {
       title: "Warehousing & Distribution",
@@ -214,82 +214,6 @@ const en: I18nDict = {
       ],
     },
   },
-  servicesPage: {
-    page: {
-      title: "Services",
-      desc: "Freight coordination from China to the USA and Europe, with other destinations available on request.",
-    },
-    details: [
-      {
-        title: "Ocean Freight",
-        subtitle: "Ocean Freight",
-        color: "from-blue-500 to-blue-700",
-        items: [
-          "FCL Shipping — 20GP / 40GP / 40HQ, subject to carrier availability",
-          "LCL Shipping — Flexible consolidation for cost efficiency",
-          "Furniture, general, and oversized cargo reviewed before booking",
-          "Core routes from China to the USA and Europe",
-          "Port delivery and door delivery options",
-          "Cargo insurance available on request",
-        ],
-      },
-      {
-        title: "Air Freight",
-        subtitle: "Air Freight",
-        color: "from-sky-500 to-indigo-600",
-        items: [
-          "Air freight for general cargo and urgent shipments",
-          "Core routes from China to the USA and Europe",
-          "Battery cargo is subject to documents and carrier acceptance",
-          "Airport delivery and door delivery options",
-          "Routing and estimated transit time confirmed at quotation",
-          "Cargo insurance available on request",
-        ],
-      },
-      {
-        title: "DDP Door to Door",
-        subtitle: "DDP Shipping",
-        color: "from-emerald-500 to-teal-700",
-    items: [
-      "DDP service to the USA and Europe, subject to cargo and destination review",
-      "DDU and door-to-door options",
-          "Air/sea freight door-to-door combined solutions",
-          "Residential and business delivery options",
-          "Confirmed shipment updates through your freight specialist",
-        ],
-      },
-      {
-        title: "Warehousing & Distribution",
-        subtitle: "Warehousing & Distribution",
-        color: "from-amber-500 to-orange-600",
-        items: [
-          "Shenzhen receiving and consolidation",
-          "Sorting, palletizing, wooden crating, repacking, and labeling",
-          "Cargo measurements and photos available on request",
-          "Short-term storage subject to confirmation",
-          "Onward delivery coordination",
-        ],
-      },
-      {
-        title: "E-Commerce Logistics",
-        subtitle: "E-Commerce Logistics",
-        color: "from-violet-500 to-purple-700",
-        items: [
-          "Amazon FBA first-mile logistics service",
-          "Supplier pickup and multi-supplier consolidation",
-          "Carton and shipping-label coordination",
-          "Ocean or air options based on deadline",
-          "Shipment updates through one freight specialist",
-        ],
-      },
-    ],
-    learnMore: "Learn More",
-    cta: {
-      title: "Need a Custom Logistics Solution?",
-      desc: "Our professional team will tailor the optimal, most cost-effective logistics solution for your needs.",
-      button: "Contact Us",
-    },
-  },
   contactPage: {
     page: {
       title: "Talk to a Freight Specialist",
@@ -327,79 +251,6 @@ const en: I18nDict = {
       hoursLabel: "Office Hours / Response",
       hoursValue: "Mon–Fri 9:00–18:00 China Standard Time · Replies within one business day",
       whatsapp: "Chat on WhatsApp",
-    },
-  },
-  servicePages: {
-    seaFreight: {
-       title: "Sea Freight from China to the USA & Europe | FCL & LCL",
-       desc: "FCL and LCL ocean freight from China to the USA and Europe. Other destinations are available on request.",
-      features: [
-        "FCL Shipping — 20GP / 40GP / 40HQ standard and special containers",
-        "LCL Shipping — Flexible consolidation for cost efficiency",
-         "Furniture, general, and oversized cargo reviewed before booking",
-         "Estimated transit time confirmed for the selected route",
-         "Port delivery or door delivery options",
-         "Cargo insurance available on request",
-         "Other destinations available on request",
-      ],
-      solutionsTitle: "Flexible Sea Freight Solutions from China",
-      solutionsSubtitle: "FOB, CIF, DDP & Door-to-Door Shipping Services",
-       solutionsDesc: "We coordinate ocean freight under agreed trade and service terms, including port-to-port and door delivery options. Booking, documentation, customs responsibilities, and final delivery scope are confirmed before shipment.",
-      faq: [
-        {
-          question: "What is CIF shipping from China?",
-          answer: "CIF (Cost, Insurance and Freight) is an international shipping term where the seller arranges ocean transportation and insurance coverage until the goods reach the destination port. Our team can assist with CIF shipments from China, including freight booking, customs documentation, and international logistics coordination."
-        }
-      ],
-    },
-    airFreight: {
-       title: "Air Freight from China to the USA & Europe",
-      desc: "Fast and reliable international air freight — e-commerce goods, samples, and urgent shipments delivered directly.",
-      features: [
-        "International air freight for general cargo and express shipments",
-         "Estimated transit time confirmed at quotation",
-         "Airport delivery and door delivery options",
-         "Battery cargo subject to documents and carrier acceptance",
-         "Cargo requirements reviewed before booking",
-         "Cargo insurance available on request",
-         "Shipment milestones shared through your freight specialist",
-      ],
-    },
-    doorToDoor: {
-       title: "Door-to-Door Shipping from China to the USA & Europe | DDP",
-      desc: "Door-to-door DDP shipping from China to your door in the USA or Europe. Factory pickup, export declaration, ocean or air freight, import clearance, duties, and final-mile delivery are all included.",
-      features: [
-         "Supplier pickup arranged in supported cities",
-         "Shenzhen receiving and consolidation",
-         "Export and import clearance responsibilities confirmed before shipment",
-         "DDP availability depends on cargo type and destination",
-         "Residential and business delivery confirmed before shipping",
-        "Shipment updates from pickup to proof of delivery",
-      ],
-    },
-    ecommerceLogistics: {
-       title: "E-Commerce Logistics | Amazon FBA First-Mile",
-       desc: "Supplier pickup, consolidation, shipping-label coordination, and Amazon FBA first-mile freight.",
-      features: [
-        "Amazon FBA first-mile logistics from China to USA / Europe",
-         "Supplier pickup and multi-supplier consolidation",
-         "Carton and shipping-label coordination",
-         "Ocean or air options based on shipment deadline",
-         "Cargo details reviewed before booking",
-         "Confirmed shipment updates through one specialist",
-      ],
-    },
-    warehousing: {
-      title: "Warehousing & Distribution",
-       desc: "Shenzhen receiving, consolidation, sorting, basic packing, labeling coordination, and onward delivery.",
-      features: [
-         "Shenzhen cargo receiving and consolidation",
-         "Sorting, palletizing, wooden crating, repacking, and labeling",
-         "Cargo measurements and photos available on request",
-         "Short-term storage subject to confirmation",
-         "Onward delivery coordination",
-         "Cargo status confirmed through your freight specialist",
-      ],
     },
   },
   faqPage: {
