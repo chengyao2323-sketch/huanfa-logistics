@@ -130,8 +130,8 @@ const en: I18nDict = {
       ],
     },
     testimonials: {
-      title: "Verified Customer Feedback",
-      desc: "Original customer messages paired with the corresponding completed shipment.",
+      title: "Real Shipments & Customer Feedback",
+      desc: "Original customer messages and on-site photos paired with the corresponding completed shipments.",
       quote: "Thank you for your trust and for honoring your commitment. I truly appreciate your honesty and professionalism. I have more orders to come and will of course contact you again and again.",
       customer: "Brian S.",
       source: "Customer feedback via WhatsApp · August 2026",

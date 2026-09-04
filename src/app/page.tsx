@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useT, useI18n } from "@/i18n";
 import OperationsGallery from "@/components/OperationsGallery";
 import CarrierNetwork from "@/components/CarrierNetwork";
+import ContainerShipmentCase from "@/components/ContainerShipmentCase";
 
 const serviceIcons: Record<string, React.ReactNode> = {
   ocean: (
@@ -461,6 +462,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          <ContainerShipmentCase onOpen={setLightbox} />
         </div>
       </section>
 
