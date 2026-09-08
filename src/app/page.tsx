@@ -5,58 +5,7 @@ import OperationsGallery from "@/components/OperationsGallery";
 import CarrierNetwork from "@/components/CarrierNetwork";
 import ShipmentHighlights from "@/components/ShipmentHighlights";
 import HeroVideo from "@/components/HeroVideo";
-const serviceIcons: Record<string, React.ReactNode> = {
-  ocean: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
-      <path d="M2 16l10-4 10 4" />
-      <path d="M12 3v9" />
-      <path d="M9 6l3-3 3 3" />
-      <path d="M3 18c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0" />
-    </svg>
-  ),
-  air: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
-      <path d="M22 2L11 13" />
-      <path d="M22 2l-7 20-4-9-9-4z" />
-    </svg>
-  ),
-  ddp: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
-      <rect x="1" y="3" width="15" height="13" rx="1" />
-      <rect x="15" y="5" width="7" height="11" rx="1" />
-      <circle cx="5.5" cy="19" r="2" />
-      <circle cx="18.5" cy="19" r="2" />
-      <line x1="1" y1="3" x2="4" y2="3" />
-    </svg>
-  ),
-  warehouse: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
-      <path d="M3 21V9l9-6 9 6v12" />
-      <path d="M7 21V13h10v8" />
-      <line x1="9" y1="13" x2="15" y2="13" />
-      <line x1="9" y1="17" x2="15" y2="17" />
-    </svg>
-  ),
-  ecommerce: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
-      <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-      <line x1="12" y1="22.08" x2="12" y2="12" />
-    </svg>
-  ),
-};
-
-
-const serviceKeys = ["ocean", "air", "ddp", "warehouse", "ecommerce"] as const;
-const serviceHrefs: Record<(typeof serviceKeys)[number], string> = {
-  ocean: "/services/sea-freight",
-  air: "/services/air-freight",
-  ddp: "/services/door-to-door",
-  warehouse: "/services/warehousing",
-  ecommerce: "/services/ecommerce-logistics",
-};
-
-
+import HomeServices from "@/components/HomeServices";
 export default function HomePage() {
  const t = useT();
  const { locale } = useI18n();
@@ -139,32 +88,7 @@ export default function HomePage() {
       </section>
 
 {/* Services */}
-      <section className="py-12 lg:py-16 bg-gray-50" id="services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">{t.services.title}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.services.description}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {serviceKeys.map((key) => (
-              <Link
-                key={key}
-                href={serviceHrefs[key]}
-                className="bg-white rounded-xl p-6 lg:p-8 border border-gray-100 hover:border-brand-200 hover:shadow-lg transition-all group block"
-              >
-                <div className="w-14 h-14 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                  {serviceIcons[key]}
-                </div>
-                <h3 className="text-lg font-bold text-brand-800 mb-1">{t.services[key].title}</h3>
-                {locale === "zh" && <p className="text-xs text-gray-400 uppercase tracking-wider mb-3">{t.services[key].subtitle}</p>}
-                <p className="text-sm text-gray-600 leading-relaxed">{t.services[key].desc}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeServices />
 
 <ShipmentHighlights />
 
@@ -260,4 +184,3 @@ export default function HomePage() {
       </section>
 </>;
 }
-

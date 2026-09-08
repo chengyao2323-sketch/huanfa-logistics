@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n";
 
-export const serviceOrder = ["seaFreight", "airFreight", "doorToDoor", "warehousing", "ecommerceLogistics"] as const;
+export const serviceOrder = ["seaFreight", "airFreight", "doorToDoor", "warehousing", "ecommerceLogistics", "customsInsurance"] as const;
 export type ServiceKey = (typeof serviceOrder)[number];
 export const servicePaths: Record<ServiceKey, string> = {
   seaFreight: "/services/sea-freight",
@@ -8,6 +8,7 @@ export const servicePaths: Record<ServiceKey, string> = {
   doorToDoor: "/services/door-to-door",
   warehousing: "/services/warehousing",
   ecommerceLogistics: "/services/ecommerce-logistics",
+  customsInsurance: "/services/customs-insurance",
 };
 
 type Section = { title: string; body: string };
@@ -57,6 +58,29 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       packingAlt: "Four photos showing protective packaging from a completed customer shipment",
     },
     services: {
+      customsInsurance: {
+        name: "Customs & Insurance", summary: "Coordinate customs documents and arrange cargo insurance on request before shipping.",
+        fit: "Shippers who need clearance coordination or cargo cover", highlights: ["Import & export document coordination", "Insurance on request"],
+        linkLabel: "Explore customs and insurance", title: "Plan your clearance and cargo protection.",
+        intro: "Confirm the documents, responsibilities and insurance needs for your shipment before departure. Available arrangements depend on the cargo, destination and agreed service scope.",
+        guideTitle: "Make the responsibilities clear before shipping",
+        topics: [
+          { title: "Prepare consistent shipment documents", body: "Share the product description, commercial invoice, packing list and available supporting documents. We coordinate the agreed clearance preparation and flag information needed for review; any required permits or product certificates must be confirmed for the actual goods and destination." },
+          { title: "Agree who handles clearance and charges", body: "Identify the importer, the party providing documents and the party paying duties, taxes and destination charges in the quotation. Customs authorities determine inspection and release; clearance coordination is not a guarantee of release or a promise that duties are included." },
+          { title: "Request insurance before departure", body: "Tell us the cargo value, packing and route if you need insurance. Confirm the insurer, insured value, cover, exclusions, deductible and when cover starts before accepting the arrangement. Insurance is subject to acceptance and the issued policy, not automatically included with freight." },
+        ],
+        requirements: ["Product description, photos and intended use", "Commercial invoice, packing list and declared value", "Origin, destination and transport plan", "Importer details and available supporting documents", "Insurance needs, cargo value and packing details"],
+        steps: [
+          { title: "Review the information", body: "Coordinate a review of cargo documents and your clearance or insurance needs." },
+          { title: "Confirm the arrangement", body: "Agree the service scope, responsible parties, charges and any insurance terms before shipping." },
+          { title: "Support the follow-up", body: "Coordinate confirmed clearance updates and help collect shipment documents if a claim is needed." },
+        ],
+        note: "Huanfa coordinates agreed services; insurance cover and claim decisions rest with the insurer under the policy. Report loss or damage promptly, retain packaging and evidence, and follow the applicable claim deadlines. No guaranteed clearance or compensation is promised.",
+        faq: [
+          { question: "Is cargo insurance automatically included?", answer: "No. Request it before shipping and check the written quotation and policy. Confirm the insured value, cover, exclusions and deductible rather than assuming the full cargo value is covered in every situation." },
+          { question: "What should I do if cargo arrives damaged?", answer: "Record the condition of the goods and packaging, retain delivery documents and notify Chris promptly. We can assist with shipment documents and follow-up; the insurer reviews any claim under the policy and applicable deadlines." },
+        ],
+      },
       seaFreight: {
         name: "Ocean Freight", summary: "Container and consolidated shipping with port or door delivery options.",
         fit: "Larger shipments with flexible delivery dates", highlights: ["FCL & LCL options", "Port or door delivery"],
@@ -189,6 +213,29 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       operationsAlt: "焕发货物操作现场的叉车与货物搬运", packingAlt: "已完成客户货物的四张防护包装照片拼图",
     },
     services: {
+      customsInsurance: {
+        name: "海关及保险", summary: "协调进出口清关资料，并按需在出运前安排货物运输保险。",
+        fit: "需要清关协调或货物保险安排的客户", highlights: ["进出口单证协调", "货物保险按需安排"],
+        linkLabel: "了解海关及保险", title: "出运之前，确认清关与货物保障。",
+        intro: "提前核对货物单证、清关责任和投保需求。可安排的服务根据货物、目的地及约定的服务范围确认。",
+        guideTitle: "先把单证、费用责任与保障范围讲清楚",
+        topics: [
+          { title: "准备一致、准确的出运资料", body: "请提供品名、商业发票、装箱单及已有的支持文件。我们协调约定的清关准备，并提示需要补充审核的信息；相关许可或产品证书须按实际货物和目的地确认。" },
+          { title: "明确清关与税费由谁负责", body: "报价中应明确进口主体、单证提供方，以及关税、税费和目的地费用的承担方。查验与放行由海关决定，清关协调不等于保证放行，也不代表报价默认包含关税。" },
+          { title: "需要保险，请在出运前提出", body: "请告知货值、包装及运输路线。接受安排前，核对保险人、保险金额、保障范围、除外责任、免赔额和保障起始时间。承保须经接受并以签发的保单为准，运费不默认包含保险。" },
+        ],
+        requirements: ["品名、照片及产品用途", "商业发票、装箱单和申报货值", "起运地、目的地及运输计划", "进口主体信息及已有支持文件", "投保需求、货值和包装情况"],
+        steps: [
+          { title: "核对货物与需求", body: "协调审核货物资料，以及清关或保险安排的需求。" },
+          { title: "确认服务安排", body: "出运前确认服务范围、责任方、收费及适用的保险条款。" },
+          { title: "协助后续跟进", body: "协调经确认的清关进度，如需索赔可协助整理运输资料。" },
+        ],
+        note: "焕发协调约定的服务；保险保障与理赔决定由保险人按保单处理。发生货损或遗失时，请及时通知、保留包装与证据，并遵守适用的索赔时限。不承诺保证清关或赔付。",
+        faq: [
+          { question: "运输报价会自动包含货物保险吗？", answer: "不会。请在出运前提出投保需求，并核对书面报价和保单。应确认保险金额、保障范围、除外责任和免赔额，不能默认所有情况都按全部货值赔付。" },
+          { question: "收到货物后发现损坏，应该怎么办？", answer: "请记录货物与包装状态，保留交付资料，并及时通知 Chris。我们可协助提供运输文件和跟进；是否赔付由保险人根据保单及适用时限审核。" },
+        ],
+      },
       seaFreight: {
         name: "海运服务", summary: "整箱或拼箱运输，可按需安排到港或门到门交付。",
         fit: "货量较大、交付时间相对灵活的货物", highlights: ["整箱 FCL / 拼箱 LCL", "到港或到门选项"],

@@ -6,6 +6,7 @@ const paths: Record<ServiceKey, React.ReactNode> = {
   doorToDoor: <><path d="M3 11 12 3l9 8M5 10v11h14V10M9 21v-7h6v7" /></>,
   warehousing: <><path d="M3 21V8l9-5 9 5v13M7 21V11h10v10M7 15h10M7 18h10M1 21h22" /></>,
   ecommerceLogistics: <><path d="m3 7 9-4 9 4v11l-9 4-9-4V7Zm0 0 9 4 9-4M12 11v11M7 5l10 4" /></>,
+  customsInsurance: <><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" /><path d="m8 12 3 3 5-6" /></>,
 };
 
 export default function ServiceIcon({ service, className = "h-6 w-6" }: { service: ServiceKey; className?: string }) {

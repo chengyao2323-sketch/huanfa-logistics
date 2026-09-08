@@ -47,7 +47,7 @@ export default function ServicesOverview() {
               </Link>
             </article>;
           })}
-          <aside className="flex flex-col justify-center rounded-2xl bg-brand-900 p-7 text-white sm:p-8">
+          <aside className="flex flex-col justify-center rounded-2xl bg-brand-900 p-7 text-white sm:p-8 md:col-span-2">
             <span aria-hidden="true" className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-xl text-accent-500">?</span>
             <h2 className="mb-3 text-2xl font-bold">{ui.helpTitle}</h2>
             <p className="max-w-md text-sm leading-7 text-slate-300">{ui.helpBody}</p>
