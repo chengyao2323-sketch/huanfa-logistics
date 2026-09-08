@@ -15,7 +15,7 @@ const content = {
     confirmTitle: "Confirmed before you ship",
     confirm: ["What the quoted price includes", "Estimated transit time", "Packing or pallet requirements", "Duties and customs responsibility", "Residential delivery scope", "Damage reporting and claims documents"],
     ctaTitle: "Not sure where to start?",
-    ctaDesc: "Send Chris Yu the product list, supplier city, destination ZIP code, weight, volume, and delivery access restrictions.",
+    ctaDesc: "Send Chris Yu the product list, supplier city and destination ZIP code. Add weight, volume and delivery access details if known; a supplier packing list can help fill the gaps.",
     whatsapp: "Ask Chris Yu on WhatsApp",
     quote: "Request a Shipping Plan",
   },
@@ -30,7 +30,7 @@ const content = {
     confirmTitle: "出货前明确确认",
     confirm: ["报价包含的费用", "预计运输时效", "包装、托盘或木架要求", "关税与清关责任", "住宅派送范围", "破损申报与理赔资料"],
     ctaTitle: "不知道从哪里开始？",
-    ctaDesc: "请把产品清单、供应商城市、目的地邮编、重量、体积和派送限制发给 Chris Yu。",
+    ctaDesc: "请先把产品清单、供应商城市和目的地邮编发给 Chris Yu，再补充已知的重量、体积及派送限制。暂时不清楚的可通过供应商装箱单进一步核对。",
     whatsapp: "WhatsApp 咨询 Chris Yu",
     quote: "获取运输方案",
   },
@@ -61,6 +61,11 @@ export default function PersonalShippingClient() {
       </section>
       <section className="bg-gray-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <aside className="mb-10 rounded-xl border border-amber-200 bg-amber-50 p-6 text-sm leading-7 text-slate-700">
+            <h2 className="mb-2 font-bold text-brand-800">{locale === "zh" ? "送货到家前，需要确认什么？" : "Before arranging home delivery"}</h2>
+            <p>{locale === "zh" ? "门到门不默认包含卸货、尾板、上楼、入户或安装。请提前说明道路通行及卸货条件；可提供的服务和费用以书面报价为准。" : "Door-to-door does not automatically include unloading, liftgate, upstairs or indoor delivery, or installation. Share road access and unloading conditions in advance; available services and charges are confirmed in the written quote."}</p>
+            <Link href="/shipment-cases#container-shipment-case" className="mt-4 inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "查看深圳至美国加州的真实整柜案例 →" : "View a real Shenzhen-to-California container shipment →"}</Link>
+          </aside>
           <h2 className="mb-10 text-center text-3xl font-bold text-brand-800 lg:text-4xl">{t.processTitle}</h2>
           <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{t.steps.map((step, index) => (
             <li key={step} className="rounded-2xl border border-gray-100 bg-white p-6"><div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 font-bold text-white">{index + 1}</div><div className="text-sm font-semibold leading-relaxed text-gray-800">{step}</div></li>
@@ -69,7 +74,7 @@ export default function PersonalShippingClient() {
       </section>
       <section className="bg-white py-16 lg:py-20"><div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 className="mb-4 text-3xl font-bold text-brand-800">{t.ctaTitle}</h2><p className="mb-8 text-gray-600">{t.ctaDesc}</p>
-        <div className="flex flex-wrap justify-center gap-3"><a href="https://wa.me/8615207122341" target="_blank" rel="noreferrer" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">{t.whatsapp}</a><Link href="/contact" className="rounded-lg bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-700">{t.quote}</Link></div>
+        <div className="flex flex-wrap justify-center gap-3"><a href="https://wa.me/8615207122341" target="_blank" rel="noreferrer" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">{t.whatsapp}</a><Link href="/contact?customer=personal" className="rounded-lg bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-700">{t.quote}</Link></div>
       </div></section>
     </>
   );

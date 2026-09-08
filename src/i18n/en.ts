@@ -19,9 +19,9 @@ const en: I18nDict = {
   hero: {
     badge: "China → USA & Europe Freight Forwarding",
     title: "Freight Forwarding from China to the USA & Europe",
-    subtitle: "Ocean Freight · Air Freight · DDP Door-to-Door · Oversized Cargo",
+    subtitle: "Ocean Freight · Air Freight · Door-to-Door · Consolidation",
     description:
-      "We pick up from factories across China, consolidate at our Shenzhen warehouse, handle export and import customs, and deliver to your door in the USA or Europe.",
+      "For businesses and personal buyers importing from China. We coordinate supplier pickup, Shenzhen consolidation, international freight, customs and final delivery under a confirmed service scope.",
     getQuote: "Get a Freight Quote",
     learnMore: "See How It Works",
   },
@@ -45,14 +45,14 @@ const en: I18nDict = {
       desc: "Air freight and express options for general cargo and urgent shipments to the USA and Europe.",
     },
     ddp: {
-      title: "DDP Door to Door",
-      subtitle: "DDP Door to Door",
+      title: "Door-to-Door Shipping",
+      subtitle: "Door-to-Door Shipping",
       desc: "Door-to-door freight with DDP options subject to cargo and destination review. Included services, customs responsibilities and charges are confirmed in your quotation.",
     },
     warehouse: {
-      title: "Warehousing & Distribution",
-      subtitle: "Warehousing & Distribution",
-      desc: "Modern warehousing facilities offering consolidation, sorting, packaging, distribution, and other value-added services.",
+      title: "Warehousing & Consolidation",
+      subtitle: "Warehousing & Consolidation",
+      desc: "Collect goods from multiple suppliers, check quantities and coordinate packing before international shipping.",
     },
     ecommerce: {
       title: "E-Commerce Logistics",
@@ -69,14 +69,14 @@ const en: I18nDict = {
   },
   cta: {
     title: "Ready to Ship from China?",
-    description: "Get a clear freight quote with pickup, customs, freight, and final delivery included.",
+    description: "Discuss your cargo and destination. Get a quote with the service scope, included charges and exclusions explained.",
     button: "Request a Quote",
   },
   homeSections: {
     verification: {
       title: "Company Verification",
       desc: "Real, searchable company information so you know exactly who you are working with.",
-      legalName: "Legal Company Name",
+      legalName: "English Company Name",
       legalNameValue: "Shenzhen Huanfa International Logistics Co., Ltd.",
       chineseLegalName: "Chinese Legal Name",
       chineseLegalNameValue: "深圳市焕发国际物流有限公司",
@@ -132,9 +132,9 @@ const en: I18nDict = {
     testimonials: {
       title: "Real Shipments & Customer Feedback",
       desc: "Original customer messages and on-site photos paired with the corresponding completed shipments.",
-      quote: "Thank you for your trust and for honoring your commitment. I truly appreciate your honesty and professionalism. I have more orders to come and will of course contact you again and again.",
+      quote: "Thank you for your trust and for honoring your commitment. I truly appreciate your honesty and professionalism. … I have more order to come and I will ofcourse contact you again and again.",
       customer: "Brian S.",
-      source: "Customer feedback via WhatsApp · August 2026",
+      source: "Selected WhatsApp messages · August 2026",
       shipmentTitle: "Shipment connected to this feedback",
       shipmentItems: [
         { label: "Route", value: "Shenzhen, China → Hawaii, USA" },
@@ -152,9 +152,9 @@ const en: I18nDict = {
         viewOriginal: "Click any image to enlarge",
         closeImage: "Close enlarged image",
         imageAlts: [
-        "Customer feedback about careful cargo packaging",
         "Customer feedback about trust and professionalism",
-        "Customer thanking Huanfa Logistics after delivery",
+        "Customer feedback about careful cargo packaging",
+        "Customer thanking Huanfa Logistics for its service",
       ],
       packingAlt: "Four-photo collage showing protective packing for the Hawaii shipment",
     },
@@ -183,8 +183,8 @@ const en: I18nDict = {
     faq: "FAQ",
     ocean: "Ocean Freight",
     air: "Air Freight",
-    land: "DDP Door to Door",
-    warehouse: "Warehousing & Distribution",
+    land: "Door-to-Door Shipping",
+    warehouse: "Warehousing & Consolidation",
   },
   aboutPage: {
     page: {
@@ -260,65 +260,61 @@ const en: I18nDict = {
     },
     items: [
       {
-        question: "Can you pick up goods from my supplier in China?",
-        answer: "Yes. We arrange pickup from your supplier or factory in most cities across China, including Foshan, Guangzhou, Zhongshan, Dongguan, and Shenzhen.",
+        "question": "Do you work with businesses and private buyers?",
+        "answer": "Yes. We coordinate shipments from China for businesses and personal importers, with core routes to the USA and Europe. You do not need a company in China to ask for a quote. Destination import requirements and the responsible importer are checked before booking."
       },
       {
-        question: "Can you consolidate goods from multiple Chinese suppliers?",
-        answer: "Yes. We collect cargo from different factories, consolidate it at our Shenzhen warehouse, and ship everything as one consolidated shipment.",
+        "question": "What do you need for a quote?",
+        "answer": "Start with your name and an email address or WhatsApp number. Add the supplier city, destination country and ZIP/postcode, product list, packed weight and dimensions if known. If details are missing, send product photos or a supplier packing list by email or WhatsApp; we can identify what is still needed."
       },
       {
-        question: "Can I ship without having a company in China?",
-        answer: "Yes. As an importer in the USA or Europe, you do not need a Chinese company. We coordinate factory pickup, export customs, international freight, and delivery on your behalf.",
+        "question": "Can you collect from multiple suppliers?",
+        "answer": "We can coordinate supplier pickup or delivery to our Shenzhen operation and consolidate cargo. Pickup locations, storage, packing requirements and any related charges are confirmed in the quotation before goods are sent."
       },
       {
-        question: "Do you provide DDP shipping to the USA?",
-        answer: "Yes. DDP means we handle export customs, ocean or air freight, import clearance, duties, and final-mile delivery, so the cargo arrives at your door with no surprise charges.",
+        "question": "What cargo and destinations can you accept?",
+        "answer": "General cargo, furniture, lighting, machinery and e-commerce goods can be reviewed for the selected route. Acceptance depends on the product, packaging, size and destination. Please disclose batteries, liquids, powders, chemicals or other restricted characteristics before sending cargo; do not assume they are accepted."
       },
       {
-        question: "Are customs duties included in the quote?",
-        answer: "For DDP shipments, duties and taxes are included in the total price. For DDU shipments, destination duties and taxes are paid separately by the consignee. We confirm this clearly before shipping.",
+        "question": "Are duties and all delivery charges included?",
+        "answer": "Door-to-door does not automatically mean every cost is included. DDP options are reviewed for the cargo and destination. Your written quote should identify included duties and taxes, clearance responsibilities, delivery scope and exclusions. Inspection, storage, re-delivery or changed cargo details may result in additional costs; ask us to clarify the applicable terms before booking."
       },
       {
-        question: "Who handles customs clearance?",
-        answer: "For DDP, we handle both export and import clearance. For DDU, we handle export clearance and the consignee or their broker handles import clearance.",
+        "question": "Who is responsible for customs documents?",
+        "answer": "We coordinate customs arrangements within the agreed service scope. Before booking, confirm who acts as importer, who provides declarations and product documents, and who pays duties and taxes. The shipper and recipient must provide accurate information; customs release remains subject to the authorities."
       },
       {
-        question: "Can you ship batteries?",
-        answer: "Yes. We handle built-in and accompanying batteries on dedicated lanes, with compliant declaration and documentation for the destination country.",
+        "question": "How long will shipping take?",
+        "answer": "We confirm an estimated schedule for your route and cargo at quotation. Ask whether the estimate is port-to-port, airport-to-airport or includes pickup, customs and final delivery. Times shown in our real cases describe those shipments only, not a guaranteed schedule for future bookings."
       },
       {
-        question: "Can you ship oversized furniture?",
-        answer: "Yes. Sofas, dining tables, beds, and other oversized furniture are our specialty. We arrange reinforced packaging, ocean freight, customs clearance, and delivery to your door.",
+        "question": "Does home delivery include unloading or installation?",
+        "answer": "Residential delivery must be checked against the destination and access conditions. Unloading, liftgate, upstairs or indoor delivery, assembly and installation are not automatically included. Tell us about road access, stairs and unloading equipment so we can confirm what can be arranged and priced."
       },
       {
-        question: "Can you deliver to residential addresses?",
-        answer: "Yes. We arrange final-mile delivery to residential addresses. Liftgate, room-of-choice, and other special delivery requirements are confirmed in advance.",
+        "question": "Can you ship battery-powered products?",
+        "answer": "Please share the battery type, capacity, whether it is installed or separate, and available compliance documents. Acceptance is subject to document review, route restrictions and carrier approval. Do not send battery cargo until we confirm acceptance."
       },
       {
-        question: "Can you deliver to Amazon FBA?",
-        answer: "Yes. We provide China to USA and Europe FBA first-mile logistics, including booking, labeling, and delivery to the correct FBA warehouse.",
+        "question": "Can you arrange Amazon FBA shipments?",
+        "answer": "We coordinate FBA first-mile shipments to the USA and Europe. Send your shipment plan, assigned warehouse, labels and packing requirements. Appointment, preparation and delivery services are confirmed for that shipment; do not assume all warehouses or preparation tasks are covered."
       },
       {
-        question: "How do I track my shipment?",
-        answer: "We provide shipment updates from factory pickup to final delivery, including milestones, photos when available, and proof of delivery.",
+        "question": "How do I get shipment updates?",
+        "answer": "Contact Chris Yu by WhatsApp or email with your shipment reference. We share confirmed milestones and available carrier updates, photos or delivery documents. The website does not provide a live tracking system."
       },
       {
-        question: "What happens if my cargo is damaged or lost?",
-        answer: "Notify us within the agreed timeframe with photos or the POD. An assigned contact will document the issue and follow the claim process with you.",
+        "question": "What about cargo insurance and damage claims?",
+        "answer": "Ask about insurance before shipment and confirm the policy, insured value, exclusions and any deductible. If you notice damage or loss, contact us promptly, preferably within 24 hours; retain packaging, photos and delivery records. This notification request does not replace the deadlines in the applicable policy or transport terms. We assist with documentation; claim approval and compensation depend on the applicable terms."
       },
       {
-        question: "Can I buy cargo insurance?",
-        answer: "Yes. Cargo insurance is available on request, and the insured value is confirmed before shipment.",
+        "question": "How can I verify your company?",
+        "answer": "Our About Us page lists the company name, unified social credit code, office information and contact details. You can also review operating photos and real shipment cases. Contact us if you need additional verification information."
       },
       {
-        question: "How can I verify your company?",
-        answer: "We share our legal company name, unified social credit code, office information, contact details, and real operating photos. Ask us for any additional verification information you need.",
-      },
-      {
-        question: "What payment methods do you accept?",
-        answer: "Payments are made to our officially designated company bank account. Our bank beneficiary name matches our legal company information, and we never ask for payment to an individual account through an unexpected email.",
-      },
+        "question": "How should I confirm payment details?",
+        "answer": "Use the officially designated company bank account stated in the confirmed payment instructions. Check the beneficiary against our company information. Independently verify any unexpected change by contacting Chris Yu using the WhatsApp number already listed on this website; do not rely only on a new email or invoice."
+      }
     ],
     cta: {
       title: "Have Another Question?",

@@ -39,6 +39,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
             <p className="text-sm leading-6 text-slate-700">{svc.note}</p>
           </aside>
           {service === "warehousing" && <ServiceProofPhotos />}
+          {(service === "seaFreight" || service === "doorToDoor") && <Link href="/shipment-cases#container-shipment-case" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实整柜案例：深圳 → 美国加州 · 40英尺整柜 →" : "See a real FCL shipment: Shenzhen → California, USA · 40-ft container →"}</Link>}
         </div>
         <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6" aria-labelledby="service-quote-title">
           <h2 id="service-quote-title" className="mb-5 text-xl font-bold text-brand-800">{ui.quoteTitle}</h2>

@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -14,28 +14,36 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: t.nav.home },
     { href: "/services", label: t.nav.services },
+    { href: "/personal-shipping-from-china", label: locale === "zh" ? "个人运输" : "Personal Shipping" },
+    { href: "/shipment-cases", label: locale === "zh" ? "真实案例" : "Shipping Cases" },
     { href: "/about", label: t.nav.about },
     { href: "/faq", label: t.nav.faq },
-    { href: "/contact", label: t.nav.contact },
   ];
 
   const isActive = (href: string) =>
     href === "/" ? pathname === href : pathname.startsWith(href);
 
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   return (
     <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-32 lg:h-36">
+        <div className="flex h-20 items-center justify-between lg:h-24">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="Huanfa International Logistics"
-              width={140}
-              height={140}
-              className="rounded-lg"
+              width={80}
+              height={80}
+              className="h-16 w-16 rounded-lg lg:h-20 lg:w-20"
               priority
             />
-            <span className="text-2xl font-bold text-brand-800 leading-tight hidden sm:inline">
+            <span className="hidden text-xl font-bold leading-tight text-brand-800 sm:inline">
               {locale === "zh" ? (
                 <span className="inline-grid grid-cols-6" style={{ width: '192px', verticalAlign: 'middle' }}>
                   <span className="text-center" style={{ transform: 'scale(1.09)' }}>焕</span>
@@ -50,11 +58,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden items-center gap-5 xl:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-brand-600 border-b-2 border-brand-600 pb-1"
@@ -84,9 +93,11 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+            className="min-h-11 min-w-11 rounded-lg p-2 text-gray-600 hover:bg-gray-100 xl:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={t.nav.openMenu}
+            aria-label={menuOpen ? (locale === "zh" ? "关闭菜单" : "Close menu") : t.nav.openMenu}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             {menuOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +114,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
+        <div id="mobile-navigation" className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-gray-100 bg-white xl:hidden">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link

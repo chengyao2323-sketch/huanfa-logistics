@@ -1,10 +1,11 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { useT } from "@/i18n";
+import { useT, useI18n } from "@/i18n";
 
 export default function Footer() {
   const t = useT();
+  const { locale } = useI18n();
 
   return (
     <footer className="bg-brand-900 text-gray-300">
@@ -24,6 +25,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">{t.footer.home}</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">{t.footer.services}</Link></li>
+              <li><Link href="/personal-shipping-from-china" className="hover:text-white transition-colors">{locale === "zh" ? "个人进口运输" : "Personal Shipping"}</Link></li>
+              <li><Link href="/shipment-cases" className="hover:text-white transition-colors">{locale === "zh" ? "真实运输案例" : "Shipping Cases"}</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">{t.footer.about}</Link></li>
               <li><Link href="/faq" className="hover:text-white transition-colors">{t.footer.faq}</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">{t.footer.contact}</Link></li>
@@ -38,6 +41,7 @@ export default function Footer() {
               <li><Link href="/services/air-freight" className="hover:text-white transition-colors">{t.footer.air}</Link></li>
               <li><Link href="/services/door-to-door" className="hover:text-white transition-colors">{t.footer.land}</Link></li>
               <li><Link href="/services/warehousing" className="hover:text-white transition-colors">{t.footer.warehouse}</Link></li>
+              <li><Link href="/services/ecommerce-logistics" className="hover:text-white transition-colors">{t.services.ecommerce.title}</Link></li>
             </ul>
           </div>
 
@@ -56,13 +60,13 @@ export default function Footer() {
                 <svg className="w-4 h-4 mt-0.5 shrink-0 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>{t.footer.phone}</span>
+                <a href="tel:+8615207122341" className="hover:text-white">{t.footer.phone}</a>
               </li>
               <li className="flex items-start gap-2">
                 <svg className="w-4 h-4 mt-0.5 shrink-0 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>{t.footer.email}</span>
+                <a href="mailto:sales@huanfalogistics.com" className="break-all hover:text-white">{t.footer.email}</a>
               </li>
             </ul>
           </div>

@@ -6,6 +6,9 @@
   --foreground: #0f172a;
   --background: #ffffff;
 }
+
+html { scroll-padding-top: 7rem; }
+dialog::backdrop { background: rgb(3 7 18 / 90%); }
 .whatsapp-contact-widget {
   right: max(1rem, env(safe-area-inset-right));
   bottom: max(1rem, env(safe-area-inset-bottom));
@@ -16,7 +19,8 @@ html[data-whatsapp-widget="visible"] footer {
   padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
 }
 
-@media (min-width: 768px) {
+/* Keep the approved raised position only where there is room beside content. */
+@media (min-width: 1440px) {
   .whatsapp-contact-widget {
     top: calc(70% - 20px);
     bottom: auto;

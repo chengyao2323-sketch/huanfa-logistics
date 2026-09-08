@@ -64,7 +64,7 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
 
   return (
     <article id="container-shipment-case" className="mt-16 scroll-mt-36 space-y-8 border-t border-gray-200 pt-12 lg:mt-20 lg:pt-16">
-      <h3 className="text-2xl font-bold text-brand-800 lg:text-3xl">{copy.title}</h3>
+      <h2 className="text-2xl font-bold text-brand-800 lg:text-3xl">{copy.title}</h2>
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white shadow-xl lg:p-10">
           <svg className="mb-5 h-9 w-9 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

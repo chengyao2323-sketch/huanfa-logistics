@@ -1,13 +1,10 @@
-﻿"use client";
-
+"use client";
 import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { useT, useI18n } from "@/i18n";
 import OperationsGallery from "@/components/OperationsGallery";
 import CarrierNetwork from "@/components/CarrierNetwork";
-import ContainerShipmentCase from "@/components/ContainerShipmentCase";
-
+import ShipmentHighlights from "@/components/ShipmentHighlights";
+import HeroVideo from "@/components/HeroVideo";
 const serviceIcons: Record<string, React.ReactNode> = {
   ocean: (
     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
@@ -59,43 +56,17 @@ const serviceHrefs: Record<(typeof serviceKeys)[number], string> = {
   ecommerce: "/services/ecommerce-logistics",
 };
 
+
 export default function HomePage() {
-  const t = useT();
-  const { locale } = useI18n();
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-
-  useEffect(() => {
-    if (!lightbox) return;
-    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setLightbox(null);
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", closeOnEscape);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [lightbox]);
-
-  return (
-    <>
-      {/* Hero */}
+ const t = useT();
+ const { locale } = useI18n();
+ return <>
+{/* Hero */}
       <section className="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/video/hero-logistics-poster.jpg"
-          aria-hidden="true"
-          disablePictureInPicture
-        >
-          <source src="/video/hero-logistics.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-900/75 via-brand-900/45 to-brand-900/20"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuMDMiPjxwYXRoIGQ9Ik0zMCAwaDMwdjMwSDMwem0wIDMwaDMwdjMwSDMweiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm text-yellow-300 mb-6">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -123,7 +94,7 @@ export default function HomePage() {
                 </svg>
               </Link>
               <Link
-                href="/services"
+                href="#process"
                 className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
               >
                 {t.hero.learnMore}
@@ -133,87 +104,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Company verification */}
-      <section className="py-16 lg:py-24 bg-white" id="verify">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.verification.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.verification.desc}
-            </p>
-          </div>
-          <div className="mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {[
-                { label: t.homeSections.verification.legalName, value: t.homeSections.verification.legalNameValue },
-                { label: t.homeSections.verification.chineseLegalName, value: t.homeSections.verification.chineseLegalNameValue },
-                { label: t.homeSections.verification.registration, value: t.homeSections.verification.registrationValue },
-                { label: t.homeSections.verification.founded, value: t.homeSections.verification.foundedValue },
-                { label: t.homeSections.verification.hq, value: t.homeSections.verification.hqValue },
-                { label: t.homeSections.verification.warehouse, value: t.homeSections.verification.warehouseValue },
-                { label: t.homeSections.verification.email, value: t.homeSections.verification.emailValue },
-              ].map((item) => (
-                <div key={item.label} className="flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4">
-                  <div className="w-9 h-9 shrink-0 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-gray-900">{item.label}</div>
-                    <div className="text-sm text-gray-500">{item.value}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 rounded-2xl border border-green-100 bg-green-50 p-6">
-              <h3 className="mb-2 font-bold text-brand-800">{t.homeSections.payment.title}</h3>
-              <p className="mb-4 text-sm text-gray-600">{t.homeSections.payment.desc}</p>
-              <ul className="grid gap-3 text-sm text-gray-700 md:grid-cols-3">
-                {t.homeSections.payment.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-green-600" aria-hidden="true">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+<div id="verify" className="border-b border-gray-100 bg-white"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-5 text-sm sm:px-6 lg:px-8"><span className="font-semibold text-brand-800">{locale === "zh" ? "深圳货物操作 · 企业与个人进口服务" : "Shenzhen cargo operations · Business & personal imports"}</span><Link href="/about#verify" className="inline-flex min-h-11 items-center font-medium text-brand-600 hover:underline">{locale === "zh" ? "查看公司信息与付款说明 →" : "Company details & payment information →"}</Link></div></div>
 
-      {/* Services */}
-      <section className="py-16 lg:py-24 bg-gray-50" id="services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">{t.services.title}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.services.description}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {serviceKeys.map((key) => (
-              <Link
-                key={key}
-                href={serviceHrefs[key]}
-                className="bg-white rounded-xl p-6 lg:p-8 border border-gray-100 hover:border-brand-200 hover:shadow-lg transition-all group block"
-              >
-                <div className="w-14 h-14 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                  {serviceIcons[key]}
-                </div>
-                <h3 className="text-lg font-bold text-brand-800 mb-1">{t.services[key].title}</h3>
-                <p className="text-xs text-gray-400 uppercase tracking-wider mb-3">{t.services[key].subtitle}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{t.services[key].desc}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer types */}
-      <section className="bg-white py-16 lg:py-24" id="who-we-ship-for">
+{/* Customer types */}
+      <section className="bg-white py-12 lg:py-16" id="who-we-ship-for">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-brand-800 lg:text-4xl">
@@ -244,74 +138,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Real warehouse and team */}
-      <section className="py-16 lg:py-24 bg-white" id="real">
+{/* Services */}
+      <section className="py-12 lg:py-16 bg-gray-50" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.real.title}
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">{t.services.title}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.real.desc}
+              {t.services.description}
             </p>
           </div>
-          <OperationsGallery
-            labels={[
-              t.homeSections.real.warehouse1,
-              t.homeSections.real.warehouse2,
-              t.homeSections.real.team,
-            ]}
-          />
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="py-16 lg:py-24 bg-gray-50" id="about">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-brand-50 text-brand-600 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-                {t.about.badge}
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-6">
-                {t.about.title.split("\n").map((line, i, arr) => (
-                  <span key={i}>{line}{i < arr.length - 1 && <br/>}</span>
-                ))}
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t.about.p1}
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {t.about.p2}
-              </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {serviceKeys.map((key) => (
               <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700"
+                key={key}
+                href={serviceHrefs[key]}
+                className="bg-white rounded-xl p-6 lg:p-8 border border-gray-100 hover:border-brand-200 hover:shadow-lg transition-all group block"
               >
-                {t.about.learnMore}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <div className="w-14 h-14 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                  {serviceIcons[key]}
+                </div>
+                <h3 className="text-lg font-bold text-brand-800 mb-1">{t.services[key].title}</h3>
+                {locale === "zh" && <p className="text-xs text-gray-400 uppercase tracking-wider mb-3">{t.services[key].subtitle}</p>}
+                <p className="text-sm text-gray-600 leading-relaxed">{t.services[key].desc}</p>
               </Link>
-            </div>
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
-                <Image
-                  src="/about-company.jpg"
-                  alt="Huanfa International Logistics"
-                  width={1600}
-                  height={1200}
-                  className="w-full h-auto object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-16 lg:py-24 bg-white" id="process">
+<ShipmentHighlights />
+
+{/* Process */}
+      <section className="py-12 lg:py-16 bg-white" id="process">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
@@ -334,140 +192,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Insurance and claims */}
-      <section className="py-16 lg:py-24 bg-gray-50" id="insurance">
+{/* Real warehouse and team */}
+      <section className="py-12 lg:py-16 bg-white" id="real">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
-              {t.homeSections.insurance.title}
+              {t.homeSections.real.title}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              {t.homeSections.insurance.desc}
+              {t.homeSections.real.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {t.homeSections.insurance.steps.map((step, i) => (
-              <div key={step} className="bg-white rounded-2xl border border-gray-100 p-6">
-                <div className="text-xs font-bold text-brand-600 mb-3">0{i + 1}</div>
-                <div className="text-sm text-gray-700 leading-relaxed">{step}</div>
-              </div>
-            ))}
-          </div>
+          <OperationsGallery
+            labels={[
+              t.homeSections.real.warehouse1,
+              t.homeSections.real.warehouse2,
+              t.homeSections.real.team,
+            ]}
+          />
         </div>
       </section>
 
-      {/* Verified customer feedback */}
-      <section className="bg-gray-50 py-16 lg:py-24" id="customer-feedback">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center lg:mb-16">
-            <h2 className="mb-4 text-3xl font-bold text-brand-800 lg:text-4xl">
-              {t.homeSections.testimonials.title}
-            </h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
-              {t.homeSections.testimonials.desc}
-            </p>
-          </div>
+<section id="about" className="bg-brand-50 py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="grid gap-6 lg:grid-cols-[1.6fr_1fr] lg:items-center"><div><h2 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "一个联系人，持续跟进您的货物" : "One contact from quotation to delivery"}</h2><p className="leading-7 text-gray-600">{t.about.p1}</p></div><div className="flex flex-wrap gap-3"><Link href="/about" className="inline-flex min-h-11 items-center rounded-lg border border-brand-200 bg-white px-5 font-semibold text-brand-600">{t.about.learnMore}</Link><Link href="/contact" className="inline-flex min-h-11 items-center rounded-lg bg-brand-600 px-5 font-semibold text-white">{locale === "zh" ? "联系 Chris Yu" : "Talk to Chris Yu"}</Link></div></div></div></section>
 
-          <div className="space-y-8">
-            <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white shadow-xl lg:p-10">
-                <svg className="mb-5 h-9 w-9 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M7.17 6A5.17 5.17 0 002 11.17V18h7v-7H5.1A2.17 2.17 0 017.17 9H9V6H7.17zm10 0A5.17 5.17 0 0012 11.17V18h7v-7h-3.9A2.17 2.17 0 0117.17 9H19V6h-1.83z" />
-                </svg>
-                <blockquote className="mb-7 text-lg font-medium leading-relaxed text-blue-50 lg:text-xl">
-                  “{t.homeSections.testimonials.quote}”
-                </blockquote>
-                <div className="border-t border-white/15 pt-5">
-                  <div className="font-bold">{t.homeSections.testimonials.customer}</div>
-                  <div className="mt-1 text-sm text-blue-200">{t.homeSections.testimonials.source}</div>
-                </div>
-              </div>
-
-              <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm lg:p-8">
-                <div className="mb-5 flex items-center justify-between gap-4 border-b border-gray-100 pb-4">
-                  <h3 className="font-bold text-brand-800">{t.homeSections.testimonials.shipmentTitle}</h3>
-                  <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold uppercase text-green-700">
-                    {t.homeSections.testimonials.shipmentItems[3]?.value}
-                  </span>
-                </div>
-                <dl className="grid grid-cols-2 gap-x-5 gap-y-4">
-                  {t.homeSections.testimonials.shipmentItems.map((item) => (
-                    <div key={item.label}>
-                      <dt className="text-xs text-gray-500">{item.label}</dt>
-                      <dd className="mt-1 text-sm font-semibold leading-snug text-gray-800">{item.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
-
-            <div>
-              <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-                <h3 className="text-xl font-bold text-brand-800">{t.homeSections.testimonials.messagesTitle}</h3>
-                <p className="text-sm text-gray-500">{t.homeSections.testimonials.messagesNote}</p>
-              </div>
-              <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-                {[
-                  "/customer-feedback/brian-feedback-trust.jpg",
-                  "/customer-feedback/brian-feedback-packaging.jpg",
-                  "/customer-feedback/brian-feedback-thanks.jpg",
-                ].map((src, index) => (
-                  <button
-                    type="button"
-                    key={src}
-                    onClick={() => setLightbox({ src, alt: t.homeSections.testimonials.imageAlts[index] })}
-                    aria-label={t.homeSections.testimonials.viewOriginal}
-                    className="group relative block aspect-[1.72/1] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500"
-                  >
-                    <Image
-                      src={src}
-                      alt={t.homeSections.testimonials.imageAlts[index]}
-                      width={1117}
-                      height={647}
-                      className="h-full w-full rounded-xl object-cover"
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                    />
-                    <span className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-gray-950/75 px-3 py-1.5 text-xs font-semibold text-white opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
-                      {t.homeSections.testimonials.viewOriginal}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid items-center gap-6 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm lg:grid-cols-[1.25fr_0.75fr] lg:p-6">
-              <button
-                type="button"
-                onClick={() => setLightbox({ src: "/customer-feedback/brian-packaging-collage.jpg", alt: t.homeSections.testimonials.packingAlt })}
-                aria-label={t.homeSections.testimonials.viewOriginal}
-                className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500"
-              >
-                <Image
-                  src="/customer-feedback/brian-packaging-collage.jpg"
-                  alt={t.homeSections.testimonials.packingAlt}
-                  width={1456}
-                  height={1088}
-                  className="h-full w-full rounded-xl object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-                <span className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-gray-950/75 px-3 py-1.5 text-xs font-semibold text-white opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
-                  {t.homeSections.testimonials.viewOriginal}
-                </span>
-              </button>
-              <div className="p-3 lg:p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-600">{t.homeSections.testimonials.packingLabel}</p>
-                <h3 className="mt-3 text-2xl font-bold text-brand-800">{t.homeSections.testimonials.packingTitle}</h3>
-                <p className="mt-4 leading-relaxed text-gray-600">{t.homeSections.testimonials.packingDesc}</p>
-                <p className="mt-5 text-sm font-semibold text-brand-600">{t.homeSections.testimonials.viewOriginal}</p>
-              </div>
-            </div>
-          </div>
-          <ContainerShipmentCase onOpen={setLightbox} />
-        </div>
-      </section>
-
-      {/* Carriers */}
-      <section className="py-16 lg:py-24 bg-gray-50" id="carriers">
+{/* Carriers */}
+      <section className="py-12 lg:py-16 bg-gray-50" id="carriers">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-4">
@@ -481,7 +230,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+{/* CTA */}
       <section className="bg-gradient-to-r from-brand-800 to-brand-700 text-white py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t.cta.title}</h2>
@@ -509,38 +258,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-[100] flex cursor-zoom-out items-center justify-center bg-gray-950/90 p-4 backdrop-blur-sm sm:p-8"
-          role="dialog"
-          aria-modal="true"
-          aria-label={lightbox.alt}
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            type="button"
-            onClick={() => setLightbox(null)}
-            className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/45 text-2xl text-white transition hover:bg-white hover:text-gray-900 sm:right-7 sm:top-7"
-            aria-label={t.homeSections.testimonials.closeImage}
-          >
-            ×
-          </button>
-          <img
-            src={lightbox.src}
-            alt={lightbox.alt}
-            className="h-auto max-h-[90vh] w-auto max-w-[94vw] cursor-zoom-out rounded-xl object-contain shadow-2xl"
-            onClick={() => setLightbox(null)}
-          />
-        </div>
-      )}
-    </>
-  );
+</>;
 }
-
-
-
-
-
-
 

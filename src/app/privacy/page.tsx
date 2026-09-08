@@ -11,7 +11,7 @@ const sections = [
   {
     heading: "Who We Are",
     body: [
-      "Huanfa International Logistics is a freight forwarding company based in Shenzhen, China. We help businesses ship goods from China to the USA and Europe.",
+      "Huanfa International Logistics is a freight forwarding company based in Shenzhen, China. We help businesses and personal importers ship goods from China to the USA and Europe.",
       "This policy explains how we collect and use information when you visit our website or contact us for freight services.",
     ],
   },

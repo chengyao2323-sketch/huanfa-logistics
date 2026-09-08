@@ -20,16 +20,16 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
 
   useEffect(() => {
-    const savedLocale = localStorage.getItem("locale");
-    if (savedLocale === "zh" || savedLocale === "en") {
-      setLocaleState(savedLocale);
-    }
+    try {
+      const savedLocale = localStorage.getItem("locale");
+      if (savedLocale === "zh" || savedLocale === "en") setLocaleState(savedLocale);
+    } catch { /* Language switching still works when browser storage is unavailable. */ }
   }, []);
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);
     if (typeof window !== "undefined") {
-      localStorage.setItem("locale", l);
+      try { localStorage.setItem("locale", l); } catch { /* Keep the in-memory preference. */ }
     }
   }, []);
 

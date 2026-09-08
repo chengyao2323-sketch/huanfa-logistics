@@ -14,7 +14,7 @@ export async function sendInquiryEmail(data: {
   const env = (globalThis as any).process?.env ?? {};
   const apiKey = env.RESEND_API_KEY;
   const notifyTo = env.NOTIFY_EMAIL;
-  const subject = "New Inquiry - " + (data.companyName || data.contactPerson);
+  const subject = "New Inquiry - " + (data.companyName || data.contactPerson).replace(/[\r\n]+/g, " ");
   const body = [
     "Company: " + data.companyName,
     "Contact: " + data.contactPerson,
@@ -54,7 +54,7 @@ export async function sendInquiryEmail(data: {
   }
 
   if (!apiKey || !notifyTo) {
-    console.log("Email not configured. Inquiry data:", JSON.stringify(data, null, 2));
+    console.error("Inquiry email delivery is not configured.");
     console.log("To enable: set SMTP_HOST/SMTP_USER/SMTP_PASS or RESEND_API_KEY, plus NOTIFY_EMAIL in Cloudflare Pages");
     return false;
   }
@@ -62,7 +62,7 @@ export async function sendInquiryEmail(data: {
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: "Bearer " + apiKey, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: "Huanfa Logistics <onboarding@resend.dev>", to: [notifyTo], subject, text: body }),
+    body: JSON.stringify({ from: "Huanfa Logistics <onboarding@resend.dev>", to: [notifyTo], subject, text: body, ...(data.email ? { reply_to: data.email } : {}) }),
   });
   if (!response.ok) throw new Error("Email API error (" + response.status + "): " + (await response.text()));
   console.log("Inquiry email sent to", notifyTo);

@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useT } from "@/i18n";
+import Link from "next/link";
+import CompanyVerification from "@/components/CompanyVerification";
+import { useT, useI18n } from "@/i18n";
 
 const valueIcons = [
   <svg key="0" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,6 +22,7 @@ const valueIcons = [
 
 export default function AboutPage() {
   const t = useT();
+  const { locale } = useI18n();
 
   return (
     <>
@@ -76,6 +79,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <CompanyVerification />
       {/* Values */}
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,6 +100,13 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <section className="bg-brand-900 py-12 text-white"><div className="mx-auto max-w-4xl px-4 text-center">
+        <h2 className="mb-6 text-2xl font-bold">{locale === "zh" ? "认识我们的服务，也看看实际出货" : "See our work, then discuss your shipment"}</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/shipment-cases" className="rounded-lg border border-white/40 px-6 py-3 font-semibold">{locale === "zh" ? "查看真实案例" : "View Real Shipments"}</Link>
+          <Link href="/contact" className="rounded-lg bg-accent-500 px-6 py-3 font-bold text-brand-900">{locale === "zh" ? "联系 Chris Yu" : "Contact Chris Yu"}</Link>
+        </div>
+      </div></section>
     </>
   );
 }
