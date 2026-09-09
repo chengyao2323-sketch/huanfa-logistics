@@ -10,6 +10,15 @@ import CargoProcess from "@/components/CargoProcess";
 export default function HomePage() {
  const t = useT();
  const { locale } = useI18n();
+ const strengths = locale === "zh" ? [
+   { title: "深圳集货", description: "集中收货、核对数量，再安排出运。" },
+   { title: "多供应商协调", description: "不同供应商的货物，统一跟进。" },
+   { title: "Chris 持续跟进", description: "从询价到交付，一个联系人。" },
+ ] : [
+   { title: "Shenzhen consolidation", description: "Receive, count and prepare your goods for shipping." },
+   { title: "Multiple suppliers, coordinated", description: "One point of contact for your suppliers in China." },
+   { title: "Chris follows your shipment", description: "From quotation to delivery, one familiar contact." },
+ ];
  return <>
 {/* Hero */}
       <section className="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
@@ -38,7 +47,7 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-accent-500 text-brand-900 px-6 py-3 rounded-lg font-bold hover:bg-accent-600 transition-colors"
               >
-                {t.hero.getQuote}
+                {t.nav.getQuote}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -64,7 +73,7 @@ export default function HomePage() {
               {locale === "zh" ? "我们为谁运输" : "Who We Ship For"}
             </h2>
             <p className="mx-auto max-w-2xl text-gray-600">
-              {locale === "zh" ? "为企业进口商和从中国采购家具、建材或其他商品的个人客户提供清晰的运输方案。" : "Clear shipping options for businesses and individuals buying furniture, building materials, or other goods from China."}
+              {locale === "zh" ? "企业采购或个人进口，都有对应的运输方案。" : "Shipping from China, for your business or your home."}
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -78,8 +87,9 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl border border-brand-100 bg-brand-50 p-8">
               <div className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-600">{locale === "zh" ? "个人进口客户" : "For Personal Importers"}</div>
-              <h3 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "从中国购买家具、建材或家居用品？" : "Buying furniture or home goods from China?"}</h3>
-              <p className="mb-6 text-sm leading-relaxed text-gray-600">{locale === "zh" ? "我们可从多个供应商收货、集中整理，并根据目的地安排门到门运输方案。" : "We can collect from multiple suppliers, consolidate your goods, and arrange a door-to-door shipping plan for your destination."}</p>
+              <h3 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "从中国采购，运到您家" : "Buying from China for your home?"}</h3>
+              <p className="mb-3 text-sm font-semibold leading-relaxed text-brand-700">{locale === "zh" ? "家具 · 灯具 · 建材 · 多供应商采购" : "Furniture · Lighting · Building materials · Multi-supplier purchases"}</p>
+              <p className="mb-6 text-sm leading-relaxed text-gray-600">{locale === "zh" ? "集货并协调门到门运输，方案按货物及目的地确认。" : "Consolidation and door delivery, subject to your cargo and destination."}</p>
               <Link href="/personal-shipping-from-china" className="inline-flex rounded-lg bg-accent-500 px-5 py-2.5 text-sm font-bold text-brand-900 hover:bg-accent-600">
                 {locale === "zh" ? "个人运输指南" : "Personal Shipping"}
               </Link>
@@ -111,7 +121,20 @@ export default function HomePage() {
         <OperationsGallery />
       </section>
 
-<section id="about" className="bg-brand-50 py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="grid gap-6 lg:grid-cols-[1.6fr_1fr] lg:items-center"><div><h2 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "一个联系人，持续跟进您的货物" : "One contact from quotation to delivery"}</h2><p className="leading-7 text-gray-600">{t.about.p1}</p></div><div className="flex flex-wrap gap-3"><Link href="/about" className="inline-flex min-h-11 items-center rounded-lg border border-brand-200 bg-white px-5 font-semibold text-brand-600">{t.about.learnMore}</Link><Link href="/contact" className="inline-flex min-h-11 items-center rounded-lg bg-brand-600 px-5 font-semibold text-white">{locale === "zh" ? "联系 Chris Yu" : "Talk to Chris Yu"}</Link></div></div></div></section>
+      <section id="about" className="bg-brand-50 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-7 flex flex-wrap items-center justify-between gap-4">
+            <h2 className="text-2xl font-bold text-brand-800">{locale === "zh" ? "您在中国的运输伙伴" : "Your shipping partner in China"}</h2>
+            <Link href="/about" className="inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "了解焕发 →" : "About Huanfa →"}</Link>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {strengths.map(item => <div key={item.title} className="border-l-2 border-brand-300 pl-4">
+              <h3 className="mb-2 font-bold text-brand-800">{item.title}</h3>
+              <p className="text-sm leading-6 text-gray-600">{item.description}</p>
+            </div>)}
+          </div>
+        </div>
+      </section>
 
 {/* Carriers */}
       <section className="py-12 lg:py-16 bg-gray-50" id="carriers">
@@ -129,18 +152,18 @@ export default function HomePage() {
       </section>
 
 {/* CTA */}
-      <section className="bg-gradient-to-r from-brand-800 to-brand-700 text-white py-16 lg:py-20">
+      <section id="quote" className="bg-gradient-to-r from-brand-800 to-brand-700 text-white py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t.cta.title}</h2>
           <p className="text-blue-100/80 text-lg mb-8 max-w-2xl mx-auto">
-            {t.cta.description}
+            {locale === "zh" ? "不知道重量或体积？先通过 WhatsApp 或邮件发产品照片也可以。" : "Not sure about weight or volume? Send product photos via WhatsApp or email to get started."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent-500 text-brand-900 px-8 py-3.5 rounded-lg font-bold text-lg hover:bg-accent-600 transition-colors"
             >
-              {t.cta.button}
+              {t.nav.getQuote}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
