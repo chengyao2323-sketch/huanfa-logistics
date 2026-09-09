@@ -97,6 +97,13 @@ const zh: I18nDict = {
       warehouse1: "仓库入口",
       warehouse2: "装柜作业",
       team: "货物操作现场",
+      storage: "仓库储货区",
+      pallets: "托盘货物",
+      forklift: "仓内叉车作业",
+      nightLoading: "夜间装柜作业",
+      galleryLabel: "仓库照片带，聚焦此处可暂停自动滚动。",
+      pause: "暂停照片滚动",
+      resume: "继续照片滚动",
     },
     process: {
       title: "我们如何承运您的货物",

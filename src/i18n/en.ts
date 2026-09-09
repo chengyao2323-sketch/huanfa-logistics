@@ -97,6 +97,13 @@ const en: I18nDict = {
       warehouse1: "Warehouse entrance",
       warehouse2: "Container loading operation",
       team: "Cargo handling operation",
+      storage: "Warehouse storage area",
+      pallets: "Palletized cargo",
+      forklift: "Forklift handling in the warehouse",
+      nightLoading: "Container loading at night",
+      galleryLabel: "Warehouse photo strip. Focus here to pause automatic scrolling.",
+      pause: "Pause photo scrolling",
+      resume: "Resume photo scrolling",
     },
     process: {
       title: "How We Handle Your Cargo",

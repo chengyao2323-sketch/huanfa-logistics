@@ -74,6 +74,13 @@
       warehouse1: string;
       warehouse2: string;
       team: string;
+      storage: string;
+      pallets: string;
+      forklift: string;
+      nightLoading: string;
+      galleryLabel: string;
+      pause: string;
+      resume: string;
     };
     process: {
       title: string;

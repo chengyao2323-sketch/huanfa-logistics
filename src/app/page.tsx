@@ -107,14 +107,8 @@ export default function HomePage() {
               {t.homeSections.real.desc}
             </p>
           </div>
-          <OperationsGallery
-            labels={[
-              t.homeSections.real.warehouse1,
-              t.homeSections.real.warehouse2,
-              t.homeSections.real.team,
-            ]}
-          />
         </div>
+        <OperationsGallery />
       </section>
 
 <section id="about" className="bg-brand-50 py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="grid gap-6 lg:grid-cols-[1.6fr_1fr] lg:items-center"><div><h2 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "一个联系人，持续跟进您的货物" : "One contact from quotation to delivery"}</h2><p className="leading-7 text-gray-600">{t.about.p1}</p></div><div className="flex flex-wrap gap-3"><Link href="/about" className="inline-flex min-h-11 items-center rounded-lg border border-brand-200 bg-white px-5 font-semibold text-brand-600">{t.about.learnMore}</Link><Link href="/contact" className="inline-flex min-h-11 items-center rounded-lg bg-brand-600 px-5 font-semibold text-white">{locale === "zh" ? "联系 Chris Yu" : "Talk to Chris Yu"}</Link></div></div></div></section>
