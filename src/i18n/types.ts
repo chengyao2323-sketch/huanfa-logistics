@@ -78,7 +78,7 @@
     process: {
       title: string;
       desc: string;
-      steps: string[];
+      steps: Array<{ title: string; desc: string }>;
     };
     insurance: {
       title: string;

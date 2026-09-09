@@ -102,12 +102,12 @@ const en: I18nDict = {
       title: "How We Handle Your Cargo",
       desc: "The full journey from factory pickup in China to final delivery overseas.",
       steps: [
-        "Factory pickup",
-        "Consolidation at Shenzhen warehouse",
-        "Export customs",
-        "Ocean / air freight",
-        "Import clearance & final-mile delivery",
-        "POD & after-sales support",
+        { title: "Factory pickup", desc: "Coordinate collection from your suppliers in China." },
+        { title: "Shenzhen consolidation", desc: "Combine supplier orders and prepare the cargo." },
+        { title: "Export customs", desc: "Coordinate export documents and clearance arrangements." },
+        { title: "Ocean / air freight", desc: "Ship via the agreed route and transport option." },
+        { title: "Import & delivery", desc: "Coordinate clearance and delivery within the agreed scope." },
+        { title: "POD & support", desc: "Follow up on delivery documents and after-sales needs." },
       ],
     },
     insurance: {

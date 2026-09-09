@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/i18n";
+import ShipmentProcessSteps from "@/components/ShipmentProcessSteps";
 
 const content = {
   en: {
@@ -11,7 +12,14 @@ const content = {
     suitableTitle: "Suitable for personal purchases",
     suitable: ["Furniture and home décor", "Lighting and building materials", "Home appliances and machinery", "Goods from multiple suppliers"],
     processTitle: "How it works",
-    steps: ["Send us your supplier and cargo details", "Confirm destination, packing, and delivery requirements", "Supplier delivery to our Shenzhen operation or arranged pickup", "Consolidation and shipping document check", "Ocean or air freight and customs coordination", "Final delivery under the confirmed service scope"],
+    steps: [
+      { title: "Share cargo details", desc: "Send us your supplier and cargo details." },
+      { title: "Confirm requirements", desc: "Confirm destination, packing, and delivery requirements." },
+      { title: "Pickup / warehouse intake", desc: "Supplier delivery to our Shenzhen operation or arranged pickup." },
+      { title: "Consolidate & check", desc: "Consolidation and shipping document check." },
+      { title: "Freight & customs", desc: "Ocean or air freight and customs coordination." },
+      { title: "Final delivery", desc: "Final delivery under the confirmed service scope." },
+    ],
     confirmTitle: "Confirmed before you ship",
     confirm: ["What the quoted price includes", "Estimated transit time", "Packing or pallet requirements", "Duties and customs responsibility", "Residential delivery scope", "Damage reporting and claims documents"],
     ctaTitle: "Not sure where to start?",
@@ -26,7 +34,14 @@ const content = {
     suitableTitle: "适合个人采购的货物",
     suitable: ["家具与家居用品", "灯具与建筑材料", "家电与机器设备", "来自多个供应商的货物"],
     processTitle: "运输流程",
-    steps: ["提供供应商和货物信息", "确认目的地、包装和派送要求", "供应商送货至深圳操作点或安排提货", "集货并核对运输资料", "安排海运或空运及清关协调", "按确认的服务范围安排末端派送"],
+    steps: [
+      { title: "提供货物信息", desc: "提供供应商和货物信息。" },
+      { title: "确认运输要求", desc: "确认目的地、包装和派送要求。" },
+      { title: "提货或送仓", desc: "供应商送货至深圳操作点或安排提货。" },
+      { title: "集货与资料核对", desc: "集货并核对运输资料。" },
+      { title: "国际运输与清关", desc: "安排海运或空运及清关协调。" },
+      { title: "末端派送", desc: "按确认的服务范围安排末端派送。" },
+    ],
     confirmTitle: "出货前明确确认",
     confirm: ["报价包含的费用", "预计运输时效", "包装、托盘或木架要求", "关税与清关责任", "住宅派送范围", "破损申报与理赔资料"],
     ctaTitle: "不知道从哪里开始？",
@@ -66,10 +81,10 @@ export default function PersonalShippingClient() {
             <p>{locale === "zh" ? "门到门不默认包含卸货、尾板、上楼、入户或安装。请提前说明道路通行及卸货条件；可提供的服务和费用以书面报价为准。" : "Door-to-door does not automatically include unloading, liftgate, upstairs or indoor delivery, or installation. Share road access and unloading conditions in advance; available services and charges are confirmed in the written quote."}</p>
             <Link href="/shipment-cases#container-shipment-case" className="mt-4 inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "查看深圳至美国加州的真实整柜案例 →" : "View a real Shenzhen-to-California container shipment →"}</Link>
           </aside>
-          <h2 className="mb-10 text-center text-3xl font-bold text-brand-800 lg:text-4xl">{t.processTitle}</h2>
-          <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{t.steps.map((step, index) => (
-            <li key={step} className="rounded-2xl border border-gray-100 bg-white p-6"><div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 font-bold text-white">{index + 1}</div><div className="text-sm font-semibold leading-relaxed text-gray-800">{step}</div></li>
-          ))}</ol>
+          <section id="process" className="scroll-mt-36" aria-labelledby="personal-process-title">
+            <h2 id="personal-process-title" className="mb-10 text-center text-3xl font-bold text-brand-800 lg:mb-12 lg:text-4xl">{t.processTitle}</h2>
+            <ShipmentProcessSteps steps={t.steps} />
+          </section>
         </div>
       </section>
       <section className="bg-white py-16 lg:py-20"><div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
