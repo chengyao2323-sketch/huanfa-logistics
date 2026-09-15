@@ -101,7 +101,7 @@ const zh: I18nDict = {
       pallets: "托盘货物",
       forklift: "仓内叉车作业",
       nightLoading: "夜间装柜作业",
-      galleryLabel: "仓库照片带，聚焦此处可暂停自动滚动。",
+      galleryLabel: "仓库照片带，可按住左右拖动。按 Tab 键聚焦可暂停自动滚动，按左右方向键浏览。",
       pause: "暂停照片滚动",
       resume: "继续照片滚动",
     },

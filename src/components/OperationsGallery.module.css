@@ -6,9 +6,10 @@
   background: #e2e8f0;
 }
 
-.viewport { overflow: hidden; }
+.viewport { overflow: hidden; cursor: grab; touch-action: pan-y pinch-zoom; user-select: none; -webkit-user-select: none; }
+.viewport[data-dragging="true"] { cursor: grabbing; }
 .viewport:focus-visible { outline: 3px solid #334aab; outline-offset: 3px; }
-.track { display: flex; width: max-content; animation: drift-left 70s linear infinite; }
+.track { display: flex; width: max-content; will-change: transform; }
 .group { display: flex; flex-shrink: 0; min-width: 100vw; }
 .photo { position: relative; flex: 1 0 var(--photo-width); width: var(--photo-width); height: var(--photo-height); overflow: hidden; }
 .image { object-fit: cover; }
@@ -22,7 +23,6 @@
   font-weight: 600;
   line-height: 1.5;
 }
-.track[data-paused="true"], .viewport:focus-within .track { animation-play-state: paused; }
 .control {
   position: absolute;
   right: 1rem;
@@ -41,14 +41,7 @@
 .control:hover { background: white; }
 .control:focus-visible { outline: 3px solid #334aab; outline-offset: 3px; }
 
-@keyframes drift-left { to { transform: translateX(-50%); } }
-
-@media (hover: hover) and (pointer: fine) {
-  .viewport:hover .track { animation-play-state: paused; }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .viewport { overflow-x: auto; scrollbar-width: thin; }
-  .track { animation: none; }
-  .group[aria-hidden="true"], .control { display: none; }
+  .track { will-change: auto; }
+  .control { display: none; }
 }

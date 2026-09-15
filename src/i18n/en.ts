@@ -101,7 +101,7 @@ const en: I18nDict = {
       pallets: "Palletized cargo",
       forklift: "Forklift handling in the warehouse",
       nightLoading: "Container loading at night",
-      galleryLabel: "Warehouse photo strip. Focus here to pause automatic scrolling.",
+      galleryLabel: "Warehouse photos. Drag left or right to browse. Use Tab to pause and arrow keys to browse.",
       pause: "Pause photo scrolling",
       resume: "Resume photo scrolling",
     },
