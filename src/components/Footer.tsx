@@ -81,6 +81,18 @@ export default function Footer() {
             <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link href="/shipping-terms" className="hover:text-white transition-colors">Shipping Terms</Link>
           </div>
+          <a
+            href="https://www.facebook.com/people/Huanfa-logistic/61590352722071/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Huanfa Logistics on Facebook"
+            title="Facebook"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#1877f2] text-white transition-colors hover:bg-[#166fe5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <path d="M13.5 21v-8h2.75l.41-3h-3.16V8.08c0-.87.24-1.46 1.49-1.46H16.6V3.94c-.28-.04-1.23-.12-2.34-.12-2.31 0-3.9 1.41-3.9 4V10H7.75v3h2.61v8h3.14Z" />
+            </svg>
+          </a>
           {t.footer.icp && <p>{t.footer.icp}</p>}
         </div>
       </div>
