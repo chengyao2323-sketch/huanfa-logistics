@@ -20,7 +20,7 @@ export default function ShipmentHighlights() {
         {cases.map(item => <article key={item.id} id={item.id === "container-shipment-case" ? item.id : undefined} className="scroll-mt-28 rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
           <div className="mb-4 flex justify-between gap-3 text-xs"><span className="font-medium text-gray-500">{item.date}</span><span className="rounded-full bg-green-100 px-3 py-1 font-bold text-green-800">{zh ? "已签收" : "Delivered"}</span></div>
           <h3 className="text-xl font-bold text-brand-800">{item.title}</h3><p className="mt-2 text-sm text-gray-600">{item.service}</p>
-          <div className="my-4 flex flex-wrap items-baseline gap-x-3 gap-y-1"><span className="text-2xl font-bold text-brand-800">{item.time}</span><span className="text-xs text-gray-500">{zh ? "本票实际时效" : "Actual shipment time"}</span></div>
+          <div className="my-4 flex flex-wrap items-baseline gap-x-3 gap-y-1"><span className="text-2xl font-bold text-brand-800">{item.time}</span><span className="text-xs text-gray-500">{zh ? "本票实际全程时效" : "Actual end-to-end delivery"}</span></div>
           <figure className="mb-4 border-l-2 border-brand-300 pl-3">
             <blockquote className="text-sm leading-6 text-brand-800">“{item.quote}”</blockquote>
             <figcaption className="mt-1 text-xs text-gray-500">{item.customer} · {zh ? "客户反馈节选译文" : "Customer message excerpt"}</figcaption>
@@ -28,7 +28,7 @@ export default function ShipmentHighlights() {
           <Link href={`/shipment-cases#${item.id}`} className="inline-flex min-h-11 items-center gap-2 font-semibold text-brand-600 hover:underline">{zh ? "查看完整记录与照片" : "View messages & photos"}<span aria-hidden="true">→</span></Link>
         </article>)}
       </div>
-      <p className="mt-5 text-xs leading-6 text-gray-500">{zh ? "时效仅代表上述货件，并非其他货件的承诺；路线、预计时效及费用按货物和目的地确认。" : "Times shown are shipment-specific, not guarantees. Your route, timing and price depend on cargo and destination."}</p>
+      <p className="mt-5 text-xs leading-6 text-gray-500">{zh ? "以上为从中国起运至目的地交付的实际全程时效，仅代表这两票货件。其他货件的路线、预计时效及费用按货物和目的地确认。" : "Times cover the completed journey from dispatch in China to delivery at the destination for these two shipments. Other routes, delivery estimates and prices depend on cargo and destination."}</p>
     </div>
   </section>;
 }

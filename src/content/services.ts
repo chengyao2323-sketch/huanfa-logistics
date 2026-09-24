@@ -42,7 +42,7 @@ type ServicesContent = {
 export const servicesContent: Record<Locale, ServicesContent> = {
   en: {
     ui: {
-      eyebrow: "OUR SERVICES", title: "Find the right way to ship.",
+      eyebrow: "OUR SERVICES", title: "Freight Forwarding Services from China",
       intro: "From suppliers in China to the USA and Europe. Compare transport options and the support you need along the way.",
       choiceTitle: "What does your shipment need?",
       choiceNote: "These services can work together. Other destinations are available on request.",
@@ -61,7 +61,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       customsInsurance: {
         name: "Customs & Insurance", summary: "Coordinate customs documents and arrange cargo insurance on request before shipping.",
         fit: "Shippers who need clearance coordination or cargo cover", highlights: ["Import & export document coordination", "Insurance on request"],
-        linkLabel: "Explore customs and insurance", title: "Plan your clearance and cargo protection.",
+        linkLabel: "Explore customs and insurance", title: "Customs Coordination & Cargo Insurance",
         intro: "Confirm the documents, responsibilities and insurance needs for your shipment before departure. Available arrangements depend on the cargo, destination and agreed service scope.",
         guideTitle: "Make the responsibilities clear before shipping",
         topics: [
@@ -84,11 +84,13 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       seaFreight: {
         name: "Ocean Freight", summary: "Container and consolidated shipping with port or door delivery options.",
         fit: "Larger shipments with flexible delivery dates", highlights: ["FCL & LCL options", "Port or door delivery"],
-        linkLabel: "Explore ocean freight", title: "Ocean freight, planned around your cargo.",
+        linkLabel: "Explore ocean freight", title: "Ocean Freight from China to the USA & Europe",
         intro: "Compare full-container and shared-container options from China to the USA and Europe. Your cargo volume, packing and delivery needs shape the plan.",
         guideTitle: "Choose the right ocean freight setup",
         topics: [
+          { title: "Measure the packed cargo", body: "Use the outside dimensions after crating or palletizing. For example, two crates measuring 1.2 × 1.0 × 1.0 metres each total 2.4 cubic metres (CBM). Send the gross weight and dimensions of every piece too: volume alone does not confirm the freight price, loading fit or minimum charge." },
           { title: "FCL or LCL?", body: "FCL uses a full container for your shipment; LCL combines smaller shipments in shared container space. Send your packed dimensions, weight and quantity so we can compare suitable options rather than choose by weight alone." },
+          { title: "Compare the complete quotation", body: "Compare quotes for the same pickup and delivery points. Check supplier collection, packing, origin handling, ocean freight, destination handling, customs coordination and final delivery separately. Identify taxes, insurance and special handling as included, excluded or separately quoted; a low ocean freight line is not the total delivered cost." },
           { title: "Where does our service end?", body: "Tell us whether you need arrival at a destination port or delivery to an address. The quotation should identify pickup, clearance, destination handling and delivery responsibilities so the handover is clear." },
           { title: "Plan for packing and access", body: "For furniture or oversized pieces, share photos and the dimensions after packing. We review handling needs, loading arrangements and the available container or consolidation option before booking." },
         ],
@@ -107,7 +109,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       airFreight: {
         name: "Air Freight", summary: "Air and express options for cargo with a time-sensitive delivery need.",
         fit: "Urgent orders, samples and smaller shipments", highlights: ["Air & express options", "Cargo review before booking"],
-        linkLabel: "Explore air freight", title: "Air freight for time-sensitive shipments.",
+        linkLabel: "Explore air freight", title: "Air Freight & Express Shipping from China",
         intro: "Start with your delivery deadline and packed cargo details. We review air or express options and confirm the route and delivery scope at quotation.",
         guideTitle: "Prepare the details that shape your air quote",
         topics: [
@@ -130,7 +132,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       doorToDoor: {
         name: "Door-to-Door Shipping", summary: "Coordinate pickup, international transport and delivery under one agreed plan.",
         fit: "Importers who need delivery to a specific address", highlights: ["Sea or air transport", "DDP options subject to review"],
-        linkLabel: "Explore door-to-door shipping", title: "Door-to-door shipping, with a clear scope.",
+        linkLabel: "Explore door-to-door shipping", title: "Door-to-Door Shipping from China",
         intro: "Connect supplier pickup with final delivery in the USA or Europe. Sea, air and DDP options are reviewed against your goods, destination and receiving arrangements.",
         guideTitle: "Agree what happens at each end",
         topics: [
@@ -153,13 +155,15 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       warehousing: {
         name: "Warehousing & Consolidation", summary: "Bring supplier orders together in Shenzhen and prepare them for onward shipping.",
         fit: "Multi-supplier orders or cargo needing repacking", highlights: ["Receiving & consolidation", "Packing & labeling coordination"],
-        linkLabel: "Explore warehousing", title: "Bring your supplier orders together.",
+        linkLabel: "Explore warehousing", title: "Shenzhen Warehousing & Multi-Supplier Consolidation",
         intro: "Coordinate receiving, consolidation and cargo preparation in Shenzhen before onward transport. Storage and handling arrangements are agreed for the goods you plan to send.",
         guideTitle: "Plan the work before goods arrive",
         topics: [
-          { title: "Give each delivery a reference", body: "Share the supplier list, expected package counts and ready dates before dispatch. Confirm the receiving instructions with Chris so incoming deliveries can be linked to your shipment." },
+          { title: "Prepare a supplier-by-supplier packing list", body: "List each supplier's name, contact, order reference, product, carton count and expected ready date. Keep different orders identifiable and ask Chris for the receiving reference before suppliers label or dispatch cargo. Share any supplier changes so the receiving information stays aligned." },
+          { title: "Match arrivals to your order list", body: "Use the supplier references and expected package counts to identify which deliveries belong together. Tell Chris if some orders will arrive later, and agree whether to wait for them or plan separate shipments before dispatching the consolidated goods." },
           { title: "Choose the preparation needed", body: "Tell us whether the cargo needs sorting, repacking, palletizing, wooden crating or labeling. Share product photos and handling concerns; packing materials, work scope and charges are confirmed for your order." },
           { title: "Plan the onward shipment", body: "Let us know when all supplier orders are expected and how the combined goods will travel. Measurements and cargo photos can be requested to help confirm the final shipment plan." },
+          { title: "Review the shipment after repacking", body: "Crates, pallets and combined cartons can change the package count, dimensions and gross weight. Use the final packing information for the onward freight plan. Agree which receiving or packing photos you need, and confirm storage duration, packing materials and handling charges before work starts." },
         ],
         requirements: ["Supplier list and expected arrival dates", "Product descriptions and package counts", "Approximate dimensions, weights and cargo photos", "Required packing, crating or labeling work", "Expected storage period and onward destination"],
         steps: [
@@ -176,7 +180,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       ecommerceLogistics: {
         name: "E-Commerce Logistics", summary: "Supplier coordination and first-mile freight for Amazon FBA inventory.",
         fit: "Sellers preparing stock for fulfillment centers", highlights: ["Multi-supplier pickup", "Carton & shipment-label coordination"],
-        linkLabel: "Explore e-commerce logistics", title: "Prepare your inventory for its next destination.",
+        linkLabel: "Explore e-commerce logistics", title: "Amazon FBA & E-Commerce Freight from China",
         intro: "Coordinate supplier pickup, consolidation and Amazon FBA first-mile transport from China to the USA and Europe, using the destination and shipment information you provide.",
         guideTitle: "Prepare the shipment, not just the transport",
         topics: [
@@ -200,7 +204,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
   },
   zh: {
     ui: {
-      eyebrow: "服务项目", title: "为你的货物，找到合适的运输方案。",
+      eyebrow: "服务项目", title: "中国出口货运与国际物流服务",
       intro: "从中国供应商到美国、欧洲。比较运输方式，也了解运输前后可以协调的服务。",
       choiceTitle: "这票货物，需要什么服务？", choiceNote: "以下服务可以组合安排，其他目的地可按需咨询。",
       fitLabel: "适合这些需求", helpTitle: "还不确定选哪种服务？",
@@ -216,7 +220,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       customsInsurance: {
         name: "海关及保险", summary: "协调进出口清关资料，并按需在出运前安排货物运输保险。",
         fit: "需要清关协调或货物保险安排的客户", highlights: ["进出口单证协调", "货物保险按需安排"],
-        linkLabel: "了解海关及保险", title: "出运之前，确认清关与货物保障。",
+        linkLabel: "了解海关及保险", title: "清关协调与货物运输保险",
         intro: "提前核对货物单证、清关责任和投保需求。可安排的服务根据货物、目的地及约定的服务范围确认。",
         guideTitle: "先把单证、费用责任与保障范围讲清楚",
         topics: [
@@ -239,11 +243,13 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       seaFreight: {
         name: "海运服务", summary: "整箱或拼箱运输，可按需安排到港或门到门交付。",
         fit: "货量较大、交付时间相对灵活的货物", highlights: ["整箱 FCL / 拼箱 LCL", "到港或到门选项"],
-        linkLabel: "了解海运方案", title: "根据货物情况，安排合适的海运。",
+        linkLabel: "了解海运方案", title: "中国至美国、欧洲海运服务",
         intro: "比较中国至美国、欧洲的整箱与拼箱方案。货物体积、包装和交付要求，共同决定如何安排运输。",
         guideTitle: "先确定适合你的海运组合",
         topics: [
+          { title: "按最终包装测量体积", body: "使用打木箱或托盘后的外部尺寸。例如，两个长1.2米、宽1米、高1米的木箱，合计体积为2.4立方米（CBM）。还需提供每件毛重和尺寸；仅凭体积不能确定运费、装载可行性或最低收费。" },
           { title: "选择整箱，还是拼箱？", body: "整箱是为这票货物安排一个完整集装箱；拼箱是与其他货物共享集装箱空间。请提供包装后的尺寸、重量和件数，我们会据此比较适用方案，而不是只看总重量。" },
+          { title: "比较同一范围的完整报价", body: "比较报价时，要使用相同的提货点和交付点。分别核对供应商提货、包装、起运地操作、海运、目的地操作、清关协调和派送费用，并注明税费、保险及特殊操作是包含、不包含还是另行报价。海运费这一项较低，不代表送达总费用较低。" },
           { title: "服务需要做到哪一步？", body: "请说明是到目的港交付，还是送到指定地址。报价时应明确提货、清关、目的港操作和末端派送由谁负责，让交接范围清楚。" },
           { title: "提前考虑包装与装卸", body: "家具、大件或特殊尺寸货物，请先提供照片及包装后尺寸。订舱前会审核搬运需求、装载条件及可用的整箱或拼箱方案。" },
         ],
@@ -262,7 +268,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       airFreight: {
         name: "空运服务", summary: "根据送达需求，审核空运或国际快递运输选项。",
         fit: "急件、样品及较小批量的货物", highlights: ["空运与国际快递选项", "订舱前审核货物资料"],
-        linkLabel: "了解空运方案", title: "为时间紧的货物，规划空运方案。",
+        linkLabel: "了解空运方案", title: "中国出口空运与国际快递服务",
         intro: "先提供送达期限与包装后的货物信息，再审核空运或快递选项。具体路线和交付范围在报价时确认。",
         guideTitle: "这些信息，决定空运如何报价",
         topics: [
@@ -285,7 +291,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       doorToDoor: {
         name: "门到门运输", summary: "按一份确认的方案，协调供应商提货、国际运输与末端交付。",
         fit: "希望货物送到指定地址的进口客户", highlights: ["海运或空运组合", "DDP 选项须提前审核"],
-        linkLabel: "了解门到门方案", title: "门到门运输，先把服务范围讲清楚。",
+        linkLabel: "了解门到门方案", title: "中国至海外门到门运输服务",
         intro: "从中国供应商提货，到美国、欧洲指定地址交付。海运、空运及 DDP 选项，根据货物、目的地和收货条件审核。",
         guideTitle: "把起点、终点和费用责任说清楚",
         topics: [
@@ -308,13 +314,15 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       warehousing: {
         name: "仓储与集货", summary: "把多个供应商的订单集中到深圳，为后续运输做好准备。",
         fit: "多供应商集货或需要重新包装的货物", highlights: ["收货与合并出运", "包装及贴标协调"],
-        linkLabel: "了解仓储与集货", title: "把供应商的订单，汇成一票货物。",
+        linkLabel: "了解仓储与集货", title: "深圳仓储与多供应商集货服务",
         intro: "在后续运输前，协调深圳收货、集货与货物整理。存放条件和操作内容，按你计划发来的货物提前确认。",
         guideTitle: "货物到仓前，先确认要做哪些事",
         topics: [
-          { title: "每批来货都要有对应信息", body: "供应商发货前，请提供供应商清单、预计件数与备货日期，并向 Chris 确认收货指引，方便将各批货物对应到你的出运计划。" },
+          { title: "按供应商整理装箱清单", body: "逐一列出供应商名称、联系人、订单编号、品名、箱数及预计备货日期。不同订单应能明确区分；供应商贴标或发货前，先向 Chris 确认收货对应信息。供应商信息有变化时及时同步，避免到仓信息不一致。" },
+          { title: "把到仓批次与订单对应起来", body: "使用供应商对应信息和预计件数，区分哪些来货需要一起出运。如果部分订单较晚到仓，请及时告诉 Chris，并在合并出运前确认等待到齐还是分批运输。" },
           { title: "按需确定包装操作", body: "请说明是否需要分拣、重新包装、打托、木架或贴标，并提供产品照片与搬运注意事项。材料、操作范围和费用按订单确认。" },
           { title: "一起安排后续出运", body: "请说明所有供应商预计何时到齐，以及合并后的运输方式。可以按需提出测量和拍照要求，用于确认最终出货计划。" },
+          { title: "重新包装后核对出货数据", body: "木箱、托盘或合箱可能改变件数、尺寸与毛重，后续运输应使用最终包装信息。提前说明需要哪些收货或包装照片，并在操作前确认存放时间、包装材料与操作收费。" },
         ],
         requirements: ["供应商清单与预计到仓日期", "货物品名与预计件数", "大致尺寸、重量及货物照片", "包装、木架或贴标需求", "预计存放时间及后续目的地"],
         steps: [
@@ -331,7 +339,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       ecommerceLogistics: {
         name: "跨境电商物流", summary: "为 Amazon FBA 备货协调供应商、货物准备与头程运输。",
         fit: "准备向履约仓补货的电商卖家", highlights: ["多供应商提货集货", "外箱与运输标签协调"],
-        linkLabel: "了解电商物流", title: "为库存的下一站，做好出运准备。",
+        linkLabel: "了解电商物流", title: "中国出口电商物流与 Amazon FBA 头程",
         intro: "根据你提供的目的仓与货件信息，协调中国至美国、欧洲的供应商提货、集货及 Amazon FBA 头程运输。",
         guideTitle: "准备好货件，才能安排好运输",
         topics: [

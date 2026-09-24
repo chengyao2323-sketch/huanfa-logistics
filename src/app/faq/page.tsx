@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { useT } from "@/i18n";
 
 export default function FaqPage() {
   const t = useT();
-  const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
     <>
@@ -22,30 +20,25 @@ export default function FaqPage() {
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           {t.faqPage.items.map((item, i) => (
-            <div key={item.question} className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-              <button
-                type="button"
-                onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-                aria-expanded={openIndex === i}
-                aria-controls={`faq-answer-${i}`}
+            <details key={i} open={i === 0} className="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+              <summary
+                className="w-full flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600 [&::-webkit-details-marker]:hidden"
               >
                 <span className="font-semibold text-brand-800">{item.question}</span>
                 <svg
-                  className={`w-5 h-5 shrink-0 text-brand-600 transition-transform ${openIndex === i ? "rotate-180" : ""}`}
+                  className="w-5 h-5 shrink-0 text-brand-600 transition-transform group-open:rotate-180"
+                  aria-hidden="true"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
-              {openIndex === i && (
-                <div id={`faq-answer-${i}`} className="px-6 pb-6 text-sm text-gray-600 leading-relaxed">
-                  {item.answer}
-                </div>
-              )}
-            </div>
+              </summary>
+              <div id={`faq-answer-${i}`} className="px-6 pb-6 text-sm text-gray-600 leading-relaxed">
+                {item.answer}
+              </div>
+            </details>
           ))}
         </div>
       </section>

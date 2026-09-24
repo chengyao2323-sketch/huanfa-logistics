@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between lg:h-24">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src="/logo-256.png"
               alt="Huanfa International Logistics"
               width={80}
               height={80}

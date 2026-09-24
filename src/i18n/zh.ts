@@ -21,7 +21,7 @@ const zh: I18nDict = {
     title: "焕发国际物流",
     subtitle: "海运 · 空运 · 门到门运输",
     description:
-      "为企业和个人进口客户协调中国供应商提货、深圳集货、海运或空运、清关及末端派送。",
+      "焕发国际物流为企业与个人客户安排中国至美国、欧洲的运输，按确认的方案协调供应商提货、深圳集货、海运或空运、清关及末端派送。",
     getQuote: "获取报价",
     learnMore: "了解运输流程",
   },
@@ -148,7 +148,7 @@ const zh: I18nDict = {
         { label: "运输方式", value: "UPS" },
         { label: "货物", value: "普通货物 · 20KG" },
         { label: "状态", value: "已签收" },
-        { label: "运输时效", value: "3天" },
+        { label: "全程运输时效", value: "3天" },
         { label: "出货月份", value: "2026年8月" },
         ],
         messagesTitle: "客户原始聊天反馈",

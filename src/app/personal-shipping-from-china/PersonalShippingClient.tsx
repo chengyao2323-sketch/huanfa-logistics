@@ -22,6 +22,12 @@ const content = {
     ],
     confirmTitle: "Confirmed before you ship",
     confirm: ["What the quoted price includes", "Estimated transit time", "Packing or pallet requirements", "Duties and customs responsibility", "Residential delivery scope", "Damage reporting and claims documents"],
+    checklistTitle: "Prepare your furniture shipment before suppliers dispatch",
+    checklist: [
+      { title: "One list for all your purchases", body: "List each supplier, product, quantity and ready date. Ask for dimensions and gross weight after packaging, including any wooden crates or pallets. Keep invoices and packing lists linked to the corresponding supplier orders." },
+      { title: "Show how the goods are packed", body: "Send photos of fragile surfaces, glass, corners and the proposed packaging. Explain whether pieces can be disassembled and flag heavy or oversized items. Agree any repacking or crating work before goods leave the supplier." },
+      { title: "Plan the final handover", body: "Share the destination postcode, whether a delivery truck can reach the address, and who can unload and move the cargo. Flag stairs, narrow access and any need for a liftgate or appointment before accepting the delivery plan." },
+    ],
     ctaTitle: "Not sure where to start?",
     ctaDesc: "Send Chris Yu the product list, supplier city and destination ZIP code. Add weight, volume and delivery access details if known; a supplier packing list can help fill the gaps.",
     whatsapp: "Ask Chris Yu on WhatsApp",
@@ -44,6 +50,12 @@ const content = {
     ],
     confirmTitle: "出货前明确确认",
     confirm: ["报价包含的费用", "预计运输时效", "包装、托盘或木架要求", "关税与清关责任", "住宅派送范围", "破损申报与理赔资料"],
+    checklistTitle: "供应商发货前，准备好家具运输资料",
+    checklist: [
+      { title: "把不同供应商的采购汇成一份清单", body: "列出供应商、品名、数量和备货日期，并索取包装后的尺寸与毛重，包括木箱或托盘。发票、装箱单与对应的供应商订单应能相互核对。" },
+      { title: "先看包装，再安排发运", body: "提供易损表面、玻璃、边角及计划包装方式的照片，说明家具是否可拆卸，以及超重或超大件情况。需要重新包装或打木箱时，应在供应商发货前确认操作方案。" },
+      { title: "提前规划住宅收货", body: "提供目的地邮编，说明货车能否抵达，以及由谁卸货和搬运。楼梯、狭窄通道、尾板或预约需求，都应在接受派送方案前提出。" },
+    ],
     ctaTitle: "不知道从哪里开始？",
     ctaDesc: "请先把产品清单、供应商城市和目的地邮编发给 Chris Yu，再补充已知的重量、体积及派送限制。暂时不清楚的可通过供应商装箱单进一步核对。",
     whatsapp: "WhatsApp 咨询 Chris Yu",
@@ -72,6 +84,17 @@ export default function PersonalShippingClient() {
               <ul className="space-y-3">{(items as readonly string[]).map((item) => <li key={item} className="flex gap-3 text-gray-700"><span className="text-green-600">✓</span>{item}</li>)}</ul>
             </div>
           ))}
+        </div>
+      </section>
+      <section className="bg-white pb-16 lg:pb-20" aria-labelledby="personal-checklist-title">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 id="personal-checklist-title" className="mb-8 text-2xl font-bold text-brand-800 sm:text-3xl">{t.checklistTitle}</h2>
+          <div className="space-y-6">
+            {t.checklist.map(item => <article key={item.title} className="border-l-2 border-brand-200 pl-5">
+              <h3 className="mb-2 text-lg font-bold text-brand-800">{item.title}</h3>
+              <p className="text-sm leading-7 text-slate-600">{item.body}</p>
+            </article>)}
+          </div>
         </div>
       </section>
       <section className="bg-gray-50 py-16 lg:py-24">

@@ -24,7 +24,7 @@ export default function CustomerStories() {
 
           <div id="hawaii-express" className="scroll-mt-28 space-y-8">
             <h2 className="text-2xl font-bold text-brand-800">{locale === "zh" ? "深圳至美国夏威夷 · 20 kg 快递案例" : "Shenzhen to Hawaii · 20 kg Express Shipment"}</h2>
-            <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "3天为本票运输记录，并非其他货件的时效承诺。您的路线及预计时效将在报价时确认。" : "The 3-day time relates to this shipment only, not a guarantee for other cargo. Your route and estimated timing are confirmed at quotation."}</p>
+            <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "3天为本票从中国起运至夏威夷目的地交付的实际全程时效，并非仅航班运输时间。不代表其他货件的时效承诺；您的路线及预计全程时效将在报价时确认。" : "3 days was the actual end-to-end delivery time from dispatch in China to delivery at the Hawaii destination, including final delivery. This completed shipment is not a guarantee for other cargo; your route and estimated end-to-end timing are confirmed at quotation."}</p>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white shadow-xl lg:p-10">
                 <svg className="mb-5 h-9 w-9 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

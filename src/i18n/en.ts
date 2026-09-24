@@ -21,7 +21,7 @@ const en: I18nDict = {
     title: "Freight Forwarding from China to the USA & Europe",
     subtitle: "Ocean Freight · Air Freight · Door-to-Door · Consolidation",
     description:
-      "For businesses and personal buyers importing from China. We coordinate supplier pickup, Shenzhen consolidation, international freight, customs and final delivery under a confirmed service scope.",
+      "Huanfa Logistics helps businesses and individuals ship from China to the USA and Europe. We coordinate supplier pickup, Shenzhen consolidation, ocean or air freight, customs and final delivery under an agreed shipping plan.",
     getQuote: "Get a Freight Quote",
     learnMore: "See How It Works",
   },
@@ -148,7 +148,7 @@ const en: I18nDict = {
         { label: "Service", value: "UPS" },
         { label: "Cargo", value: "General cargo · 20 kg" },
         { label: "Status", value: "Delivered" },
-        { label: "Transit time", value: "3 days" },
+        { label: "End-to-end delivery time", value: "3 days" },
         { label: "Shipment month", value: "August 2026" },
         ],
         messagesTitle: "Original customer messages",

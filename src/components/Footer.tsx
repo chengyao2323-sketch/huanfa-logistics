@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div>
+          <div data-nosnippet="">
             <h3 className="text-white font-semibold mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">{t.footer.home}</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div data-nosnippet="">
             <h3 className="text-white font-semibold mb-4">{t.footer.servicesTitle}</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/services/sea-freight" className="hover:text-white transition-colors">{t.footer.ocean}</Link></li>

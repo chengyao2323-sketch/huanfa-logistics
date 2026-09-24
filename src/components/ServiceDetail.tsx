@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/i18n";
-import { servicesContent, type ServiceKey } from "@/content/services";
+import { servicePaths, servicesContent, type ServiceKey } from "@/content/services";
 import ServiceIcon from "./ServiceIcon";
 import ServiceProofPhotos from "./ServiceProofPhotos";
 
@@ -10,11 +10,36 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
   const { locale } = useI18n();
   const { ui, services } = servicesContent[locale];
   const svc = services[service];
+  const url = `https://huanfalogistics.com${servicePaths[service]}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: svc.title,
+        serviceType: svc.name,
+        description: svc.intro,
+        url,
+        provider: { "@id": "https://huanfalogistics.com/#organization" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: locale === "zh" ? "首页" : "Home", item: "https://huanfalogistics.com/" },
+          { "@type": "ListItem", position: 2, name: ui.allServices, item: "https://huanfalogistics.com/services" },
+          { "@type": "ListItem", position: 3, name: svc.name, item: url },
+        ],
+      },
+    ],
+  };
 
   return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
     <header className="bg-brand-900 text-white">
       <div className="mx-auto max-w-7xl px-4 py-9 sm:px-6 lg:px-8 lg:py-12">
         <nav aria-label={locale === "zh" ? "面包屑导航" : "Breadcrumb"} className="mb-7 flex flex-wrap items-center gap-2 text-sm text-slate-300">
+          <Link href="/" className="underline-offset-4 hover:underline">{locale === "zh" ? "首页" : "Home"}</Link><span aria-hidden="true">/</span>
           <Link href="/services" className="underline-offset-4 hover:underline">{ui.allServices}</Link><span aria-hidden="true">/</span><span aria-current="page">{svc.name}</span>
         </nav>
         <div className="mb-4 flex items-center gap-3 text-accent-500"><ServiceIcon service={service} /><span className="text-xs font-bold uppercase tracking-[0.15em]">{svc.name}</span></div>
@@ -40,6 +65,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
           </aside>
           {service === "warehousing" && <ServiceProofPhotos />}
           {(service === "seaFreight" || service === "doorToDoor") && <Link href="/shipment-cases#container-shipment-case" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实整柜案例：深圳 → 美国加州 · 40英尺整柜 →" : "See a real FCL shipment: Shenzhen → California, USA · 40-ft container →"}</Link>}
+          {service === "airFreight" && <Link href="/shipment-cases#hawaii-express" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实快递案例：深圳 → 夏威夷 · UPS 20 kg · 本票全程3天 →" : "See a completed express shipment: Shenzhen → Hawaii · UPS 20 kg · 3 days end to end for this shipment →"}</Link>}
         </div>
         <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6" aria-labelledby="service-quote-title">
           <h2 id="service-quote-title" className="mb-5 text-xl font-bold text-brand-800">{ui.quoteTitle}</h2>
