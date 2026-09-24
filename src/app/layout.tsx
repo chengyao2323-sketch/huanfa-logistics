@@ -8,6 +8,14 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://huanfalogistics.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   title: {
     default: "China Freight Forwarder | International Logistics Company | Huanfa Logistics",
     template: "%s | Huanfa Logistics - China Freight Forwarder",
