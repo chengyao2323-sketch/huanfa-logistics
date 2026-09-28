@@ -8,6 +8,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://huanfalogistics.com"),
+  verification: { google: "8CFqvqWNehk_Mni3pPTw3AdMCqYkKGdBoVb3sp4gEHk" },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
