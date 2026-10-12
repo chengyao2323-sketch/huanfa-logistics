@@ -98,6 +98,14 @@ export default function HomePage() {
         </div>
       </section>
 
+<section className="bg-brand-50 py-10" aria-labelledby="usa-guide-title">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 id="usa-guide-title" className="text-2xl font-bold text-brand-800">{locale === "zh" ? "计划从中国运货到美国？" : "Planning a shipment from China to the USA?"}</h2>
+    <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{locale === "zh" ? "比较整柜、拼箱、空运和集货方案，了解报价范围与住宅派送，并查看已完成的加州和夏威夷案例。" : "Compare FCL, LCL, air freight and consolidation. Review quote inclusions, residential delivery needs and completed shipments to California and Hawaii."}</p>
+    <Link href="/shipping-from-china-to-usa" className="mt-4 inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "查看美国运输指南 →" : "Explore China-to-USA shipping →"}</Link>
+  </div>
+</section>
+
 {/* Services */}
       <HomeServices />
 

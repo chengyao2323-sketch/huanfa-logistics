@@ -94,6 +94,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
           </details>)}
         </div>
       </section>
+      <Link href="/shipping-from-china-to-usa" className="mt-8 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "目的地是美国？查看线路、报价范围与真实案例 →" : "Shipping to the USA? Review route options, quote scope and real shipments →"}</Link>
       <Link href="/services" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-brand-600 hover:underline"><span aria-hidden="true">←</span>{ui.allServices}</Link>
     </div>
   </>;

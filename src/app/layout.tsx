@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   title: {
-    default: "Huanfa Logistics | China Freight Forwarder",
+    default: "China Freight Forwarder to USA & Europe | Huanfa Logistics",
     template: "%s | Huanfa Logistics",
   },
-  description: "Ship from China to the USA and Europe with Huanfa Logistics. Ocean and air freight, Shenzhen consolidation, and door-to-door options for businesses and individuals.",
+  description: "Shipping from China to the USA and Europe. Huanfa Logistics arranges supplier pickup, consolidation, sea and air freight, and door-to-door delivery. Request a quote.",
   keywords: [
     "China freight forwarder", "international logistics company China",
     "shipping from China", "China sea freight", "China air freight",
@@ -34,15 +34,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", locale: "en_US", alternateLocale: "zh_CN",
     siteName: "Huanfa Logistics",
-    title: "Huanfa Logistics | China Freight Forwarder",
-    description: "Ship from China to the USA and Europe with Huanfa Logistics. Ocean and air freight, Shenzhen consolidation, and door-to-door options for businesses and individuals.",
+    title: "China Freight Forwarder to USA & Europe | Huanfa Logistics",
+    description: "Shipping from China to the USA and Europe. Huanfa Logistics arranges supplier pickup, consolidation, sea and air freight, and door-to-door delivery. Request a quote.",
     url: "https://huanfalogistics.com",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Huanfa International Logistics - China Freight Forwarder" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Huanfa Logistics | China Freight Forwarder",
-    description: "Ship from China to the USA and Europe with Huanfa Logistics. Ocean and air freight, Shenzhen consolidation, and door-to-door options for businesses and individuals.",
+    title: "China Freight Forwarder to USA & Europe | Huanfa Logistics",
+    description: "Shipping from China to the USA and Europe. Huanfa Logistics arranges supplier pickup, consolidation, sea and air freight, and door-to-door delivery. Request a quote.",
     images: ["/og-image.png"],
   },
   alternates: { canonical: "/" },

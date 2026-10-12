@@ -174,6 +174,8 @@ export const servicesContent: Record<Locale, ServicesContent> = {
         note: "Short-term storage, cargo acceptance and handling charges need advance confirmation. Receiving or packing photos are not a product-quality inspection or certification.",
         faq: [
           { question: "Can I ask suppliers to send goods immediately?", answer: "Please confirm receiving instructions and acceptance first. Send supplier names, cargo details and expected arrival dates before arranging deliveries." },
+          { question: "What if one supplier is ready later than the others?", answer: "Send each supplier's ready date before arranging deliveries. We can compare waiting to consolidate with shipping ready goods separately, subject to receiving capacity and the transport plan. Confirm storage duration and charges; a late supplier can move the dispatch date for the combined shipment." },
+          { question: "Will consolidation always reduce my shipping cost?", answer: "Not necessarily. Compare the combined freight quote with separate shipments, including pickup, storage, repacking and handling. Final dimensions and weight can change after packing, so confirm the total cost and delivery timing before choosing." },
           { question: "Can you provide packing photos?", answer: "Photos and measurements can be requested as part of the agreed handling work. Let Chris know what needs to be documented before the goods are prepared." },
         ],
       },
@@ -332,6 +334,8 @@ export const servicesContent: Record<Locale, ServicesContent> = {
         ],
         note: "短期存放、货物接受情况和操作收费须提前确认。收货或包装照片不等同于产品质量检验或认证。",
         faq: [
+          { question: "有一家供应商备货较晚怎么办？", answer: "安排送仓前提供各供应商备货日期，根据收货条件和运输方案比较等待集货与分批发运。仓储时长和费用需提前确认，较晚到货的供应商可能影响整票集货的发运日期。" },
+          { question: "合并运输一定更便宜吗？", answer: "不一定。应比较合并与分批发运的完整费用，包含提货、仓储、重新包装及操作费。包装后的尺寸和重量可能变化，选择方案前需核对总费用及交付时间。" },
           { question: "可以直接让供应商发货到仓吗？", answer: "请先确认收货指引及接受情况。安排来货前，将供应商名称、货物信息和预计到达日期提供给我们。" },
           { question: "可以提供包装照片吗？", answer: "可以在约定的操作中提出照片和测量需求。请在货物整理前，告诉 Chris 需要记录哪些内容。" },
         ],

@@ -25,6 +25,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">{t.footer.home}</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">{t.footer.services}</Link></li>
+              <li><Link href="/shipping-from-china-to-usa" className="hover:text-white transition-colors">{locale === "zh" ? "中国到美国运输" : "China to USA Shipping"}</Link></li>
               <li><Link href="/personal-shipping-from-china" className="hover:text-white transition-colors">{locale === "zh" ? "个人进口运输" : "Personal Shipping"}</Link></li>
               <li><Link href="/shipment-cases" className="hover:text-white transition-colors">{locale === "zh" ? "真实运输案例" : "Shipping Cases"}</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">{t.footer.about}</Link></li>

@@ -7,7 +7,7 @@ import ShipmentProcessSteps from "@/components/ShipmentProcessSteps";
 const content = {
   en: {
     eyebrow: "Personal Import Shipping",
-    title: "Shipping from China to Your Home",
+    title: "Furniture & Personal Shipping from China",
     intro: "Bought furniture, lighting, building materials, machinery, or home goods from China? We help organize supplier pickup, consolidation, international freight, customs coordination, and delivery planning.",
     suitableTitle: "Suitable for personal purchases",
     suitable: ["Furniture and home décor", "Lighting and building materials", "Home appliances and machinery", "Goods from multiple suppliers"],
@@ -35,7 +35,7 @@ const content = {
   },
   zh: {
     eyebrow: "个人进口运输",
-    title: "从中国运输到您的家中",
+    title: "中国家具与个人采购运输",
     intro: "从中国购买了家具、灯具、建材、机器或家居用品？我们可协助安排供应商提货、集货、国际运输、清关协调和末端派送方案。",
     suitableTitle: "适合个人采购的货物",
     suitable: ["家具与家居用品", "灯具与建筑材料", "家电与机器设备", "来自多个供应商的货物"],
@@ -110,6 +110,11 @@ export default function PersonalShippingClient() {
           </section>
         </div>
       </section>
+      <section className="bg-white py-12"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-5 text-2xl font-bold text-brand-800">{locale === "zh" ? "家具运输费用包含什么？" : "What goes into a furniture shipping quote?"}</h2>
+        <p className="text-sm leading-7 text-slate-600">{locale === "zh" ? "比较供应商提货、集货、木箱或托盘、仓储、国际运输、目的地操作及派送的完整费用。关税、税费、卸货、尾板和住宅预约是否包含，需在书面报价中明确。包装后的体积和重量会影响方案，不应只根据家具购买价格估算运费。" : "Compare supplier pickup, consolidation, crates or pallets, storage, international freight, destination handling and delivery together. Confirm in writing whether duties, taxes, unloading, liftgate and residential appointments are included. Packed volume and weight affect the plan; the furniture purchase price alone does not determine freight cost."}</p>
+        <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2"><Link href="/services/warehousing" className="inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "查看多供应商集货流程 →" : "Review multi-supplier consolidation →"}</Link><Link href="/shipping-from-china-to-usa" className="inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "查看美国运输与派送指南 →" : "Review US shipping and delivery →"}</Link></div>
+      </div></section>
       <section className="bg-white py-16 lg:py-20"><div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 className="mb-4 text-3xl font-bold text-brand-800">{t.ctaTitle}</h2><p className="mb-8 text-gray-600">{t.ctaDesc}</p>
         <div className="flex flex-wrap justify-center gap-3"><a href="https://wa.me/8615207122341" target="_blank" rel="noreferrer" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">{t.whatsapp}</a><Link href="/contact?customer=personal" className="rounded-lg bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-700">{t.quote}</Link></div>

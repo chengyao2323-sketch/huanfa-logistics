@@ -19,6 +19,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: "/zh", destination: "/", permanent: true },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.huanfalogistics.com" }],
