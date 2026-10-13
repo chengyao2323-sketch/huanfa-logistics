@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,7 +8,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://huanfalogistics.com"),
-  verification: { google: "8CFqvqWNehk_Mni3pPTw3AdMCqYkKGdBoVb3sp4gEHk" },
+  verification: { other: { "msvalidate.01": "43C54FF6395B9CA203582FA0CB7FE263" }, google: "8CFqvqWNehk_Mni3pPTw3AdMCqYkKGdBoVb3sp4gEHk" },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
