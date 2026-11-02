@@ -6,6 +6,7 @@ import { servicePaths, servicesContent, type ServiceKey } from "@/content/servic
 import ServiceIcon from "./ServiceIcon";
 import ServiceProofPhotos from "./ServiceProofPhotos";
 import DdpCargoGuide from "./DdpCargoGuide";
+import { DdpPlanningGuide, DdpReferences } from "./DdpPlanningGuide";
 
 export default function ServiceDetail({ service }: { service: ServiceKey }) {
   const { locale } = useI18n();
@@ -65,6 +66,9 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
       </div>
     </header>
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+      {service === "doorToDoor" && <nav aria-label={locale === "zh" ? "本页内容" : "On this page"} className="mb-8 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-brand-700">
+        {(locale === "zh" ? [["ddp-terms", "DDP 与 DAP"], ["ddp-options", "空运与海运"], ["ddp-costs", "费用范围"], ["ddp-cargo", "货物审核"], ["service-faq-title", "常见问题"]] : [["ddp-terms", "DDP vs DAP"], ["ddp-options", "Air vs sea"], ["ddp-costs", "Quote scope"], ["ddp-cargo", "Cargo review"], ["service-faq-title", "FAQs"]]).map(([id,label]) => <a key={id} href={`#${id}`} className="underline underline-offset-4">{label}</a>)}
+      </nav>}
       <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-12">
         <div className="min-w-0">
           <section aria-labelledby="service-guide-title">
@@ -81,7 +85,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
             <p className="text-sm leading-6 text-slate-700">{svc.note}</p>
           </aside>
           {service === "warehousing" && <ServiceProofPhotos />}
-          {(service === "seaFreight" || service === "doorToDoor") && <Link href="/shipment-cases#container-shipment-case" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实整柜案例：深圳 → 美国加州 · 40英尺整柜 →" : "See a real FCL shipment: Shenzhen → California, USA · 40-ft container →"}</Link>}
+          {service === "seaFreight" && <Link href="/shipment-cases#container-shipment-case" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实整柜案例：深圳 → 美国加州 · 40英尺整柜 →" : "See a real FCL shipment: Shenzhen → California, USA · 40-ft container →"}</Link>}
           {service === "airFreight" && <Link href="/shipment-cases#hawaii-express" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实快递案例：深圳 → 夏威夷 · UPS 20 kg · 本票全程3天 →" : "See a completed express shipment: Shenzhen → Hawaii · UPS 20 kg · 3 days end to end for this shipment →"}</Link>}
         </div>
         <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6" aria-labelledby="service-quote-title">
@@ -93,7 +97,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
           <Link href="/contact" className="mt-5 flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600">{service === "doorToDoor" ? (locale === "zh" ? "获取 DDP 报价" : "Request a DDP quote") : ui.quoteButton}<span aria-hidden="true">→</span></Link>
         </aside>
       </div>
-      {service === "doorToDoor" && <DdpCargoGuide />}
+      {service === "doorToDoor" && <><DdpPlanningGuide /><DdpCargoGuide /></>}
       <section className="mt-12 border-t border-slate-200 pt-10" aria-labelledby="service-steps-title">
         <h2 id="service-steps-title" className="mb-6 text-2xl font-bold text-brand-800">{ui.stepsTitle}</h2>
         <ol className="grid gap-4 md:grid-cols-3">
@@ -112,6 +116,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
           </details>)}
         </div>
       </section>
+      {service === "doorToDoor" && <DdpReferences />}
       <Link href="/shipping-from-china-to-usa" className="mt-8 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "目的地是美国？查看线路、报价范围与真实案例 →" : "Shipping to the USA? Review route options, quote scope and real shipments →"}</Link>
       <Link href="/services" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-brand-600 hover:underline"><span aria-hidden="true">←</span>{ui.allServices}</Link>
     </div>
