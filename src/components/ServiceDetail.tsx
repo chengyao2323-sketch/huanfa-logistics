@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n";
 import { servicePaths, servicesContent, type ServiceKey } from "@/content/services";
 import ServiceIcon from "./ServiceIcon";
 import ServiceProofPhotos from "./ServiceProofPhotos";
+import DdpCargoGuide from "./DdpCargoGuide";
 
 export default function ServiceDetail({ service }: { service: ServiceKey }) {
   const { locale } = useI18n();
@@ -20,6 +21,14 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
         name: svc.title,
         serviceType: svc.name,
         description: svc.intro,
+        ...(service === "doorToDoor" ? {
+          areaServed: [
+            { "@type": "Country", name: "United States" },
+            { "@type": "Country", name: "Canada" },
+            { "@type": "Place", name: "Europe" },
+            { "@type": "Country", name: "Australia" },
+          ],
+        } : {}),
         url,
         provider: { "@id": "https://huanfalogistics.com/#organization" },
       },
@@ -31,6 +40,14 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
           { "@type": "ListItem", position: 3, name: svc.name, item: url },
         ],
       },
+      ...(service === "doorToDoor" ? [{
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: svc.faq.map(item => ({
+          "@type": "Question", name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }] : []),
     ],
   };
 
@@ -73,9 +90,10 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
             {svc.requirements.map(item => <li key={item} className="flex gap-2.5 text-sm leading-6 text-slate-700"><span className="mt-0.5 font-bold text-green-700" aria-hidden="true">✓</span>{item}</li>)}
           </ul>
           <p className="mt-6 border-t border-slate-200 pt-5 text-xs leading-6 text-slate-500">{ui.quoteNote}</p>
-          <Link href="/contact" className="mt-5 flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600">{ui.quoteButton}<span aria-hidden="true">→</span></Link>
+          <Link href="/contact" className="mt-5 flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600">{service === "doorToDoor" ? (locale === "zh" ? "获取 DDP 报价" : "Request a DDP quote") : ui.quoteButton}<span aria-hidden="true">→</span></Link>
         </aside>
       </div>
+      {service === "doorToDoor" && <DdpCargoGuide />}
       <section className="mt-12 border-t border-slate-200 pt-10" aria-labelledby="service-steps-title">
         <h2 id="service-steps-title" className="mb-6 text-2xl font-bold text-brand-800">{ui.stepsTitle}</h2>
         <ol className="grid gap-4 md:grid-cols-3">

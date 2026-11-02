@@ -14,6 +14,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: t.nav.home },
     { href: "/services", label: t.nav.services },
+    { href: "/services/door-to-door", label: locale === "zh" ? "DDP 包税到门" : "DDP Shipping" },
     { href: "/personal-shipping-from-china", label: locale === "zh" ? "个人运输" : "Personal Shipping" },
     { href: "/shipment-cases", label: locale === "zh" ? "真实案例" : "Shipping Cases" },
     { href: "/about", label: t.nav.about },
@@ -21,7 +22,9 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === href : pathname.startsWith(href);
+    href === "/" ? pathname === href : href === "/services"
+      ? pathname.startsWith(href) && pathname !== "/services/door-to-door"
+      : pathname.startsWith(href);
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
   useEffect(() => {

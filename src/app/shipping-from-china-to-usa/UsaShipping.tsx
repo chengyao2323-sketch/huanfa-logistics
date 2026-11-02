@@ -81,10 +81,14 @@ export default function UsaShipping() {
         <nav aria-label={locale === "zh" ? "面包屑导航" : "Breadcrumb"} className="mb-6 text-sm text-blue-200"><Link href="/" className="hover:underline">{t.home}</Link><span aria-hidden="true"> / </span><span aria-current="page">{t.title}</span></nav>
         <h1 className="max-w-4xl text-3xl font-extrabold sm:text-4xl lg:text-5xl">{t.title}</h1>
         <p className="mt-6 max-w-3xl text-base leading-7 text-blue-100">{t.intro}</p>
-        <Link href="/contact" className="mt-7 inline-flex min-h-11 items-center rounded-lg bg-accent-500 px-6 py-3 font-bold text-brand-900 hover:bg-accent-600">{t.quote}</Link>
+        <div className="mt-7 flex flex-wrap items-center gap-5"><Link href="/contact" className="inline-flex min-h-11 items-center rounded-lg bg-accent-500 px-6 py-3 font-bold text-brand-900 hover:bg-accent-600">{t.quote}</Link><Link href="/services/door-to-door" className="inline-flex min-h-11 items-center text-sm font-semibold text-white underline underline-offset-4">{locale === "zh" ? "查看 DDP 包税到门与货物要求" : "DDP service, cargo requirements and minimums"}</Link></div>
       </div>
     </header>
     <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 sm:px-6 lg:px-8">
+      <section aria-labelledby="usa-ddp-title" className="rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8">
+        <h2 id="usa-ddp-title" className="text-2xl font-bold text-brand-800">{locale === "zh" ? "中国到美国 DDP：清关、税费与到门派送" : "DDP shipping from China to the USA: clearance, taxes and delivery"}</h2>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600">{locale === "zh" ? "确认的 DDP 服务包含出口及进口清关、进口关税与清关税费，并派送至约定地址，正常交付时收件人不再支付这些已含费用。空运无最低起运重量要求，海运 12 kg 起运；按具体货物及美国邮编审核线路。卸货、入户、上楼等特殊服务须提前确认。" : "Our confirmed DDP service includes export and import clearance, import duties and taxes, and delivery to the agreed US address, without repeat collection of those included charges at normal handover. Air has no minimum shipment weight; sea starts at 12 kg. Confirm the actual goods and US ZIP code before shipping, along with any unloading, indoor or upstairs delivery needs."}</p>
+      </section>
       <section><h2 className="mb-6 text-2xl font-bold text-brand-800">{t.optionsTitle}</h2><div className="grid gap-6 lg:grid-cols-3">{t.options.map(item => <article key={item.title} className="rounded-2xl border border-slate-200 p-6"><h3 className="text-lg font-bold text-brand-800">{item.title}</h3><p className="my-4 text-sm leading-7 text-slate-600">{item.body}</p><Link href={item.href} className="inline-flex min-h-11 items-center text-sm font-semibold text-brand-600 hover:underline">{item.link} →</Link></article>)}</div></section>
       <div className="grid gap-8 lg:grid-cols-2">
         <section className="rounded-2xl bg-slate-50 p-6 sm:p-8"><h2 className="mb-4 text-2xl font-bold text-brand-800">{t.scopeTitle}</h2><p className="mb-4 text-sm leading-7 text-slate-600">{t.scopeIntro}</p><ul className="list-disc space-y-3 pl-5 text-sm leading-6 text-slate-700">{t.scope.map(item => <li key={item}>{item}</li>)}</ul></section>

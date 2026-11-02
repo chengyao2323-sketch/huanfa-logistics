@@ -8,7 +8,7 @@ const content = {
   en: {
     eyebrow: "Personal Import Shipping",
     title: "Furniture & Personal Shipping from China",
-    intro: "Bought furniture, lighting, building materials, machinery, or home goods from China? We help organize supplier pickup, consolidation, international freight, customs coordination, and delivery planning.",
+    intro: "Bought furniture, lighting or home goods from China? Request DDP delivery with import clearance, duties and taxes handled under the agreed quote. Send photos, packed measurements and the residential postcode; oversize or over-limit cargo is outside standard DDP channels.",
     suitableTitle: "Suitable for personal purchases",
     suitable: ["Furniture and home décor", "Lighting and building materials", "Home appliances and machinery", "Goods from multiple suppliers"],
     processTitle: "How it works",
@@ -36,7 +36,7 @@ const content = {
   zh: {
     eyebrow: "个人进口运输",
     title: "中国家具与个人采购运输",
-    intro: "从中国购买了家具、灯具、建材、机器或家居用品？我们可协助安排供应商提货、集货、国际运输、清关协调和末端派送方案。",
+    intro: "从中国购买了家具、灯具或家居用品？可咨询含进口清关和税费处理的 DDP 到门方案。请提供照片、包装尺寸及住宅邮编；超限超大件不在常规 DDP 渠道承接范围内。",
     suitableTitle: "适合个人采购的货物",
     suitable: ["家具与家居用品", "灯具与建筑材料", "家电与机器设备", "来自多个供应商的货物"],
     processTitle: "运输流程",

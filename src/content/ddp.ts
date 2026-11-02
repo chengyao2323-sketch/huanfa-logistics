@@ -1,0 +1,65 @@
+import type { Locale } from "@/i18n";
+import type { ServiceContent } from "./services";
+
+export const ddpService: Record<Locale, ServiceContent> = {
+  en: {
+    name: "DDP Door-to-Door Shipping",
+    summary: "Shipping from China with export and import clearance, import duties and taxes, and delivery to your agreed address.",
+    fit: "Businesses and personal buyers seeking duty-paid delivery",
+    highlights: ["USA, Canada & Europe", "Air: no minimum weight", "Sea: from 12 kg"],
+    linkLabel: "Explore DDP shipping from China",
+    title: "DDP Shipping from China",
+    intro: "Huanfa Logistics arranges DDP door-to-door shipping from China to the USA, Canada and Europe, with Australia also available. We coordinate export and import clearance, handle import duties and taxes, and deliver approved cargo to the agreed address under a confirmed quotation.",
+    guideTitle: "Plan your DDP shipment from pickup to delivery",
+    topics: [
+      { title: "One plan for freight, clearance and import taxes", body: "Our confirmed DDP service covers the agreed transport and delivery, export and import clearance, and import duties and taxes. The recipient does not pay these included charges again at normal handover. Supplier pickup, multi-supplier consolidation, packing and any special delivery requirements are agreed before shipment." },
+      { title: "USA, Canada and Europe first; Australia also available", body: "Send the destination country, postcode and full receiving address. We review the goods and available DDP route for business premises, fulfillment facilities or residential delivery. European country coverage, remote areas and address-specific requirements must be confirmed for your shipment." },
+      { title: "DDP air freight or sea freight from China", body: "DDP air shipping has no minimum shipment weight. DDP sea shipping starts at 12 kg. Small parcels and larger general cargo can be considered; oversize or over-limit goods are outside our standard DDP channels. Price and timing depend on the goods, packed size, weight and destination; request a cargo-specific quote." },
+    ],
+    requirements: ["Product names, photos and intended use", "Quantity, packed dimensions and gross weight", "Supplier locations and cargo-ready date", "Destination country, postcode and business or residential address", "Cargo value, invoice and packing list", "Battery, liquid, powder, brand and wooden-packaging details, if applicable"],
+    steps: [
+      { title: "Review your goods and destination", body: "Send product details and photos. We check the DDP channel, any supporting documents and your receiving requirements before cargo is dispatched." },
+      { title: "Confirm a written DDP quote", body: "Review the transport option, included clearance and import taxes, pickup and delivery scope, estimated timing and any special arrangements." },
+      { title: "Ship, clear and deliver", body: "We coordinate the confirmed transport, customs and tax arrangements, then delivery to the agreed address and available shipment updates." },
+    ],
+    note: "DDP is a duty-paid delivery arrangement, while door-to-door describes the transport scope. DDP does not automatically include unloading, a liftgate, indoor or upstairs delivery, assembly or insurance. Agree any additional services in writing. Customs release and cargo acceptance remain subject to the actual goods, documents and destination requirements.",
+    faq: [
+      { question: "What is DDP shipping, and is it the same as door-to-door?", answer: "DDP means Delivered Duty Paid. Our DDP service combines delivery to the agreed address with export and import clearance and handling of import duties and taxes. Door-to-door on its own does not specify who pays those taxes. Confirm DDP and its full scope in your written quotation." },
+      { question: "Does the recipient pay import duties on arrival?", answer: "For approved cargo booked under our confirmed DDP quote, we handle import duties and customs taxes. The recipient does not pay those included charges again at normal delivery. Share any unloading, access or special delivery needs before booking so the complete scope is agreed in advance." },
+      { question: "What is the minimum weight for DDP air and sea shipping?", answer: "DDP air shipping has no minimum shipment weight. DDP sea shipping starts at 12 kg. A shipment's price still depends on the product, package dimensions, weight and destination. Send the packing details for a quote." },
+      { question: "Which countries do you serve with DDP shipping?", answer: "Our priority destinations are the USA, Canada and Europe; Australia is also available. Send the specific country, postcode, address type and goods so we can confirm route coverage and acceptance." },
+      { question: "Can you ship batteries, cosmetics or branded goods by DDP?", answer: "These require advance review and may need a specialist channel. Declare batteries, power banks, cosmetics, liquids and powders before sending them. Battery cargo needs the requested MSDS/SDS and UN 38.3 documentation; additional transport requirements may apply. Branded goods require valid authorization. Do not dispatch before acceptance is confirmed." },
+      { question: "Can individuals use DDP for furniture and home purchases?", answer: "Yes, businesses and personal buyers can request DDP quotes. Send product photos, supplier locations, packed sizes and weights, and the residential postcode. Confirm truck access and unloading needs. Oversize or over-limit goods are not accepted through standard DDP channels; indoor delivery, upstairs handling and installation are not automatically included." },
+    ],
+  },
+  zh: {
+    name: "DDP 双清包税到门",
+    summary: "从中国出运，安排出口与进口清关、进口关税及清关税费，并派送至约定地址。",
+    fit: "希望包税派送到门的企业及个人采购客户",
+    highlights: ["美国、加拿大、欧洲为主", "空运无最低起运重量", "海运 12 kg 起运"],
+    linkLabel: "了解 DDP 双清包税到门服务",
+    title: "中国出发 DDP 双清包税到门运输",
+    intro: "焕发国际物流主推中国至美国、加拿大、欧洲的 DDP 双清包税到门，澳洲也可安排。按确认报价协调出口及进口清关、统一处理进口关税与清关税费，并将审核通过的货物派送至约定地址，支持企业与个人客户。",
+    guideTitle: "从中国提货到海外签收，提前确认 DDP 全程方案",
+    topics: [
+      { title: "运输、清关、进口税费与派送统一安排", body: "确认的 DDP 服务包含约定运输与派送、出口及进口清关，以及进口关税和清关税费；正常交付时，收件人无需再次支付这些已包含的费用。供应商提货、多供应商集货、包装及特殊派送需求，在发货前一并确认。" },
+      { title: "重点美国、加拿大、欧洲，澳洲也可咨询", body: "请提供具体国家、邮编及完整地址，我们根据货物审核可用 DDP 线路。可提出商业地址、履约仓或住宅派送需求；欧洲具体国家、偏远地区和地址通行条件，须按每票货物确认。" },
+      { title: "空运无最低起运重量，海运 12 kg 起运", body: "DDP 空运没有最低起运重量要求；DDP 海运最低 12 kg 起运。大小件普货均可提供资料评估，超限超大件不在常规 DDP 渠道承接范围内。费用与预计时效取决于品名、包装尺寸、重量和目的地，请按实际货物询价。" },
+    ],
+    requirements: ["品名、产品照片及用途", "数量、包装后尺寸及毛重", "供应商所在地及备货日期", "目的地国家、邮编及商业或住宅地址", "货值、发票及装箱单", "如适用，说明电池、液体、粉末、品牌及木质包装情况"],
+    steps: [
+      { title: "预审货物与目的地", body: "先提供品名、照片与收货信息，核对 DDP 线路、所需资料及派送条件，获得承接确认后再安排发货。" },
+      { title: "确认 DDP 书面报价", body: "明确运输方式、包含的清关与进口税费、提货及派送范围、预计时效和特殊服务安排。" },
+      { title: "安排运输、清关与派送", body: "按确认方案协调国际运输、清关及税费处理，派送至约定地址，并跟进可获得的运输节点。" },
+    ],
+    note: "DDP 说明完税交付责任，“门到门”说明运输范围。卸货、尾板、入户、上楼、安装和保险不会因采用 DDP 自动包含，需要提前书面确认。是否承接及海关放行仍取决于实际货物、资料和目的地要求。",
+    faq: [
+      { question: "DDP 是什么，和普通门到门有什么区别？", answer: "DDP 即完税后交货。我们的 DDP 服务将约定地址派送与出口、进口清关及进口关税税费处理一并安排；仅写“门到门”并不能确定由谁承担进口税费，应在书面报价中明确 DDP 及完整服务范围。" },
+      { question: "收件人签收时还需要支付进口税费吗？", answer: "审核通过并按确认 DDP 报价发运的货物，进口关税及清关税费由我方统一处理，正常交付时收件人无需再次支付这些已包含的费用。卸货、通行或特殊派送需求，请在订舱前提出并确认完整方案。" },
+      { question: "DDP 空运和海运最低多少起运？", answer: "DDP 空运没有最低起运重量要求，DDP 海运最低 12 kg 起运。具体费用仍根据品名、包装尺寸、重量与目的地确认，请提供包装资料询价。" },
+      { question: "DDP 主要可以发到哪些国家？", answer: "重点为美国、加拿大和欧洲，澳洲也可安排。请提供具体国家、邮编、地址类型及品名，以便确认线路覆盖及承接情况。" },
+      { question: "电池、化妆品或品牌商品能做 DDP 吗？", answer: "须提前申报审核，可能需要专项渠道。锂电池、充电宝、化妆品、液体及粉末等应先提供资料；电池货物需按要求提供 MSDS/SDS、UN 38.3 等资料，并满足对应运输要求。品牌商品需有效授权。确认承接前请勿发货。" },
+      { question: "个人购买家具和家居用品可以做 DDP 吗？", answer: "企业和个人客户都可咨询。请提供产品照片、供应商所在地、包装尺寸、重量及住宅邮编，并说明货车通行和卸货条件。超限超大件不在常规 DDP 渠道承接范围内；入户、上楼和安装并非自动包含。" },
+    ],
+  },
+};

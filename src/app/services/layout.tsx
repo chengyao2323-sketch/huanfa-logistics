@@ -1,8 +1,8 @@
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Freight Forwarding Services from China",
-  description: "Ocean freight, air freight, door-to-door delivery, e-commerce logistics, and cargo handling services from China.",
+  title: "China Shipping Services: DDP, Air & Sea",
+  description: "Explore DDP shipping, air and sea freight, supplier consolidation and e-commerce logistics from China. Get a quote for your goods and destination.",
   path: "/services",
 });
 

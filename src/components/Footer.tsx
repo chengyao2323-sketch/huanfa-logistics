@@ -38,9 +38,9 @@ export default function Footer() {
           <div data-nosnippet="">
             <h3 className="text-white font-semibold mb-4">{t.footer.servicesTitle}</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/services/door-to-door" className="hover:text-white transition-colors">{t.footer.land}</Link></li>
               <li><Link href="/services/sea-freight" className="hover:text-white transition-colors">{t.footer.ocean}</Link></li>
               <li><Link href="/services/air-freight" className="hover:text-white transition-colors">{t.footer.air}</Link></li>
-              <li><Link href="/services/door-to-door" className="hover:text-white transition-colors">{t.footer.land}</Link></li>
               <li><Link href="/services/warehousing" className="hover:text-white transition-colors">{t.footer.warehouse}</Link></li>
               <li><Link href="/services/ecommerce-logistics" className="hover:text-white transition-colors">{t.services.ecommerce.title}</Link></li>
               <li><Link href="/services/customs-insurance" className="hover:text-white transition-colors">{locale === "zh" ? "海关及保险" : "Customs & Insurance"}</Link></li>

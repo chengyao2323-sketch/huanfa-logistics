@@ -1,6 +1,7 @@
 import type { Locale } from "@/i18n";
+import { ddpService } from "./ddp";
 
-export const serviceOrder = ["seaFreight", "airFreight", "doorToDoor", "warehousing", "ecommerceLogistics", "customsInsurance"] as const;
+export const serviceOrder = ["doorToDoor", "seaFreight", "airFreight", "warehousing", "ecommerceLogistics", "customsInsurance"] as const;
 export type ServiceKey = (typeof serviceOrder)[number];
 export const servicePaths: Record<ServiceKey, string> = {
   seaFreight: "/services/sea-freight",
@@ -42,8 +43,8 @@ type ServicesContent = {
 export const servicesContent: Record<Locale, ServicesContent> = {
   en: {
     ui: {
-      eyebrow: "OUR SERVICES", title: "Freight Forwarding Services from China",
-      intro: "From suppliers in China to the USA and Europe. Compare transport options and the support you need along the way.",
+      eyebrow: "OUR SERVICES", title: "China Shipping Services: DDP, Air & Sea",
+      intro: "DDP shipping from China to the USA, Canada and Europe, with Australia also available. Compare duty-paid delivery, air and sea freight, and supplier consolidation.",
       choiceTitle: "What does your shipment need?",
       choiceNote: "These services can work together. Other destinations are available on request.",
       fitLabel: "A GOOD FIT FOR", helpTitle: "Not sure which service fits?",
@@ -129,29 +130,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
           { question: "Can you accept products containing batteries?", answer: "Send the product and battery details first. Available options depend on the documents, packing, destination and carrier acceptance; do not send the goods before confirmation." },
         ],
       },
-      doorToDoor: {
-        name: "Door-to-Door Shipping", summary: "Coordinate pickup, international transport and delivery under one agreed plan.",
-        fit: "Importers who need delivery to a specific address", highlights: ["Sea or air transport", "DDP options subject to review"],
-        linkLabel: "Explore door-to-door shipping", title: "Door-to-Door Shipping from China",
-        intro: "Connect supplier pickup with final delivery in the USA or Europe. Sea, air and DDP options are reviewed against your goods, destination and receiving arrangements.",
-        guideTitle: "Agree what happens at each end",
-        topics: [
-          { title: "Start at the supplier", body: "Share the collection address, supplier contact and cargo-ready date. Let us know if goods from multiple suppliers need to be combined or repacked before international transport." },
-          { title: "Make the quotation explicit", body: "Before booking, confirm which party handles export and import clearance, duties and taxes, destination charges and final delivery. DDP availability is reviewed for each shipment; door-to-door alone is not a promise that every charge is included." },
-          { title: "Check the receiving address", body: "Tell us whether delivery is residential or commercial, and whether there are unloading, access or appointment requirements. Special arrangements need confirmation; do not assume inside delivery or installation is included." },
-        ],
-        requirements: ["Supplier collection address and contact", "Destination address, postcode and address type", "Cargo description, value and packing information", "Package count, dimensions and gross weight", "Receiving access, unloading needs and target date"],
-        steps: [
-          { title: "Map the journey", body: "Review pickup, consolidation, transport and receiving requirements together." },
-          { title: "Agree responsibilities", body: "Confirm service availability, the cost breakdown and any exclusions in writing." },
-          { title: "Coordinate delivery", body: "Follow the agreed shipment milestones through final delivery and available delivery documents." },
-        ],
-        note: "DDP and other delivery options are subject to cargo and destination review. The accepted quotation sets out the included services, responsibilities and exclusions.",
-        faq: [
-          { question: "Does door-to-door automatically mean duties are included?", answer: "No. Check the agreed trade terms and quotation. Ask explicitly who handles clearance, duties and taxes instead of relying on the words 'door-to-door'." },
-          { question: "Can you deliver to a home or a business?", answer: "Both can be considered. Send the full address and explain access and unloading needs so the delivery option and any special arrangements can be confirmed before shipping." },
-        ],
-      },
+      doorToDoor: ddpService.en,
       warehousing: {
         name: "Warehousing & Consolidation", summary: "Bring supplier orders together in Shenzhen and prepare them for onward shipping.",
         fit: "Multi-supplier orders or cargo needing repacking", highlights: ["Receiving & consolidation", "Packing & labeling coordination"],
@@ -207,7 +186,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
   zh: {
     ui: {
       eyebrow: "服务项目", title: "中国出口货运与国际物流服务",
-      intro: "从中国供应商到美国、欧洲。比较运输方式，也了解运输前后可以协调的服务。",
+      intro: "主推中国至美国、加拿大、欧洲 DDP 双清包税到门，澳洲也可安排。按实际货物选择空运、海运及集货方案。",
       choiceTitle: "这票货物，需要什么服务？", choiceNote: "以下服务可以组合安排，其他目的地可按需咨询。",
       fitLabel: "适合这些需求", helpTitle: "还不确定选哪种服务？",
       helpBody: "告诉 Chris Yu 货物情况、目的地和期望送达日期，我们可以一起比较可行的方案。",
@@ -290,29 +269,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
           { question: "含电池产品可以运输吗？", answer: "请先提供产品及电池信息。可用方案取决于资料、包装、目的地和承运人的接受情况，确认前请不要直接发货。" },
         ],
       },
-      doorToDoor: {
-        name: "门到门运输", summary: "按一份确认的方案，协调供应商提货、国际运输与末端交付。",
-        fit: "希望货物送到指定地址的进口客户", highlights: ["海运或空运组合", "DDP 选项须提前审核"],
-        linkLabel: "了解门到门方案", title: "中国至海外门到门运输服务",
-        intro: "从中国供应商提货，到美国、欧洲指定地址交付。海运、空运及 DDP 选项，根据货物、目的地和收货条件审核。",
-        guideTitle: "把起点、终点和费用责任说清楚",
-        topics: [
-          { title: "从供应商交接开始", body: "请提供提货地址、供应商联系人和备货日期。如果多个供应商的货物需要合并或重新包装，也请在国际运输前提前说明。" },
-          { title: "报价要写明包含与不包含", body: "订舱前确认出口及进口清关、关税税费、目的地杂费和派送分别由谁负责。DDP 按每票货物审核；仅写“门到门”，不代表所有费用无条件包含。" },
-          { title: "确认实际收货条件", body: "请说明住宅或商业地址，以及卸货、车辆通行或预约需求。特殊交付须提前确认，不应默认包含入户搬运或安装。" },
-        ],
-        requirements: ["供应商提货地址和联系人", "目的地地址、邮编及地址类型", "品名、货值及包装情况", "包裹件数、尺寸和毛重", "收货通行条件、卸货需求及目标日期"],
-        steps: [
-          { title: "梳理全程需求", body: "一起核对提货、集货、运输与收货条件。" },
-          { title: "明确服务责任", body: "书面确认可用服务、费用明细和不包含的项目。" },
-          { title: "跟进最终交付", body: "按约定跟进运输节点至交付，并提供可获得的交付资料。" },
-        ],
-        note: "DDP 及其他交付方案须根据货物和目的地审核。接受的报价应明确服务内容、责任分工和不包含的项目。",
-        faq: [
-          { question: "门到门就一定包含关税吗？", answer: "不是。请核对约定的贸易条款和报价，明确由谁负责清关及关税税费，不要仅凭“门到门”判断。" },
-          { question: "可以送到住宅或公司吗？", answer: "两类地址都可以提出需求。请提供完整地址，并说明通行和卸货条件，以便在发货前确认派送方式及特殊安排。" },
-        ],
-      },
+      doorToDoor: ddpService.zh,
       warehousing: {
         name: "仓储与集货", summary: "把多个供应商的订单集中到深圳，为后续运输做好准备。",
         fit: "多供应商集货或需要重新包装的货物", highlights: ["收货与合并出运", "包装及贴标协调"],

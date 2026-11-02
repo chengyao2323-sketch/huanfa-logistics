@@ -19,6 +19,7 @@ const sections = [
     heading: "Duties and Customs Responsibilities",
     body: [
       "Door-to-door shipping does not automatically include all duties, taxes or destination charges. DDP options are reviewed against the cargo and destination before booking.",
+      "For cargo accepted under our confirmed DDP service, we arrange export and import clearance and handle import duties and customs taxes. The recipient does not pay those included charges again at normal delivery to the agreed address. Confirm any unloading, access or special delivery services before booking.",
       "The written quotation must identify included charges, exclusions, the responsible importer, required documentation and who pays duties and taxes. A freight service quotation does not replace the sales contract between buyer and seller.",
     ],
   },
@@ -26,6 +27,7 @@ const sections = [
     heading: "Charging Basis",
     body: [
       "Freight charges may be based on actual weight, volumetric weight, or cubic meters, whichever applies to the selected service and carrier.",
+      "Our DDP air service has no minimum shipment weight; DDP sea service starts at 12 kg. Rates depend on the actual cargo, packing and destination. Oversize or over-limit cargo is outside standard DDP channel acceptance.",
       "Oversized cargo, batteries, residential delivery, liftgate, and special handling may carry additional charges confirmed in advance. Inspection, storage, re-delivery or changes to declared cargo details may also result in additional costs under the applicable terms.",
     ],
   },

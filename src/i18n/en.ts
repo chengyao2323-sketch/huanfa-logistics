@@ -13,16 +13,16 @@ const en: I18nDict = {
     about: "About Us",
     contact: "Contact Us",
     faq: "FAQ",
-    getQuote: "Get a Quote",
+    getQuote: "Get a DDP Quote",
     openMenu: "Open menu",
   },
   hero: {
-    badge: "China → USA & Europe Freight Forwarding",
-    title: "Freight Forwarding from China to the USA & Europe",
-    subtitle: "Ocean Freight · Air Freight · Door-to-Door · Consolidation",
+    badge: "DDP Shipping · USA, Canada & Europe",
+    title: "DDP Shipping from China, Delivered to Your Door",
+    subtitle: "Customs Clearance · Import Duties & Taxes · Door Delivery",
     description:
-      "Huanfa Logistics helps businesses and individuals ship from China to the USA and Europe. We coordinate supplier pickup, Shenzhen consolidation, ocean or air freight, customs and final delivery under an agreed shipping plan.",
-    getQuote: "Get a Freight Quote",
+      "DDP air and sea shipping for businesses and personal buyers in the USA, Canada and Europe, with Australia also available. We coordinate clearance, import duties and taxes, and delivery to your agreed address. Air: no minimum shipment weight. Sea: from 12 kg.",
+    getQuote: "Get a DDP Quote",
     learnMore: "See How It Works",
   },
   stats: {
@@ -33,7 +33,7 @@ const en: I18nDict = {
   },
   services: {
     title: "Our Core Services",
-    description: "Focused freight services from China to the USA and Europe. Other destinations are available on request.",
+    description: "DDP door-to-door is our core service, supported by air freight, sea freight and Shenzhen supplier consolidation.",
     ocean: {
       title: "Ocean Freight",
       subtitle: "Ocean Freight",
@@ -45,9 +45,9 @@ const en: I18nDict = {
       desc: "Air freight and express options for general cargo and urgent shipments to the USA and Europe.",
     },
     ddp: {
-      title: "Door-to-Door Shipping",
-      subtitle: "Door-to-Door Shipping",
-      desc: "Door-to-door freight with DDP options subject to cargo and destination review. Included services, customs responsibilities and charges are confirmed in your quotation.",
+      title: "DDP Door-to-Door Shipping",
+      subtitle: "DDP Door-to-Door Shipping",
+      desc: "DDP shipping with export and import clearance, import duties and taxes, and agreed-address delivery. Confirm cargo acceptance and the written quote before dispatch.",
     },
     warehouse: {
       title: "Warehousing & Consolidation",
@@ -174,7 +174,7 @@ const en: I18nDict = {
     },
   },
   footer: {
-    description: "China freight forwarding to the USA and Europe. Factory pickup, Shenzhen consolidation, customs clearance, ocean and air freight, and final-mile delivery.",
+    description: "DDP shipping from China to the USA, Canada and Europe; Australia also available. Customs clearance, import duties and taxes, and agreed-address delivery.",
     quickLinks: "Quick Links",
     servicesTitle: "Services",
     contactTitle: "Contact Us",
@@ -190,7 +190,7 @@ const en: I18nDict = {
     faq: "FAQ",
     ocean: "Ocean Freight",
     air: "Air Freight",
-    land: "Door-to-Door Shipping",
+    land: "DDP Door-to-Door Shipping",
     warehouse: "Warehousing & Consolidation",
   },
   aboutPage: {
@@ -268,7 +268,7 @@ const en: I18nDict = {
     items: [
       {
         "question": "Do you work with businesses and private buyers?",
-        "answer": "Yes. We coordinate shipments from China for businesses and personal importers, with core routes to the USA and Europe. You do not need a company in China to ask for a quote. Destination import requirements and the responsible importer are checked before booking."
+        "answer": "Yes. Our DDP service supports businesses and personal importers, focused on the USA, Canada and Europe, with Australia also available. You do not need a company in China to ask for a quote. Cargo acceptance, destination import requirements and the responsible importer are checked before booking."
       },
       {
         "question": "What do you need for a quote?",
@@ -280,11 +280,11 @@ const en: I18nDict = {
       },
       {
         "question": "What cargo and destinations can you accept?",
-        "answer": "General cargo, furniture, lighting, machinery and e-commerce goods can be reviewed for the selected route. Acceptance depends on the product, packaging, size and destination. Please disclose batteries, liquids, powders, chemicals or other restricted characteristics before sending cargo; do not assume they are accepted."
+        "answer": "Our DDP focus is the USA, Canada and Europe, with Australia also available. General consumer goods, textiles, gifts, plastics, small hardware and ordinary printed goods can be reviewed. Declare battery-powered electronics and sensitive goods in advance. Oversize or over-limit cargo is outside standard DDP channels; confirm the actual goods, documents and destination before dispatch."
       },
       {
         "question": "Are duties and all delivery charges included?",
-        "answer": "Door-to-door does not automatically mean every cost is included. DDP options are reviewed for the cargo and destination. Your written quote should identify included duties and taxes, clearance responsibilities, delivery scope and exclusions. Inspection, storage, re-delivery or changed cargo details may result in additional costs; ask us to clarify the applicable terms before booking."
+        "answer": "For approved cargo booked under our confirmed DDP service, we arrange export and import clearance and handle import duties and customs taxes, with no repeat payment of those included charges by the recipient at normal delivery. Door-to-door alone does not specify tax responsibilities. Unloading, indoor or upstairs delivery, insurance and other special arrangements must be confirmed separately before booking."
       },
       {
         "question": "Who is responsible for customs documents?",

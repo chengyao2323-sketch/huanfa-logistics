@@ -1,8 +1,8 @@
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Door-to-Door Shipping from China",
-  description: "Door-to-door freight from China with pickup, consolidation, customs coordination, ocean or air transport, and final delivery.",
+  title: "DDP Shipping from China: Air & Sea",
+  description: "DDP air and sea shipping from China to the USA, Canada and Europe; Australia also available. Clearance, import duties, taxes and agreed-address delivery.",
   path: "/services/door-to-door",
 });
 

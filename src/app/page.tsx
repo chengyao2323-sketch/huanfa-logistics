@@ -7,6 +7,7 @@ import ShipmentHighlights from "@/components/ShipmentHighlights";
 import HeroVideo from "@/components/HeroVideo";
 import HomeServices from "@/components/HomeServices";
 import CargoProcess from "@/components/CargoProcess";
+import DdpOverview from "@/components/DdpOverview";
 export default function HomePage() {
  const t = useT();
  const { locale } = useI18n();
@@ -65,6 +66,8 @@ export default function HomePage() {
 
 <div id="verify" className="border-b border-gray-100 bg-white"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-5 text-sm sm:px-6 lg:px-8"><span className="font-semibold text-brand-800">{locale === "zh" ? "深圳货物操作 · 企业与个人进口服务" : "Shenzhen cargo operations · Business & personal imports"}</span><Link href="/about#verify" className="inline-flex min-h-11 items-center font-medium text-brand-600 hover:underline">{locale === "zh" ? "查看公司信息与付款说明 →" : "Company details & payment information →"}</Link></div></div>
 
+<DdpOverview />
+
 {/* Customer types */}
       <section className="bg-white py-12 lg:py-16" id="who-we-ship-for">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -81,8 +84,8 @@ export default function HomePage() {
               <div className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-600">{locale === "zh" ? "企业客户" : "For Businesses"}</div>
               <h3 className="mb-4 text-2xl font-bold text-brand-800">{locale === "zh" ? "进口商、批发商、零售商与电商品牌" : "Importers, wholesalers, retailers & e-commerce brands"}</h3>
               <p className="mb-6 text-sm leading-relaxed text-gray-600">{locale === "zh" ? "支持供应商提货、集货、海运或空运、清关协调及末端派送。" : "Supplier pickup, consolidation, ocean or air freight, customs coordination, and final delivery."}</p>
-              <Link href="/services" className="inline-flex rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
-                {locale === "zh" ? "查看企业运输服务" : "Business Shipping"}
+              <Link href="/services/door-to-door" className="inline-flex rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
+                {locale === "zh" ? "企业 DDP 运输方案" : "Business DDP Shipping"}
               </Link>
             </div>
             <div className="rounded-2xl border border-brand-100 bg-brand-50 p-8">
@@ -101,7 +104,7 @@ export default function HomePage() {
 <section className="bg-brand-50 py-10" aria-labelledby="usa-guide-title">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <h2 id="usa-guide-title" className="text-2xl font-bold text-brand-800">{locale === "zh" ? "计划从中国运货到美国？" : "Planning a shipment from China to the USA?"}</h2>
-    <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{locale === "zh" ? "比较整柜、拼箱、空运和集货方案，了解报价范围与住宅派送，并查看已完成的加州和夏威夷案例。" : "Compare FCL, LCL, air freight and consolidation. Review quote inclusions, residential delivery needs and completed shipments to California and Hawaii."}</p>
+    <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{locale === "zh" ? "了解中国到美国 DDP 包税到门、海运和空运选择，确认清关税费、住宅派送范围，并查看加州和夏威夷的真实运输案例。" : "Explore China-to-USA DDP delivery, sea and air options, import clearance and tax arrangements, residential delivery needs and real shipments to California and Hawaii."}</p>
     <Link href="/shipping-from-china-to-usa" className="mt-4 inline-flex min-h-11 items-center font-semibold text-brand-600 hover:underline">{locale === "zh" ? "查看美国运输指南 →" : "Explore China-to-USA shipping →"}</Link>
   </div>
 </section>
