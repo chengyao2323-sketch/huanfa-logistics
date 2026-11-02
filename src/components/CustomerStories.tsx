@@ -9,7 +9,32 @@ export default function CustomerStories() {
   const t = useT();
   const {locale} = useI18n();
   const [lightbox, setLightbox] = useState<{src:string;alt:string}|null>(null);
+  const caseList = [
+    {
+      id: "hawaii-express",
+      name: locale === "zh" ? "深圳至美国夏威夷 · 20 kg 快递案例" : "Shenzhen to Hawaii · 20 kg Express Shipment",
+    },
+    {
+      id: "container-shipment-case",
+      name: locale === "zh" ? "深圳至美国 · 40英尺整柜海运案例" : "Shenzhen to the USA · 40-Foot FCL Shipment",
+    },
+  ];
   return <>
+  <script type="application/ld+json" dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://huanfalogistics.com/shipment-cases#case-list",
+      name: t.homeSections.testimonials.title,
+      numberOfItems: caseList.length,
+      itemListElement: caseList.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: `https://huanfalogistics.com/shipment-cases#${item.id}`,
+      })),
+    }).replace(/</g, "\\u003c"),
+  }} />
   {/* Verified customer feedback */}
       <section className="bg-gray-50 py-16 lg:py-24" id="customer-feedback">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -23,7 +48,7 @@ export default function CustomerStories() {
           </div>
 
           <div id="hawaii-express" className="scroll-mt-28 space-y-8">
-            <h2 className="text-2xl font-bold text-brand-800">{locale === "zh" ? "深圳至美国夏威夷 · 20 kg 快递案例" : "Shenzhen to Hawaii · 20 kg Express Shipment"}</h2>
+            <h2 className="text-2xl font-bold text-brand-800">{caseList[0].name}</h2>
             <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "3天为本票从中国起运至夏威夷目的地交付的实际全程时效，并非仅航班运输时间。不代表其他货件的时效承诺；您的路线及预计全程时效将在报价时确认。" : "3 days was the actual end-to-end delivery time from dispatch in China to delivery at the Hawaii destination, including final delivery. This completed shipment is not a guarantee for other cargo; your route and estimated end-to-end timing are confirmed at quotation."}</p>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white shadow-xl lg:p-10">
