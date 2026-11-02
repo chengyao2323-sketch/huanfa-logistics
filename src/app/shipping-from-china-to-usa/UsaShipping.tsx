@@ -24,7 +24,7 @@ const content = {
     caseTitle: "Completed shipments, with original customer feedback",
     cases: [
       { title: "Shenzhen → Roseville, California", body: "40-foot FCL carrying furniture, lighting and other goods, July 2026. Actual end-to-end delivery: 15 days from dispatch in China to delivery at the US destination, including the ocean journey and final delivery.", href: "/shipment-cases#container-shipment-case", link: "See loading photos and customer feedback" },
-      { title: "Shenzhen → Hawaii", body: "20 kg general cargo sent by UPS, August 2026. Actual end-to-end delivery: 3 days from dispatch in China to delivery at the Hawaii destination, including final delivery.", href: "/shipment-cases#hawaii-express", link: "See packaging and customer feedback" },
+      { title: "Shenzhen → Hawaii", body: "20 kg general cargo shipped by UPS under a DDP arrangement, August 2026. Clearance, import duties and taxes, and agreed-address delivery were handled. Actual end-to-end delivery: 3 days from dispatch in China, including clearance and final delivery.", href: "/shipment-cases#hawaii-express", link: "See packaging and customer feedback" },
     ],
     caseNote: "These are completed shipment results, not promised delivery times for another booking. We confirm the available route and estimated end-to-end timing for your cargo.",
     faqTitle: "Before requesting a quote",
@@ -57,7 +57,7 @@ const content = {
     caseTitle: "已完成运输与客户原始反馈",
     cases: [
       { title: "深圳 → 美国加州 Roseville", body: "2026年7月，40英尺整柜，家具、灯具及其他货物。从中国发运至美国目的地交付，本票实际全程15天，包含海运及末端派送。", href: "/shipment-cases#container-shipment-case", link: "查看装柜照片及客户反馈" },
-      { title: "深圳 → 夏威夷", body: "2026年8月，UPS运输20 kg普货。从中国发运至夏威夷目的地交付，本票实际全程3天，包含末端派送。", href: "/shipment-cases#hawaii-express", link: "查看包装与客户反馈" },
+      { title: "深圳 → 夏威夷", body: "2026年8月，20 kg 普货通过 UPS 按 DDP 方案运输，统一安排清关、进口关税税费及约定地址派送。从中国发运至夏威夷交付，本票实际全程3天，包含清关与末端派送。", href: "/shipment-cases#hawaii-express", link: "查看包装与客户反馈" },
     ],
     caseNote: "以上为已完成货物的实际结果，并非其他订单的时效承诺。可用线路和预计全程时效按具体货物确认。",
     faqTitle: "询价前常见问题",

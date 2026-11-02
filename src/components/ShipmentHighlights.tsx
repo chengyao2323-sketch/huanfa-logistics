@@ -7,7 +7,7 @@ export default function ShipmentHighlights() {
   const { locale } = useI18n();
   const zh = locale === "zh";
   const cases = [
-    { id: "hawaii-express", title: zh ? "深圳 → 美国夏威夷" : "Shenzhen → Hawaii, USA", service: zh ? "普通货物 · 20 kg · UPS 快递" : "General cargo · 20 kg · UPS Express", date: zh ? "2026年8月" : "August 2026", time: zh ? "3天" : "3 days", quote: zh ? "我非常欣赏你的诚信和专业。" : "I truly appreciate your honesty and professionalism.", customer: "Brian S." },
+    { id: "hawaii-express", title: zh ? "深圳 → 美国夏威夷" : "Shenzhen → Hawaii, USA", service: zh ? "DDP 包税到门 · 20 kg 普货 · UPS" : "DDP delivery · 20 kg general cargo · UPS", date: zh ? "2026年8月" : "August 2026", time: zh ? "3天" : "3 days", quote: zh ? "我非常欣赏你的诚信和专业。" : "I truly appreciate your honesty and professionalism.", customer: "Brian S." },
     { id: "container-shipment-case", title: zh ? "深圳 → 美国加州" : "Shenzhen → California, USA", service: zh ? "家具、灯具等 · 40英尺整柜 · 海运快船" : "Furniture, lighting & more · 40-foot FCL · Fast ocean service", date: zh ? "2026年7月" : "July 2026", time: zh ? "15天" : "15 days", quote: zh ? "我还有更多业务交给你。" : "I have more business for you", customer: zh ? "美国客户" : "US customer" },
   ];
   return <section id="customer-feedback" className="bg-white py-14 lg:py-16">

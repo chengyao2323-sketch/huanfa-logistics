@@ -12,7 +12,7 @@ export default function CustomerStories() {
   const caseList = [
     {
       id: "hawaii-express",
-      name: locale === "zh" ? "深圳至美国夏威夷 · 20 kg 快递案例" : "Shenzhen to Hawaii · 20 kg Express Shipment",
+      name: locale === "zh" ? "深圳至美国夏威夷 · 20 kg DDP 包税到门案例" : "Shenzhen to Hawaii · 20 kg DDP Shipment",
     },
     {
       id: "container-shipment-case",
@@ -49,7 +49,12 @@ export default function CustomerStories() {
 
           <div id="hawaii-express" className="scroll-mt-28 space-y-8">
             <h2 className="text-2xl font-bold text-brand-800">{caseList[0].name}</h2>
-            <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "3天为本票从中国起运至夏威夷目的地交付的实际全程时效，并非仅航班运输时间。不代表其他货件的时效承诺；您的路线及预计全程时效将在报价时确认。" : "3 days was the actual end-to-end delivery time from dispatch in China to delivery at the Hawaii destination, including final delivery. This completed shipment is not a guarantee for other cargo; your route and estimated end-to-end timing are confirmed at quotation."}</p>
+            <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "2026年8月，焕发为客户安排深圳至美国夏威夷的 DDP 双清包税到门，20 kg 普货通过 UPS 运输，出口及进口清关、进口关税税费与约定地址派送统一安排。3天为本票从中国起运至目的地交付的实际全程时效，包含清关与末端派送，并非仅航班运输时间。不代表其他货件的时效承诺；您的路线及预计全程时效将在报价时确认。" : "In August 2026, Huanfa arranged DDP shipping for 20 kg of general cargo from Shenzhen to Hawaii via UPS, coordinating export and import clearance, import duties and taxes, and delivery to the agreed address. The actual journey took 3 days from dispatch in China to delivery in Hawaii, including customs clearance and final delivery—not just flight time. This completed shipment is not a guarantee for other cargo; your route and estimated end-to-end timing are confirmed at quotation."}</p>
+            <aside className="rounded-2xl border border-brand-100 bg-white p-6">
+              <h3 className="text-lg font-bold text-brand-800">{locale === "zh" ? "这票 DDP 为客户解决了什么？" : "What did this DDP arrangement cover?"}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{locale === "zh" ? "客户无需分别对接国际运输、进口清关和末端派送；焕发按本票方案统一协调清关与进口税费，收件人签收时无需重复支付已包含的关税税费。下方打包照片与原始聊天记录展示本票的包装准备及客户体验。" : "The customer did not need to coordinate international transport, import clearance and final delivery separately. Huanfa coordinated clearance and import taxes under this booking; the recipient did not pay the included duties and taxes again at delivery. The packing photos and original messages below document shipment preparation and the customer experience."}</p>
+              <Link href="/services/door-to-door" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-brand-700 hover:underline">{locale === "zh" ? "了解 DDP 服务范围与报价要求 →" : "Explore DDP scope and quote requirements →"}</Link>
+            </aside>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white shadow-xl lg:p-10">
                 <svg className="mb-5 h-9 w-9 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

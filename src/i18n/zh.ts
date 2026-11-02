@@ -145,11 +145,12 @@ const zh: I18nDict = {
       shipmentTitle: "对应出货记录",
       shipmentItems: [
         { label: "路线", value: "中国深圳 → 美国夏威夷" },
-        { label: "运输方式", value: "UPS" },
+        { label: "承运渠道", value: "UPS" },
         { label: "货物", value: "普通货物 · 20KG" },
         { label: "状态", value: "已签收" },
         { label: "全程运输时效", value: "3天" },
         { label: "出货月份", value: "2026年8月" },
+        { label: "交付方案", value: "DDP 双清包税到门" },
         ],
         messagesTitle: "客户原始聊天反馈",
         messagesNote: "完整保留三张客户原始聊天截图",

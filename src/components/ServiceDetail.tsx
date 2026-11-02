@@ -86,7 +86,7 @@ export default function ServiceDetail({ service }: { service: ServiceKey }) {
           </aside>
           {service === "warehousing" && <ServiceProofPhotos />}
           {service === "seaFreight" && <Link href="/shipment-cases#container-shipment-case" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实整柜案例：深圳 → 美国加州 · 40英尺整柜 →" : "See a real FCL shipment: Shenzhen → California, USA · 40-ft container →"}</Link>}
-          {service === "airFreight" && <Link href="/shipment-cases#hawaii-express" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实快递案例：深圳 → 夏威夷 · UPS 20 kg · 本票全程3天 →" : "See a completed express shipment: Shenzhen → Hawaii · UPS 20 kg · 3 days end to end for this shipment →"}</Link>}
+          {(service === "airFreight" || service === "doorToDoor") && <Link href="/shipment-cases#hawaii-express" className="mt-6 block rounded-xl border border-brand-100 bg-brand-50 p-5 text-sm font-semibold leading-6 text-brand-800 hover:underline">{locale === "zh" ? "查看真实 DDP 案例：深圳 → 夏威夷 · UPS 20 kg · 本票全程3天 →" : "See a completed DDP shipment: Shenzhen → Hawaii · UPS 20 kg · 3 days end to end for this shipment →"}</Link>}
         </div>
         <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6" aria-labelledby="service-quote-title">
           <h2 id="service-quote-title" className="mb-5 text-xl font-bold text-brand-800">{ui.quoteTitle}</h2>

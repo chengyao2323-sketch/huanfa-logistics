@@ -145,11 +145,12 @@ const en: I18nDict = {
       shipmentTitle: "Shipment connected to this feedback",
       shipmentItems: [
         { label: "Route", value: "Shenzhen, China → Hawaii, USA" },
-        { label: "Service", value: "UPS" },
+        { label: "Carrier", value: "UPS" },
         { label: "Cargo", value: "General cargo · 20 kg" },
         { label: "Status", value: "Delivered" },
         { label: "End-to-end delivery time", value: "3 days" },
         { label: "Shipment month", value: "August 2026" },
+        { label: "Delivery arrangement", value: "DDP · duties and taxes handled" },
         ],
         messagesTitle: "Original customer messages",
         messagesNote: "All three original screenshots retained",

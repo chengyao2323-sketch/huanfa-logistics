@@ -26,8 +26,8 @@ const copy = {
     pricing: "There is no universal DDP price per kg. Product classification, value, dimensions, weight, route and destination all matter. Send accurate cargo details so the quote covers the correct customs and delivery scope.",
     sources: "Rules and shipment preparation",
     sourceIntro: "Service limits above are Huanfa's booking policies. For the underlying trade and handling rules, consult the issuing organizations:",
-    evidence: "See actual shipment handling and customer feedback",
-    evidenceNote: "These records show completed operations; they do not establish DDP terms or a delivery-time promise for another shipment.",
+    evidence: "See our Shenzhen-to-Hawaii DDP case: 20 kg via UPS",
+    evidenceNote: "This August 2026 DDP shipment arrived in 3 days from dispatch in China, including clearance and final delivery. That is the actual result for this shipment; other routes and delivery estimates need confirmation.",
     cta: "Send product details for a DDP quote",
   },
   zh: {
@@ -52,8 +52,8 @@ const copy = {
     pricing: "DDP 没有适用于所有货物的统一公斤价。商品归类、货值、尺寸、重量、线路及目的地共同影响报价。请提供真实完整的货物资料，以核对清关、税费与派送范围。",
     sources: "规则来源与发货准备",
     sourceIntro: "本页起运门槛及承接范围属于焕发的业务政策；贸易及运输规则可查阅发布机构的说明：",
-    evidence: "查看实际货物操作及客户反馈",
-    evidenceNote: "案例展示已完成的操作，不直接代表该票采用 DDP 条款，也不构成其他订单的时效承诺。",
+    evidence: "查看深圳至夏威夷 DDP 案例：20 kg 普货 · UPS",
+    evidenceNote: "2026年8月这票 DDP 货物从中国发运至目的地交付实际3天，包含清关与末端派送。该时效仅代表本票，其他线路与预计时效需按货物确认。",
     cta: "提供货物资料，获取 DDP 报价",
   },
 };
@@ -100,7 +100,7 @@ export function DdpReferences() {
       <li><a className="underline underline-offset-4" href="https://www.iata.org/en/programs/cargo/dangerous-goods/lithium-batteries/">IATA — {locale === "zh" ? "电池航空运输指导" : "Battery air transport guidance"}</a></li>
       <li><a className="underline underline-offset-4" href="https://www.ippc.int/en/publications/640/">IPPC — ISPM 15 / {locale === "zh" ? "国际贸易中的木质包装" : "Wood packaging in international trade"}</a></li>
     </ul>
-    <Link href="/shipment-cases" className="mt-6 inline-block text-sm font-semibold text-brand-700 underline underline-offset-4">{c.evidence} →</Link>
+    <Link href="/shipment-cases#hawaii-express" className="mt-6 inline-block text-sm font-semibold text-brand-700 underline underline-offset-4">{c.evidence} →</Link>
     <p className="mt-2 text-xs leading-6 text-slate-500">{c.evidenceNote}</p>
     <Link href="/contact" className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-brand-600 px-5 py-3 text-sm font-bold text-white hover:bg-brand-700">{c.cta} →</Link>
   </section>;
