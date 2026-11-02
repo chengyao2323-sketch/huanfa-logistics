@@ -6,7 +6,7 @@ import { useT } from "@/i18n";
 import styles from "./OperationsGallery.module.css";
 
 const photos = [
-  { src: "/operations/warehouse-exterior.webp", label: "warehouse1", position: "50% 50%" },
+  { src: "/operations/warehouse-entrance-fuyong.jpg", label: "warehouse1", position: "50% 50%" },
   { src: "/operations/container-loading.webp", label: "warehouse2", position: "50% 50%" },
   { src: "/operations/warehouse-operations.webp", label: "team", position: "50% 50%" },
   { src: "/operations/warehouse-storage.jpg", label: "storage", position: "50% 48%" },
