@@ -10,6 +10,21 @@ export default function ServicesOverview() {
   const { ui, services } = servicesContent[locale];
 
   return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": "https://huanfalogistics.com/services#services",
+        name: ui.title,
+        numberOfItems: serviceOrder.length,
+        itemListElement: serviceOrder.map((key, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: services[key].name,
+          url: `https://huanfalogistics.com${servicePaths[key]}`,
+        })),
+      }).replace(/</g, "\\u003c"),
+    }} />
     <header className="bg-brand-900 text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
         <p className="mb-3 text-xs font-bold tracking-[0.18em] text-accent-500">{ui.eyebrow}</p>

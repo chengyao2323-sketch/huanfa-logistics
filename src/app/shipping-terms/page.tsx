@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Shipping Terms",
-  description: "Shipping scope, customs responsibilities, charges and claims information for Huanfa Logistics.",
-  alternates: { canonical: "/shipping-terms" },
-};
+  description: "Review Huanfa Logistics shipping terms for service scope, customs duties, freight charges, residential delivery, cargo insurance and claims.",
+  path: "/shipping-terms",
+});
 
 const sections = [
   {

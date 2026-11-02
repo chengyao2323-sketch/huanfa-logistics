@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy",
-  description: "How Huanfa International Logistics collects, uses, and protects your information.",
-  alternates: { canonical: "/privacy" },
-};
+  description: "Read how Huanfa Logistics collects and uses website and freight inquiry information, handles data sharing, and responds to privacy requests.",
+  path: "/privacy",
+});
 
 const sections = [
   {

@@ -8,6 +8,18 @@ export default function FaqPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": "https://huanfalogistics.com/faq#faq",
+          mainEntity: t.faqPage.items.map(item => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }).replace(/</g, "\\u003c"),
+      }} />
       <section className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-2xl">

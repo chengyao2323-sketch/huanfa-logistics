@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Cookie Policy",
-  description: "How Huanfa International Logistics uses cookies on its website.",
-  alternates: { canonical: "/cookies" },
-};
+  description: "Learn how the Huanfa Logistics website uses browser storage, Cloudflare performance statistics and security cookies, and how to manage preferences.",
+  path: "/cookies",
+});
 
 const sections = [
   {

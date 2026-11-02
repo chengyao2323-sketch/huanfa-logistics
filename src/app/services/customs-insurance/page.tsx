@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Customs Coordination & Cargo Insurance",
-  description: "Coordinate import and export documents and request cargo insurance before shipping from China. Confirm responsibilities, charges and cover with Huanfa Logistics.",
+  description: "Coordinate customs documents and request cargo insurance before shipping from China. Confirm clearance responsibilities, charges and insurance cover.",
   path: "/services/customs-insurance",
 });
 

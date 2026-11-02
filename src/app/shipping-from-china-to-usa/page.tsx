@@ -2,8 +2,8 @@ import { createPageMetadata } from "@/lib/seo";
 import UsaShipping from "./UsaShipping";
 
 export const metadata = createPageMetadata({
-  title: "Shipping from China to USA: Sea, Air & Door Delivery",
-  description: "Plan China-to-USA shipping with Huanfa Logistics: supplier pickup, Shenzhen consolidation, sea or air freight and door delivery. See real shipments and request a quote.",
+  title: "China to USA Shipping: Sea, Air & Door",
+  description: "Plan China-to-USA shipping with supplier pickup, Shenzhen consolidation, sea or air freight and door delivery. Review real shipments and request a quote.",
   path: "/shipping-from-china-to-usa",
 });
 
