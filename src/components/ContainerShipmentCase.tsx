@@ -116,7 +116,7 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
             return <figure key={file} className="min-w-0">
               <button type="button" onClick={() => onOpen(image)} aria-label={`${image.alt} · ${copy.enlarge}`}
                 className="block aspect-[3/4] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500">
-                <Image {...image} width={3024} height={4032} className="h-full w-full rounded-xl object-contain" sizes="(max-width: 1024px) 50vw, 30vw" />
+                <Image {...image} width={1536} height={2048} className="h-full w-full rounded-xl object-contain" sizes="(max-width: 1024px) 50vw, 30vw" />
               </button>
               <figcaption className="mt-2 text-center text-xs text-gray-500">{image.alt}</figcaption>
             </figure>;
