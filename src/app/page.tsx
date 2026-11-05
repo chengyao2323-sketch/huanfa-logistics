@@ -64,7 +64,7 @@ export default function HomePage() {
         </div>
       </section>
 
-<div id="verify" className="border-b border-gray-100 bg-white"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-5 text-sm sm:px-6 lg:px-8"><span className="font-semibold text-brand-800">{locale === "zh" ? "深圳货物操作 · 企业与个人进口服务" : "Shenzhen cargo operations · Business & personal imports"}</span><Link href="/about#verify" className="inline-flex min-h-11 items-center font-medium text-brand-600 hover:underline">{locale === "zh" ? "查看公司信息与付款说明 →" : "Company details & payment information →"}</Link></div></div>
+<div id="verify" className="border-b border-gray-100 bg-white"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-5 text-sm sm:px-6 lg:px-8"><span className="font-semibold text-brand-800">{locale === "zh" ? "深圳货物操作 · 企业与个人进口服务 · 默认按 DDP 报价" : "Shenzhen cargo operations · Business & personal imports · DDP by default"}</span><Link href="/about#verify" className="inline-flex min-h-11 items-center font-medium text-brand-600 hover:underline">{locale === "zh" ? "查看公司信息与付款说明 →" : "Company details & payment information →"}</Link></div></div>
 
 <DdpOverview />
 
