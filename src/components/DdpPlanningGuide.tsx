@@ -96,9 +96,9 @@ export function DdpReferences() {
     <h2 id="ddp-references-title" className="text-lg font-bold text-brand-800">{c.sources}</h2>
     <p className="mt-3 text-sm leading-7 text-slate-600">{c.sourceIntro}</p>
     <ul className="mt-3 space-y-2 text-sm text-brand-700">
-      <li><a className="underline underline-offset-4" href="https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/">ICC Academy — DAP &amp; DDP / Incoterms® 2020</a></li>
-      <li><a className="underline underline-offset-4" href="https://www.iata.org/en/programs/cargo/dangerous-goods/lithium-batteries/">IATA — {locale === "zh" ? "电池航空运输指导" : "Battery air transport guidance"}</a></li>
-      <li><a className="underline underline-offset-4" href="https://www.ippc.int/en/publications/640/">IPPC — ISPM 15 / {locale === "zh" ? "国际贸易中的木质包装" : "Wood packaging in international trade"}</a></li>
+      <li><a className="underline underline-offset-4" href="https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/" target="_blank" rel="noopener noreferrer" aria-label="ICC Academy — DAP & DDP / Incoterms 2020（在新标签页打开）">ICC Academy — DAP &amp; DDP / Incoterms® 2020</a></li>
+      <li><a className="underline underline-offset-4" href="https://www.iata.org/en/programs/cargo/dangerous-goods/lithium-batteries/" target="_blank" rel="noopener noreferrer" aria-label={`IATA — ${locale === "zh" ? "电池航空运输指导" : "Battery air transport guidance"}（在新标签页打开）`}>IATA — {locale === "zh" ? "电池航空运输指导" : "Battery air transport guidance"}</a></li>
+      <li><a className="underline underline-offset-4" href="https://www.ippc.int/en/publications/640/" target="_blank" rel="noopener noreferrer" aria-label={`IPPC — ISPM 15 / ${locale === "zh" ? "国际贸易中的木质包装" : "Wood packaging in international trade"}（在新标签页打开）`}>IPPC — ISPM 15 / {locale === "zh" ? "国际贸易中的木质包装" : "Wood packaging in international trade"}</a></li>
     </ul>
     <Link href="/shipment-cases#hawaii-express" className="mt-6 inline-block text-sm font-semibold text-brand-700 underline underline-offset-4">{c.evidence} →</Link>
     <p className="mt-2 text-xs leading-6 text-slate-500">{c.evidenceNote}</p>
