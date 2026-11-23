@@ -269,59 +269,59 @@ const en: I18nDict = {
     items: [
       {
         "question": "Do you work with businesses and private buyers?",
-        "answer": "Yes. Our DDP service supports businesses and personal importers, focused on the USA, Canada and Europe, with Australia also available. You do not need a company in China to ask for a quote. Cargo acceptance, destination import requirements and the responsible importer are checked before booking."
+        "answer": "Yes. We help both businesses and private buyers ship from China. Our main DDP destinations are the USA, Canada and Europe, and we can also arrange Australia shipments. Tell us what you are buying and where it needs to go. We will check the import requirements with you before booking."
       },
       {
         "question": "What do you need for a quote?",
-        "answer": "Start with your name and an email address or WhatsApp number. Add the supplier city, destination country and ZIP/postcode, product list, packed weight and dimensions if known. If details are missing, send product photos or a supplier packing list by email or WhatsApp; we can identify what is still needed."
+        "answer": "Send us what you are shipping, the supplier city and the delivery postcode, plus your email or WhatsApp number. Packed weight and dimensions help us work out the quote. If you do not have those yet, send product photos or the supplier packing list and we will help you identify the missing details."
       },
       {
         "question": "Can you collect from multiple suppliers?",
-        "answer": "We can coordinate supplier pickup or delivery to our Shenzhen operation and consolidate cargo. Pickup locations, storage, packing requirements and any related charges are confirmed in the quotation before goods are sent."
+        "answer": "Yes. Send us your suppliers’ locations and what you are buying. We can arrange collection and combine the goods in Shenzhen before shipping. We will confirm pickup, storage and packing costs with you first."
       },
       {
         "question": "What cargo and destinations can you accept?",
-        "answer": "Our DDP focus is the USA, Canada and Europe, with Australia also available. General consumer goods, textiles, gifts, plastics, small hardware and ordinary printed goods can be reviewed. Declare battery-powered electronics and sensitive goods in advance. Oversize or over-limit cargo is outside standard DDP channels; confirm the actual goods, documents and destination before dispatch."
+        "answer": "Our main DDP routes serve the USA, Canada and Europe, with Australia also available. We can review everyday goods such as textiles, gifts, plastic products, small hardware and printed goods. Send photos and a product list first, especially for batteries or sensitive cargo. Oversized goods need a separate shipping review."
       },
       {
         "question": "Are duties and all delivery charges included?",
-        "answer": "For approved cargo booked under our confirmed DDP service, we arrange export and import clearance and handle import duties and customs taxes, with no repeat payment of those included charges by the recipient at normal delivery. Door-to-door alone does not specify tax responsibilities. Unloading, indoor or upstairs delivery, insurance and other special arrangements must be confirmed separately before booking."
+        "answer": "With our agreed DDP service, we arrange export and import clearance and handle the import duties and customs taxes included in your quote. You will not pay those same charges again at normal delivery. Tell us if you need unloading, indoor delivery, upstairs delivery or insurance so we can price those separately."
       },
       {
         "question": "Who is responsible for customs documents?",
-        "answer": "We coordinate customs arrangements within the agreed service scope. Before booking, confirm who acts as importer, who provides declarations and product documents, and who pays duties and taxes. The shipper and recipient must provide accurate information; customs release remains subject to the authorities."
+        "answer": "Send us your supplier’s packing list, invoice and product details to start. We will explain which documents you and your supplier need to provide, who will act as importer and who handles taxes. Customs may request further information, so accurate product details help avoid delays."
       },
       {
         "question": "How long will shipping take?",
-        "answer": "We confirm an estimated schedule for your route and cargo at quotation. Ask whether the estimate is port-to-port, airport-to-airport or includes pickup, customs and final delivery. Times shown in our real cases describe those shipments only, not a guaranteed schedule for future bookings."
+        "answer": "Timing depends on the route, shipping method and delivery address. One July 2026 shipment from Shenzhen to Roseville, California took 15 days from vessel departure to signed delivery, including the overseas warehouse transfer and final truck delivery. Pickup, consolidation and waiting for departure in China came before that period. We will give you an estimate for your own shipment when we quote."
       },
       {
         "question": "Does home delivery include unloading or installation?",
-        "answer": "Residential delivery must be checked against the destination and access conditions. Unloading, liftgate, upstairs or indoor delivery, assembly and installation are not automatically included. Tell us about road access, stairs and unloading equipment so we can confirm what can be arranged and priced."
+        "answer": "Tell us what help you need at the address. Unloading, a liftgate, carrying goods indoors or upstairs, assembly and installation each need to be agreed separately. Send your postcode and details of narrow roads, stairs or unloading equipment so we can check the delivery options and cost."
       },
       {
         "question": "Can you ship battery-powered products?",
-        "answer": "Please share the battery type, capacity, whether it is installed or separate, and available compliance documents. Acceptance is subject to document review, route restrictions and carrier approval. Do not send battery cargo until we confirm acceptance."
+        "answer": "Some battery-powered products can be shipped, depending on the battery and route. Send the product details, battery type and capacity, whether the battery is installed or separate, and any safety documents you have. Wait for our confirmation before sending the goods to us."
       },
       {
         "question": "Can you arrange Amazon FBA shipments?",
-        "answer": "We coordinate FBA first-mile shipments to the USA and Europe. Send your shipment plan, assigned warehouse, labels and packing requirements. Appointment, preparation and delivery services are confirmed for that shipment; do not assume all warehouses or preparation tasks are covered."
+        "answer": "Yes, we arrange Amazon FBA first-mile shipping to the USA and Europe. Send your shipment plan, assigned warehouse, labels and packing requirements. We will confirm which preparation, appointment and delivery services your shipment needs and what the quote covers."
       },
       {
         "question": "How do I get shipment updates?",
-        "answer": "Contact Chris Yu by WhatsApp or email with your shipment reference. We share confirmed milestones and available carrier updates, photos or delivery documents. The website does not provide a live tracking system."
+        "answer": "Message Chris Yu on WhatsApp or email with your shipment reference. We will check the latest confirmed shipping updates and share available photos or delivery documents. You can ask us directly when you want an update."
       },
       {
         "question": "What about cargo insurance and damage claims?",
-        "answer": "Ask about insurance before shipment and confirm the policy, insured value, exclusions and any deductible. If you notice damage or loss, contact us promptly, preferably within 24 hours; retain packaging, photos and delivery records. This notification request does not replace the deadlines in the applicable policy or transport terms. We assist with documentation; claim approval and compensation depend on the applicable terms."
+        "answer": "Ask us about insurance before shipping so we can explain the cover, insured value, exclusions and deductible. If goods arrive damaged or go missing, contact us as soon as possible, ideally within 24 hours, and keep photos, packaging and delivery records. We will help prepare the claim documents. Policy deadlines and terms determine the claim and any payment."
       },
       {
         "question": "How can I verify your company?",
-        "answer": "Our About Us page lists the company name, unified social credit code, office information and contact details. You can also review operating photos and real shipment cases. Contact us if you need additional verification information."
+        "answer": "You can find our company name, Chinese registration number, office details and contacts on the About Us page. Our warehouse photos and shipment cases also show our work. If you need more information to check the company, ask Chris Yu."
       },
       {
         "question": "How should I confirm payment details?",
-        "answer": "Use the officially designated company bank account stated in the confirmed payment instructions. Check the beneficiary against our company information. Independently verify any unexpected change by contacting Chris Yu using the WhatsApp number already listed on this website; do not rely only on a new email or invoice."
+        "answer": "Check the beneficiary against our company details and use the company bank account in your confirmed payment instructions. If an email or invoice gives you a different account, contact Chris Yu through the WhatsApp number on this website to verify it before paying."
       }
     ],
     cta: {
