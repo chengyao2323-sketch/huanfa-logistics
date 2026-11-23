@@ -56,11 +56,27 @@ export default function AboutPage() {
               <p className="text-gray-700 leading-relaxed mb-4">{t.aboutPage.story.p2}</p>
               <p className="text-gray-700 leading-relaxed">{t.aboutPage.story.p3}</p>
             </div>
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 bg-brand-50 text-brand-600 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
+            <div id="who-we-are" className="relative isolate order-1 lg:order-2 self-stretch overflow-hidden rounded-2xl bg-brand-900 text-white min-h-[720px] scroll-mt-28">
+              <video
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                poster="/about-warehouse-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="auto"
+                aria-label={locale === "zh" ? "深圳仓库实拍，13秒" : "Inside our Shenzhen warehouse, 13 seconds"}
+              >
+                <source src="/about-warehouse.webm" type="video/webm" />
+                <source src="/about-warehouse.mp4" type="video/mp4" />
+              </video>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
+              <div className="relative pointer-events-none p-6 sm:p-8 lg:p-10">
+              <div className="inline-flex items-center gap-2 bg-white/15 text-white rounded-full px-4 py-1.5 text-sm font-medium mb-4">
                 {t.aboutPage.story.badge}
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-brand-800 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 {t.aboutPage.story.title.split("\n").map((line, i, arr) => (
                   <span key={i}>{line}{i < arr.length - 1 && <br/>}</span>
                 ))}
@@ -68,11 +84,12 @@ export default function AboutPage() {
               <div className="space-y-4">
                 {t.aboutPage.story.timeline.map((item) => (
                   <div key={item.year} className="flex items-start gap-3">
-                    <div className="w-20 shrink-0 text-brand-600 font-bold text-sm">{item.year}</div>
+                    <div className="w-20 shrink-0 text-white font-bold text-sm">{item.year}</div>
                     <div className="w-px h-6 bg-brand-200 mt-1"></div>
-                    <div className="text-sm text-gray-600">{item.event}</div>
+                    <div className="text-sm text-white/90">{item.event}</div>
                   </div>
                 ))}
+              </div>
               </div>
             </div>
           </div>
