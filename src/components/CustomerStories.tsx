@@ -51,8 +51,17 @@ export default function CustomerStories() {
             <h2 className="text-2xl font-bold text-brand-800">{caseList[0].name}</h2>
             <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "2026年8月，焕发为客户安排深圳至美国夏威夷的 DDP 双清包税到门，20 kg 普货通过 UPS 运输，出口及进口清关、进口关税税费与约定地址派送统一安排。3天为本票从中国起运至目的地交付的实际全程时效，包含清关与末端派送，并非仅航班运输时间。不代表其他货件的时效承诺；您的路线及预计全程时效将在报价时确认。" : "In August 2026, Huanfa arranged DDP shipping for 20 kg of general cargo from Shenzhen to Hawaii via UPS, coordinating export and import clearance, import duties and taxes, and delivery to the agreed address. The actual journey took 3 days from dispatch in China to delivery in Hawaii, including customs clearance and final delivery—not just flight time. This completed shipment is not a guarantee for other cargo; your route and estimated end-to-end timing are confirmed at quotation."}</p>
             <aside className="rounded-2xl border border-brand-100 bg-white p-6">
-              <h3 className="text-lg font-bold text-brand-800">{locale === "zh" ? "这票 DDP 为客户解决了什么？" : "What did this DDP arrangement cover?"}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{locale === "zh" ? "客户无需分别对接国际运输、进口清关和末端派送；焕发按本票方案统一协调清关与进口税费，收件人签收时无需重复支付已包含的关税税费。下方打包照片与原始聊天记录展示本票的包装准备及客户体验。" : "The customer did not need to coordinate international transport, import clearance and final delivery separately. Huanfa coordinated clearance and import taxes under this booking; the recipient did not pay the included duties and taxes again at delivery. The packing photos and original messages below document shipment preparation and the customer experience."}</p>
+              <dl className="grid gap-5 md:grid-cols-3">
+                {(locale === "zh" ? [
+                  ["客户需求", "客户需要把20 kg普货从深圳运到美国夏威夷。"],
+                  ["处理方式", "我们根据这票货物推荐 UPS DDP 到门方案，统一协调运输、清关、进口税费及末端派送。"],
+                  ["最终结果", "货物顺利签收。本票从中国起运到夏威夷交付实际用了3天，包含清关及派送。"],
+                ] : [
+                  ["Customer request", "The customer needed to ship 20 kg of general cargo from Shenzhen to Hawaii."],
+                  ["How we handled it", "We recommended a UPS DDP service and coordinated transport, customs clearance, import taxes and final delivery."],
+                  ["Delivery result", "The goods were successfully signed for. This shipment took 3 days from dispatch in China to delivery in Hawaii, including clearance and final delivery."],
+                ]).map(([title, body]) => <div key={title}><dt className="mb-2 font-bold text-brand-800">{title}</dt><dd className="text-sm leading-6 text-slate-600">{body}</dd></div>)}
+              </dl>
               <Link href="/services/door-to-door" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-brand-700 hover:underline">{locale === "zh" ? "了解 DDP 服务范围与报价要求 →" : "Explore DDP scope and quote requirements →"}</Link>
             </aside>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { I18nProvider } from "@/i18n";
 import LangUpdater from "@/components/LangUpdater";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ConversionTracking from "@/components/ConversionTracking";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://huanfalogistics.com"),
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <I18nProvider>
           <LangUpdater />
+          <ConversionTracking />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

@@ -30,7 +30,7 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
     imageAlts: ["客户提出40英尺集装箱运输需求的聊天截图", "核对收到的灯具数量的聊天截图", "客户表示感谢并表达继续合作意愿的聊天截图"],
     packingLabel: "出货准备",
     packingTitle: "该票货物装柜实拍",
-    packingDesc: "两张现场照片记录了木箱货物装入集装箱，以及柜内木架支撑的情况。",
+    packingDesc: "我们直接到工厂装柜。现场照片记录了木箱货物装入集装箱，以及柜内木架支撑的情况。",
     photoLabels: ["装柜现场", "柜内货物与木架支撑"],
     enlarge: "点击任意图片在当前页面放大",
   } : {
@@ -55,7 +55,7 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
     imageAlts: ["Customer requesting a 40-foot container shipment", "WhatsApp conversation checking the quantity of received lighting units", "Customer expressing thanks and interest in further business"],
     packingLabel: "Shipment preparation",
     packingTitle: "Loading photos for this shipment",
-    packingDesc: "Two on-site photos show wooden crates being loaded into the container and timber bracing inside the container.",
+    packingDesc: "We arranged loading directly at the factory. These photos show the wooden crates going into the container and the timber bracing inside.",
     photoLabels: ["Container loading", "Cargo and timber bracing"],
     enlarge: "Click any image to enlarge",
   };
@@ -65,6 +65,17 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
   return (
     <article id="container-shipment-case" className="mt-16 scroll-mt-36 space-y-8 border-t border-gray-200 pt-12 lg:mt-20 lg:pt-16">
       <h2 className="text-2xl font-bold text-brand-800 lg:text-3xl">{copy.title}</h2>
+      <dl className="grid gap-5 rounded-2xl bg-white p-6 md:grid-cols-3">
+        {(zh ? [
+          ["客户需求", "客户需要把家具、灯具等货物从中国运到美国加州 Roseville，并提出使用40英尺整柜。"],
+          ["处理方式", "我们根据货物和客户需求推荐海运快船渠道，直接安排到工厂装柜，再衔接海外仓中转及卡车派送。"],
+          ["最终结果", "货物顺利签收。从开船到目的地签收共15天，包含海外仓中转及末端卡车派送。"],
+        ] : [
+          ["Customer request", "The customer wanted to ship furniture, lighting and other goods from China to Roseville, California in a 40-foot container."],
+          ["How we handled it", "We recommended a fast ocean service for the shipment and arranged container loading directly at the factory, followed by overseas warehouse transfer and truck delivery."],
+          ["Delivery result", "The shipment was successfully signed for. Vessel departure to signed delivery took 15 days, including overseas warehouse transfer and final truck delivery."],
+        ]).map(([title, body]) => <div key={title}><dt className="mb-2 font-bold text-brand-800">{title}</dt><dd className="text-sm leading-6 text-gray-600">{body}</dd></div>)}
+      </dl>
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white shadow-xl lg:p-10">
           <svg className="mb-5 h-9 w-9 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

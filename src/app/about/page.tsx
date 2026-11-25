@@ -65,11 +65,11 @@ export default function AboutPage() {
                 loop
                 playsInline
                 controls
-                preload="auto"
+                preload="metadata"
                 aria-label={locale === "zh" ? "深圳仓库实拍，13秒" : "Inside our Shenzhen warehouse, 13 seconds"}
               >
-                <source src="/about-warehouse.webm" type="video/webm" />
-                <source src="/about-warehouse.mp4" type="video/mp4" />
+                <source src="/about-warehouse-portrait.webm" type="video/webm" />
+                <source src="/about-warehouse-portrait.mp4" type="video/mp4" />
               </video>
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
               <div className="relative pointer-events-none p-6 sm:p-8 lg:p-10">

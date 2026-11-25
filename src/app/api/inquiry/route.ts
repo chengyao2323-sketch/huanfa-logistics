@@ -1,5 +1,6 @@
 ﻿import { NextRequest, NextResponse } from "next/server";
 import { sendInquiryEmail } from "@/lib/email";
+import { recordConversion } from "@/lib/conversions";
 
 export const runtime = "edge";
 
@@ -56,6 +57,7 @@ export async function POST(request: NextRequest) {
         { status: 503 }
       );
     }
+    recordConversion("inquiry_submitted", "/contact");
     return NextResponse.json({
       success: true,
       message: "Inquiry submitted successfully",

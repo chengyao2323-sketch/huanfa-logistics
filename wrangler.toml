@@ -5,6 +5,10 @@ pages_build_output_dir = ".vercel/output/static"
 
 [env.production]
 
+[[env.production.analytics_engine_datasets]]
+binding = "CONVERSIONS"
+dataset = "huanfa_conversions"
+
 [[redirects]]
 from = "/api/*"
 to = "/api/:splat"

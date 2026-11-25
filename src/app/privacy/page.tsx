@@ -20,6 +20,7 @@ const sections = [
     body: [
       "When you submit an inquiry, we may collect your company name, contact person, email, phone or WhatsApp number, origin and destination details, cargo type, weight and volume, and other information you provide about your shipment.",
       "We may also collect limited technical data such as browser type and pages visited to keep the website secure and improve its performance.",
+      "We use Cloudflare to count WhatsApp link clicks and successful inquiry submissions by page. These event records do not include your form contents, contact details, IP address or a visitor identifier. A click is counted separately from a completed inquiry.",
     ],
   },
   {
@@ -57,5 +58,5 @@ const sections = [
 ];
 
 export default function PrivacyPage() {
-  return <LegalPage title="Privacy Policy" updated="August 2026" sections={sections} />;
+  return <LegalPage title="Privacy Policy" updated="November 2026" sections={sections} />;
 }

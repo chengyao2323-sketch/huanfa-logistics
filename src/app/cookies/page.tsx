@@ -20,6 +20,7 @@ const sections = [
       "We use browser local storage to remember your language choice and session storage to remember when you dismiss the WhatsApp contact button for the current browser session. These preferences are stored on your device; they are not analytics cookies.",
       "The production website uses Cloudflare's performance analytics beacon. Cloudflare documents this analytics service as operating without analytics cookies or browser storage. Cloudflare hosting and security services may separately use security cookies when required.",
       "We do not currently run advertising tracking cookies on this website. Clicking WhatsApp opens a third-party service governed by its own privacy and storage practices.",
+      "We count WhatsApp link clicks and successfully submitted quote requests to understand which pages help visitors contact us. These event counts contain only the action and page path, without contact details, visitor IDs or URL query strings. This counting does not set cookies or use browser storage. A WhatsApp click does not mean a message was sent.",
     ],
   },
   {
@@ -37,5 +38,5 @@ const sections = [
 ];
 
 export default function CookiesPage() {
-  return <LegalPage title="Cookie Policy" updated="September 2026" sections={sections} />;
+  return <LegalPage title="Cookie Policy" updated="November 2026" sections={sections} />;
 }
