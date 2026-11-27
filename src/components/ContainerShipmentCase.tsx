@@ -65,6 +65,26 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
   return (
     <article id="container-shipment-case" className="mt-16 scroll-mt-36 space-y-8 border-t border-gray-200 pt-12 lg:mt-20 lg:pt-16">
       <h2 className="text-2xl font-bold text-brand-800 lg:text-3xl">{copy.title}</h2>
+      <div className="grid items-center gap-6 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm lg:grid-cols-[1.25fr_0.75fr] lg:p-6">
+        <div className="grid grid-cols-2 gap-3">
+          {["container-loading.jpg", "container-bracing.jpg"].map((file, index) => {
+            const image = { src: `${base}/${file}`, alt: copy.photoLabels[index] };
+            return <figure key={file} className="min-w-0">
+              <button type="button" onClick={() => onOpen(image)} aria-label={`${image.alt} · ${copy.enlarge}`}
+                className="block aspect-[3/4] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500">
+                <Image {...image} width={1536} height={2048} className="h-full w-full rounded-xl object-contain" sizes="(max-width: 1024px) 50vw, 30vw" />
+              </button>
+              <figcaption className="mt-2 text-center text-xs text-gray-500">{image.alt}</figcaption>
+            </figure>;
+          })}
+        </div>
+        <div className="p-3 lg:p-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-600">{copy.packingLabel}</p>
+          <h4 className="mt-3 text-2xl font-bold text-brand-800">{copy.packingTitle}</h4>
+          <p className="mt-4 leading-relaxed text-gray-600">{copy.packingDesc}</p>
+          <p className="mt-5 text-sm font-semibold text-brand-600">{copy.enlarge}</p>
+        </div>
+      </div>
       <dl className="grid gap-5 rounded-2xl bg-white p-6 md:grid-cols-3">
         {(zh ? [
           ["客户需求", "客户需要把家具、灯具等货物从中国运到美国加州 Roseville，并提出使用40英尺整柜。"],
@@ -120,26 +140,7 @@ export default function ContainerShipmentCase({ onOpen }: { onOpen: (image: Proo
           })}
         </div>
       </div>
-      <div className="grid items-center gap-6 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm lg:grid-cols-[1.25fr_0.75fr] lg:p-6">
-        <div className="grid grid-cols-2 gap-3">
-          {["container-loading.jpg", "container-bracing.jpg"].map((file, index) => {
-            const image = { src: `${base}/${file}`, alt: copy.photoLabels[index] };
-            return <figure key={file} className="min-w-0">
-              <button type="button" onClick={() => onOpen(image)} aria-label={`${image.alt} · ${copy.enlarge}`}
-                className="block aspect-[3/4] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500">
-                <Image {...image} width={1536} height={2048} className="h-full w-full rounded-xl object-contain" sizes="(max-width: 1024px) 50vw, 30vw" />
-              </button>
-              <figcaption className="mt-2 text-center text-xs text-gray-500">{image.alt}</figcaption>
-            </figure>;
-          })}
-        </div>
-        <div className="p-3 lg:p-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-600">{copy.packingLabel}</p>
-          <h4 className="mt-3 text-2xl font-bold text-brand-800">{copy.packingTitle}</h4>
-          <p className="mt-4 leading-relaxed text-gray-600">{copy.packingDesc}</p>
-          <p className="mt-5 text-sm font-semibold text-brand-600">{copy.enlarge}</p>
-        </div>
-      </div>
+
     </article>
   );
 }

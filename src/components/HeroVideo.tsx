@@ -12,11 +12,12 @@ export default function HeroVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    const mobile = matchMedia("(max-width: 767px)");
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
     let visible = true;
     const sync = () => {
-      if (visible && !document.hidden && !userPaused.current && !motion.matches && !connection?.saveData) {
+      if (visible && !document.hidden && !userPaused.current && !motion.matches && !connection?.saveData && !mobile.matches) {
         if (!video.getAttribute("src")) video.src = "/video/hero-logistics.mp4";
         void video.play().catch(() => setPlaying(false));
       } else video.pause();
@@ -25,7 +26,8 @@ export default function HeroVideo() {
     observer.observe(video);
     document.addEventListener("visibilitychange", sync);
     motion.addEventListener("change", sync);
-    return () => { observer.disconnect(); document.removeEventListener("visibilitychange", sync); motion.removeEventListener("change", sync); video.pause(); };
+    mobile.addEventListener("change", sync);
+    return () => { observer.disconnect(); document.removeEventListener("visibilitychange", sync); motion.removeEventListener("change", sync); mobile.removeEventListener("change", sync); video.pause(); };
   }, []);
 
   const toggle = () => {

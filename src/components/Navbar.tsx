@@ -94,6 +94,10 @@ export default function Navbar() {
             </Link>
           </div>
 
+          <div className="flex items-center gap-2 xl:hidden">
+            <Link href="/contact" onClick={() => setMenuOpen(false)} className="inline-flex min-h-11 items-center rounded-lg bg-brand-600 px-4 text-sm font-semibold text-white hover:bg-brand-700">
+              {locale === "zh" ? "获取报价" : "Get Quote"}
+            </Link>
           {/* Mobile menu button */}
           <button
             className="min-h-11 min-w-11 rounded-lg p-2 text-gray-600 hover:bg-gray-100 xl:hidden"
@@ -112,6 +116,7 @@ export default function Navbar() {
               </svg>
             )}
           </button>
+          </div>
         </div>
       </div>
 

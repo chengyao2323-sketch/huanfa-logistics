@@ -17,6 +17,7 @@ function harness(sendResult = true) {
     console: { error: (...args) => logs.push(args) },
     require: id => {
       if (id === 'next/server') return { NextResponse: { json: (body, options) => Response.json(body, options) } };
+      if (id === '@/lib/conversions') return { recordConversion: () => true };
       if (id === '@/lib/email') return { sendInquiryEmail: async body => {
         calls.push(body);
         if (sendResult instanceof Error) throw sendResult;

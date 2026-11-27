@@ -228,71 +228,7 @@ export default function ContactPage() {
     { key: "remarks", type: "text", colSpan: "sm:col-span-2", isTextarea: true, rows: 4 },
   ];
 
-  return (
-    <>
-      {/* Header */}
-      <section className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl lg:text-5xl font-extrabold mb-4">{t.contactPage.page.title}</h1>
-            <p className="text-lg text-blue-100/80">{t.contactPage.page.desc}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact form + info */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Form */}
-            <div className="lg:col-span-3 bg-white rounded-2xl border border-gray-100 p-6 lg:p-10">
-              {submitted ? (
-                /* Success state */
-                <div className="text-center py-12" role="status">
-                  <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-brand-800 mb-2">{t.contactPage.form.successTitle}</h3>
-                  <p className="text-gray-500 mb-8 max-w-md mx-auto">{t.contactPage.form.successDesc}</p>
-                  <button
-                    onClick={resetForm}
-                    className="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                    </svg>
-                    {t.contactPage.form.sendAnother}
-                  </button>
-                </div>
-              ) : (
-                <>
-                  <h2 className="text-2xl font-bold text-brand-800 mb-2">{t.contactPage.form.title}</h2>
-                  <p className="text-sm text-gray-600 mb-6">{help.intro}</p>
-
-                  {submitError && (
-                    <div role="alert" className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg text-sm">
-                      <p>{help[submitError]}</p>
-                      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3 font-semibold">
-                        <a href={emailFallback} className="underline underline-offset-4">{help.emailChris}</a>
-                        <a href={whatsappFallback} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{help.whatsappChris}</a>
-                      </div>
-                    </div>
-                  )}
-
-                  <form onSubmit={handleSubmit} className="space-y-5" noValidate aria-busy={submitting}>
-                    <fieldset disabled={submitting} className="space-y-5">
-                      <div>
-                        <label htmlFor="customerType" className="mb-1.5 block text-sm font-medium text-gray-700">{help.customerLabel}</label>
-                        <select id="customerType" name="customerType" value={customerType} onChange={(event) => { customerChanged.current = true; setCustomerType(event.target.value as typeof customerType); }} className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm focus:border-brand-400 focus:ring-2 focus:ring-brand-100 outline-none">
-                          <option value="">{help.customerUnspecified}</option>
-                          <option value="business">{help.business}</option>
-                          <option value="personal">{help.personal}</option>
-                        </select>
-                      </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      {fields.map((field) => {
+  const renderField = (field: (typeof fields)[number]) => {
                         const hint = help.hints[field.key as keyof typeof help.hints];
                         const describedBy = [hint ? `${field.key}-hint` : "", errors[field.key] ? `${field.key}-error` : ""].filter(Boolean).join(" ") || undefined;
                         return (
@@ -341,8 +277,84 @@ export default function ContactPage() {
                             <p id={`${field.key}-error`} className="mt-1 text-xs text-red-600">{errors[field.key]}</p>
                           )}
                         </div>
-                      );})}
+                      );};
+
+  return (
+    <>
+      {/* Header */}
+      <section className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl lg:text-5xl font-extrabold mb-4">{t.contactPage.page.title}</h1>
+            <p className="text-lg text-blue-100/80">{t.contactPage.page.desc}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact form + info */}
+      <section className="py-8 lg:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Form */}
+            <div className="lg:col-span-3 bg-white rounded-2xl border border-gray-100 p-6 lg:p-10">
+              {submitted ? (
+                /* Success state */
+                <div className="text-center py-12" role="status">
+                  <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-brand-800 mb-2">{t.contactPage.form.successTitle}</h3>
+                  <p className="text-gray-500 mb-8 max-w-md mx-auto">{t.contactPage.form.successDesc}</p>
+                  <button
+                    onClick={resetForm}
+                    className="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    {t.contactPage.form.sendAnother}
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold text-brand-800 mb-2">{t.contactPage.form.title}</h2>
+                  <p className="text-sm text-gray-600 mb-6">{help.intro}</p>
+
+                  {submitError && (
+                    <div role="alert" className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg text-sm">
+                      <p>{help[submitError]}</p>
+                      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3 font-semibold">
+                        <a href={emailFallback} className="underline underline-offset-4">{help.emailChris}</a>
+                        <a href={whatsappFallback} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{help.whatsappChris}</a>
+                      </div>
                     </div>
+                  )}
+
+                  <form onSubmit={handleSubmit} className="space-y-5" noValidate aria-busy={submitting}>
+                    <fieldset disabled={submitting} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {fields.filter(field => ["contactPerson", "email", "phone", "cargoType"].includes(field.key)).map(renderField)}
+                    </div>
+
+                    <details className="rounded-lg border border-gray-200 p-4">
+                      <summary className="cursor-pointer py-1 text-sm font-semibold text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600">{locale === "zh" ? "补充货物详情（选填）" : "Add shipment details (optional)"}</summary>
+                      <div className="mt-5 space-y-5">
+                      <div>
+                        <label htmlFor="customerType" className="mb-1.5 block text-sm font-medium text-gray-700">{help.customerLabel}</label>
+                        <select id="customerType" name="customerType" value={customerType} onChange={(event) => { customerChanged.current = true; setCustomerType(event.target.value as typeof customerType); }} className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm focus:border-brand-400 focus:ring-2 focus:ring-brand-100 outline-none">
+                          <option value="">{help.customerUnspecified}</option>
+                          <option value="business">{help.business}</option>
+                          <option value="personal">{help.personal}</option>
+                        </select>
+                      </div>
+
+                        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                          {fields.filter(field => !["contactPerson", "email", "phone", "cargoType"].includes(field.key)).map(renderField)}
+                        </div>
+                      </div>
+                    </details>
                     </fieldset>
 
                     <div className="pt-2">

@@ -49,7 +49,33 @@ export default function CustomerStories() {
 
           <div id="hawaii-express" className="scroll-mt-28 space-y-8">
             <h2 className="text-2xl font-bold text-brand-800">{caseList[0].name}</h2>
-            <p className="text-sm leading-6 text-gray-500">{locale === "zh" ? "2026年8月，焕发为客户安排深圳至美国夏威夷的 DDP 双清包税到门，20 kg 普货通过 UPS 运输，出口及进口清关、进口关税税费与约定地址派送统一安排。3天为本票从中国起运至目的地交付的实际全程时效，包含清关与末端派送，并非仅航班运输时间。不代表其他货件的时效承诺；您的路线及预计全程时效将在报价时确认。" : "In August 2026, Huanfa arranged DDP shipping for 20 kg of general cargo from Shenzhen to Hawaii via UPS, coordinating export and import clearance, import duties and taxes, and delivery to the agreed address. The actual journey took 3 days from dispatch in China to delivery in Hawaii, including customs clearance and final delivery—not just flight time. This completed shipment is not a guarantee for other cargo; your route and estimated end-to-end timing are confirmed at quotation."}</p>
+            <p className="text-sm font-semibold text-brand-700">{locale === "zh" ? "2026年8月 · UPS DDP · 20 kg · 已签收" : "August 2026 · UPS DDP · 20 kg · Delivered"}</p>
+            <div className="grid items-center gap-6 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm lg:grid-cols-[1.25fr_0.75fr] lg:p-6">
+              <button
+                type="button"
+                onClick={() => setLightbox({ src: "/customer-feedback/brian-packaging-collage.jpg", alt: t.homeSections.testimonials.packingAlt })}
+                aria-label={t.homeSections.testimonials.viewOriginal}
+                className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500"
+              >
+                <Image
+                  src="/customer-feedback/brian-packaging-collage.jpg"
+                  alt={t.homeSections.testimonials.packingAlt}
+                  width={1456}
+                  height={1088}
+                  className="h-full w-full rounded-xl object-cover"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+                <span className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-gray-950/75 px-3 py-1.5 text-xs font-semibold text-white opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
+                  {t.homeSections.testimonials.viewOriginal}
+                </span>
+              </button>
+              <div className="p-3 lg:p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-600">{t.homeSections.testimonials.packingLabel}</p>
+                <h3 className="mt-3 text-2xl font-bold text-brand-800">{t.homeSections.testimonials.packingTitle}</h3>
+                <p className="mt-4 leading-relaxed text-gray-600">{t.homeSections.testimonials.packingDesc}</p>
+                <p className="mt-5 text-sm font-semibold text-brand-600">{t.homeSections.testimonials.viewOriginal}</p>
+              </div>
+            </div>
             <aside className="rounded-2xl border border-brand-100 bg-white p-6">
               <dl className="grid gap-5 md:grid-cols-3">
                 {(locale === "zh" ? [
@@ -62,6 +88,7 @@ export default function CustomerStories() {
                   ["Delivery result", "The goods were successfully signed for. This shipment took 3 days from dispatch in China to delivery in Hawaii, including clearance and final delivery."],
                 ]).map(([title, body]) => <div key={title}><dt className="mb-2 font-bold text-brand-800">{title}</dt><dd className="text-sm leading-6 text-slate-600">{body}</dd></div>)}
               </dl>
+              <p className="mt-4 text-xs leading-relaxed text-gray-500">{locale === "zh" ? "3天为本票实际时效；其他货件的路线和预计时效以报价为准。" : "The 3-day transit was specific to this shipment. Your route and estimated timing are confirmed with your quote."}</p>
               <Link href="/services/door-to-door" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-brand-700 hover:underline">{locale === "zh" ? "了解 DDP 服务范围与报价要求 →" : "Explore DDP scope and quote requirements →"}</Link>
             </aside>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -130,32 +157,7 @@ export default function CustomerStories() {
               </div>
             </div>
 
-            <div className="grid items-center gap-6 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm lg:grid-cols-[1.25fr_0.75fr] lg:p-6">
-              <button
-                type="button"
-                onClick={() => setLightbox({ src: "/customer-feedback/brian-packaging-collage.jpg", alt: t.homeSections.testimonials.packingAlt })}
-                aria-label={t.homeSections.testimonials.viewOriginal}
-                className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500"
-              >
-                <Image
-                  src="/customer-feedback/brian-packaging-collage.jpg"
-                  alt={t.homeSections.testimonials.packingAlt}
-                  width={1456}
-                  height={1088}
-                  className="h-full w-full rounded-xl object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-                <span className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-gray-950/75 px-3 py-1.5 text-xs font-semibold text-white opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
-                  {t.homeSections.testimonials.viewOriginal}
-                </span>
-              </button>
-              <div className="p-3 lg:p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-600">{t.homeSections.testimonials.packingLabel}</p>
-                <h3 className="mt-3 text-2xl font-bold text-brand-800">{t.homeSections.testimonials.packingTitle}</h3>
-                <p className="mt-4 leading-relaxed text-gray-600">{t.homeSections.testimonials.packingDesc}</p>
-                <p className="mt-5 text-sm font-semibold text-brand-600">{t.homeSections.testimonials.viewOriginal}</p>
-              </div>
-            </div>
+
           </div>
           <ContainerShipmentCase onOpen={setLightbox} />
         </div>
