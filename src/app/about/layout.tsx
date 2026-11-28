@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "About Our China Freight Forwarding Team",
-  description: "Learn about Huanfa International Logistics, our Shenzhen operations, company registration, and freight coordination experience.",
+  description: "Meet Huanfa Logistics, your Shenzhen freight team for shipping from China to the USA, Canada and Europe. View our operations and company registration.",
   path: "/about",
 });
 

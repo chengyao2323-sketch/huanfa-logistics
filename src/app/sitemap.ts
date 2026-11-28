@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services/warehousing`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/services/customs-insurance`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/personal-shipping-from-china`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/about`, lastModified: "2026-11-25", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/about`, lastModified: "2026-11-28", changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/shipment-cases`, lastModified: "2026-11-25", changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/faq`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.9 },

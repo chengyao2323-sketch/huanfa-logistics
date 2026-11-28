@@ -1,8 +1,8 @@
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Sea Freight from China to the USA and Europe",
-  description: "FCL and LCL ocean freight from China to the USA and Europe with pickup, consolidation, customs coordination, and delivery options.",
+  title: "Sea Freight from China to the USA, Canada and Europe",
+  description: "FCL and LCL ocean freight from China to the USA, Canada and Europe with pickup, consolidation, customs coordination, and delivery options.",
   path: "/services/sea-freight",
 });
 

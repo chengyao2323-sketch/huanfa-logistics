@@ -37,12 +37,12 @@ const en: I18nDict = {
     ocean: {
       title: "Ocean Freight",
       subtitle: "Ocean Freight",
-      desc: "FCL and LCL ocean freight from China to the USA and Europe, with port or door delivery options.",
+      desc: "FCL and LCL ocean freight from China to the USA, Canada and Europe, with port or door delivery options.",
     },
     air: {
       title: "Air Freight",
       subtitle: "Air Freight",
-      desc: "Air freight and express options for general cargo and urgent shipments to the USA and Europe.",
+      desc: "Air freight and express options for general cargo and urgent shipments to the USA, Canada and Europe.",
     },
     ddp: {
       title: "DDP Door-to-Door Shipping",
@@ -63,7 +63,7 @@ const en: I18nDict = {
   about: {
     badge: "About Huanfa",
     title: "A China Freight Forwarder Built for Importers",
-    p1: "We help businesses and personal importers in the USA and Europe coordinate shipments from suppliers in China. Our team arranges pickup, consolidation, ocean or air freight, customs coordination, and final delivery under a clearly confirmed service scope.",
+    p1: "We help businesses and personal importers in the USA, Canada and Europe coordinate shipments from suppliers in China. Our team arranges pickup, consolidation, ocean or air freight, customs coordination, and final delivery under a clearly confirmed service scope.",
     p2: "Whether you are importing furniture, electronics, general cargo, or shipping to Amazon FBA, one freight specialist stays responsible for communication from quotation through delivery. Costs, routing, and responsibilities are confirmed before shipment.",
     learnMore: "Learn More About Huanfa",
   },
@@ -197,18 +197,18 @@ const en: I18nDict = {
   aboutPage: {
     page: {
       title: "About Huanfa Logistics",
-      desc: "A China freight forwarder helping USA and Europe importers ship with confidence.",
+      desc: "A China freight forwarder helping importers in the USA, Canada and Europe ship with confidence.",
     },
     story: {
       badge: "Who We Are",
-      title: "Freight Forwarding from China\nto the USA & Europe",
+      title: "Freight Forwarding from China\nto the USA, Canada & Europe",
       companyInfo: "Huanfa in One Paragraph",
-      p1: "Huanfa International Logistics is a Shenzhen-based freight coordinator focused on moving goods from suppliers in China to buyers in the USA and Europe. We arrange supplier pickup, consolidation, ocean or air freight, customs coordination, and final delivery under the service scope confirmed for each shipment.",
+      p1: "Huanfa International Logistics is a Shenzhen-based freight coordinator focused on moving goods from suppliers in China to buyers in the USA, Canada and Europe. We arrange supplier pickup, consolidation, ocean or air freight, customs coordination, and final delivery under the service scope confirmed for each shipment.",
       p2: "Our team has worked in cross-border logistics since 2018 and supports furniture, general cargo, electronics, and Amazon FBA shipments, subject to cargo details and route requirements.",
       p3: "We provide clear quotations, explain what is included, and share confirmed updates from pickup through delivery. One freight specialist stays responsible for communication throughout the shipment.",
       timeline: [
         { year: "2018", event: "The founding team begins working in cross-border logistics" },
-        { year: "Today", event: "Focused on China-to-USA and China-to-Europe freight coordination" },
+        { year: "Today", event: "Focused on freight coordination from China to the USA, Canada and Europe" },
       ],
     },
     values: {
@@ -305,7 +305,7 @@ const en: I18nDict = {
       },
       {
         "question": "Can you arrange Amazon FBA shipments?",
-        "answer": "Yes, we arrange Amazon FBA first-mile shipping to the USA and Europe. Send your shipment plan, assigned warehouse, labels and packing requirements. We will confirm which preparation, appointment and delivery services your shipment needs and what the quote covers."
+        "answer": "Yes, we arrange Amazon FBA first-mile shipping to the USA, Canada and Europe. Send your shipment plan, assigned warehouse, labels and packing requirements. We will confirm which preparation, appointment and delivery services your shipment needs and what the quote covers."
       },
       {
         "question": "How do I get shipment updates?",

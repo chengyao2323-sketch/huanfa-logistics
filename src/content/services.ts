@@ -85,8 +85,8 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       seaFreight: {
         name: "Ocean Freight", summary: "Container and consolidated shipping with port or door delivery options.",
         fit: "Larger shipments with flexible delivery dates", highlights: ["FCL & LCL options", "Port or door delivery"],
-        linkLabel: "Explore ocean freight", title: "Ocean Freight from China to the USA & Europe",
-        intro: "Compare full-container and shared-container options from China to the USA and Europe. Your cargo volume, packing and delivery needs shape the plan.",
+        linkLabel: "Explore ocean freight", title: "Ocean Freight from China to the USA, Canada & Europe",
+        intro: "Compare full-container and shared-container options from China to the USA, Canada and Europe. Your cargo volume, packing and delivery needs shape the plan.",
         guideTitle: "Choose the right ocean freight setup",
         topics: [
           { title: "Measure the packed cargo", body: "Use the outside dimensions after crating or palletizing. For example, two crates measuring 1.2 × 1.0 × 1.0 metres each total 2.4 cubic metres (CBM). Send the gross weight and dimensions of every piece too: volume alone does not confirm the freight price, loading fit or minimum charge." },
@@ -162,7 +162,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
         name: "E-Commerce Logistics", summary: "Supplier coordination and first-mile freight for Amazon FBA inventory.",
         fit: "Sellers preparing stock for fulfillment centers", highlights: ["Multi-supplier pickup", "Carton & shipment-label coordination"],
         linkLabel: "Explore e-commerce logistics", title: "Amazon FBA & E-Commerce Freight from China",
-        intro: "Coordinate supplier pickup, consolidation and Amazon FBA first-mile transport from China to the USA and Europe, using the destination and shipment information you provide.",
+        intro: "Coordinate supplier pickup, consolidation and Amazon FBA first-mile transport from China to the USA, Canada and Europe, using the destination and shipment information you provide.",
         guideTitle: "Prepare the shipment, not just the transport",
         topics: [
           { title: "Confirm the destination first", body: "Provide the current shipment plan and assigned receiving address. If inventory is split between destinations, tell us the package allocation before the transport plan is finalized." },
@@ -224,8 +224,8 @@ export const servicesContent: Record<Locale, ServicesContent> = {
       seaFreight: {
         name: "海运服务", summary: "整箱或拼箱运输，可按需安排到港或门到门交付。",
         fit: "货量较大、交付时间相对灵活的货物", highlights: ["整箱 FCL / 拼箱 LCL", "到港或到门选项"],
-        linkLabel: "了解海运方案", title: "中国至美国、欧洲海运服务",
-        intro: "比较中国至美国、欧洲的整箱与拼箱方案。货物体积、包装和交付要求，共同决定如何安排运输。",
+        linkLabel: "了解海运方案", title: "中国至美国、加拿大和欧洲海运服务",
+        intro: "比较中国至美国、加拿大和欧洲的整箱与拼箱方案。货物体积、包装和交付要求，共同决定如何安排运输。",
         guideTitle: "先确定适合你的海运组合",
         topics: [
           { title: "按最终包装测量体积", body: "使用打木箱或托盘后的外部尺寸。例如，两个长1.2米、宽1米、高1米的木箱，合计体积为2.4立方米（CBM）。还需提供每件毛重和尺寸；仅凭体积不能确定运费、装载可行性或最低收费。" },
@@ -301,7 +301,7 @@ export const servicesContent: Record<Locale, ServicesContent> = {
         name: "跨境电商物流", summary: "为 Amazon FBA 备货协调供应商、货物准备与头程运输。",
         fit: "准备向履约仓补货的电商卖家", highlights: ["多供应商提货集货", "外箱与运输标签协调"],
         linkLabel: "了解电商物流", title: "中国出口电商物流与 Amazon FBA 头程",
-        intro: "根据你提供的目的仓与货件信息，协调中国至美国、欧洲的供应商提货、集货及 Amazon FBA 头程运输。",
+        intro: "根据你提供的目的仓与货件信息，协调中国至美国、加拿大和欧洲的供应商提货、集货及 Amazon FBA 头程运输。",
         guideTitle: "准备好货件，才能安排好运输",
         topics: [
           { title: "先确认货物发往哪里", body: "请提供当前货件计划和分配的收货地址。如果库存需要分到多个目的地，请在运输方案确定前，说明每个目的地对应的包裹。" },
