@@ -1,4 +1,5 @@
 import { sendMail } from "cloudflare-smtp";
+import type { InquirySource } from "./inquiry-source";
 
 export async function sendInquiryEmail(data: {
   companyName: string;
@@ -10,6 +11,7 @@ export async function sendInquiryEmail(data: {
   cargoType: string;
   weightVolume: string;
   remarks: string;
+  attribution?: InquirySource;
 }): Promise<boolean> {
   const env = (globalThis as any).process?.env ?? {};
   const apiKey = env.RESEND_API_KEY;
@@ -25,6 +27,13 @@ export async function sendInquiryEmail(data: {
     "Cargo: " + data.cargoType,
     "Weight/Volume: " + data.weightVolume,
     "Remarks: " + data.remarks,
+    "",
+    "--- Inquiry source (browser-reported, not independently verified) ---",
+    "Referring website: " + (data.attribution?.referrerHost || "Direct / unknown (referrer unavailable)"),
+    "First page in this tab session: " + (data.attribution?.landingPage || "Unknown"),
+    "Submitted from: " + (data.attribution?.submissionPage || "/contact"),
+    "Campaign source: " + (data.attribution?.campaignSource || "Not provided"),
+    "Campaign medium: " + (data.attribution?.campaignMedium || "Not provided"),
     "",
     "--- Sent via Huanfa Logistics Website ---",
   ].join("\n");

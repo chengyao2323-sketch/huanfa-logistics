@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, FormEvent } from "react";
 import Link from "next/link";
 import { useI18n } from "@/i18n";
+import { captureInquirySource } from "@/lib/inquiry-source";
 
 type FormData = {
   companyName: string;
@@ -185,7 +186,7 @@ export default function ContactPage() {
       const res = await fetch("/api/inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, attribution: captureInquirySource() }),
         signal: controller.signal,
       });
       if (!res.ok) throw new Error("Submission could not be confirmed");
@@ -307,6 +308,8 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-brand-800 mb-2">{t.contactPage.form.successTitle}</h3>
                   <p className="text-gray-500 mb-8 max-w-md mx-auto">{t.contactPage.form.successDesc}</p>
+                  <p className="mb-4 text-sm text-gray-600">{locale === "zh" ? "请留意邮箱（包括垃圾邮件）或 WhatsApp，我们通常在1个工作日内回复。" : "Look out for our reply by email (including your spam folder) or WhatsApp, usually within one business day."}</p>
+                  <a href="https://wa.me/8615207122341" target="_blank" rel="noopener noreferrer" className="mb-6 inline-flex min-h-11 items-center font-semibold text-brand-700 underline underline-offset-4">{locale === "zh" ? "通过 WhatsApp 联系 Chris" : "Contact Chris on WhatsApp"}</a>
                   <button
                     onClick={resetForm}
                     className="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors"
@@ -358,6 +361,7 @@ export default function ContactPage() {
                     </fieldset>
 
                     <div className="pt-2">
+                      <p className="mb-3 text-sm text-gray-600">{locale === "zh" ? "通常在1个工作日内回复。请留意您提供的邮箱或 WhatsApp。" : "We usually reply within one business day. Check the email or WhatsApp you provide."}</p>
                       <p className="mb-4 text-xs leading-relaxed text-gray-500">{help.privacy} <Link href="/privacy" className="font-medium text-brand-700 underline underline-offset-2">{help.privacyLink}</Link></p>
                       <button
                         type="submit"

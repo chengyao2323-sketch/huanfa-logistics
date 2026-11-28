@@ -17,6 +17,7 @@ const sections = [
   {
     heading: "Preferences and Website Analytics",
     body: [
+      "We use session storage to remember the first page and available referring website or campaign source within the current tab session. This information is sent with an inquiry to help us understand its source. It is not a visitor identifier and is not used to track you across websites or browser sessions. If storage is blocked, the inquiry form still works with whatever information is available.",
       "We use browser local storage to remember your language choice and session storage to remember when you dismiss the WhatsApp contact button for the current browser session. These preferences are stored on your device; they are not analytics cookies.",
       "The production website uses Cloudflare's performance analytics beacon. Cloudflare documents this analytics service as operating without analytics cookies or browser storage. Cloudflare hosting and security services may separately use security cookies when required.",
       "We do not currently run advertising tracking cookies on this website. Clicking WhatsApp opens a third-party service governed by its own privacy and storage practices.",

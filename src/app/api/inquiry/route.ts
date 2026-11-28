@@ -1,6 +1,7 @@
 ﻿import { NextRequest, NextResponse } from "next/server";
 import { sendInquiryEmail } from "@/lib/email";
 import { recordConversion } from "@/lib/conversions";
+import { sanitizeInquirySource } from "@/lib/inquiry-source";
 
 export const runtime = "edge";
 
@@ -50,7 +51,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const sent = await sendInquiryEmail(body);
+    const sent = await sendInquiryEmail({ ...body, attribution: sanitizeInquirySource(source.attribution) });
     if (!sent) {
       return NextResponse.json(
         { error: "Inquiry service is temporarily unavailable. Please contact us by email or WhatsApp." },

@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { captureInquirySource } from "@/lib/inquiry-source";
 
 export default function ConversionTracking() {
   useEffect(() => {
+    captureInquirySource();
     let lastClick = 0;
     function track(event: MouseEvent) {
       if (!event.isTrusted || (event.type === "auxclick" && event.button !== 1)) return;
